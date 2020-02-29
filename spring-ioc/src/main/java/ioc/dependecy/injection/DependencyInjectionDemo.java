@@ -16,9 +16,9 @@ public class DependencyInjectionDemo {
         BeanFactory beanFactory =new ClassPathXmlApplicationContext("META-INF/dependency-injection-context.xml");
         UserRepositroy userRepository = (UserRepositroy) beanFactory.getBean("userRepository");
 //        System.out.println(userRepository.getUsers());
-
         //依赖注入
         System.out.println(userRepository.getBeanFactory());
+        System.out.println(beanFactory);
 //        System.out.println(userRepository.getBeanFactory()==beanFactory);
         //依赖查找
 //        System.out.println(beanFactory.getBean(BeanFactory.class));
