@@ -10,19 +10,19 @@ package com.classloader;
  */
 public class MyTest4 {
     public static void main(String[] args) {
-       MyParent4 myParent4 = new MyParent4();
+//       MyParent4 myParent4 = new MyParent4();
         MyParent4[]  myParent4s = new MyParent4[1];
-        System.out.println(myParent4s.getClass());
-        MyParent4[][]  myParent4ss = new MyParent4[1][1];
-        System.out.println(myParent4ss.getClass());
-
-        int[] i = new int[1];
-        System.out.println(i.getClass());//class [I
-        System.out.println(i.getClass().getSuperclass());//class java.lang.Object
-
-        char[] c =new char[1];
-        System.out.println(c.getClass());//class [C
-        System.out.println(c.getClass().getSuperclass());//class java.lang.Object
+//        System.out.println(myParent4s.getClass());
+//        MyParent4[][]  myParent4ss = new MyParent4[1][1];
+//        System.out.println(myParent4ss.getClass());
+//
+//        int[] i = new int[1];
+//        System.out.println(i.getClass());//class [I
+//        System.out.println(i.getClass().getSuperclass());//class java.lang.Object
+//
+//        char[] c =new char[1];
+//        System.out.println(c.getClass());//class [C
+//        System.out.println(c.getClass().getSuperclass());//class java.lang.Object
     }
 }
 class  MyParent4{
