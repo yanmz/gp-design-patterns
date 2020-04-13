@@ -24,13 +24,13 @@ public class GPDispatchServlet extends HttpServlet {
     //享元模式，缓存
     private List<String> classNames = new ArrayList<String>();
 
-    private Map<String,Object> ioc = new HashMap<>();
+    private Map<String,Object> ioc = new HashMap<String,Object>();
 
     private Map<String,Method> handlerMapping = new HashMap<String, Method>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+        this.doPost(req, resp);
     }
 
     @Override
@@ -214,7 +214,7 @@ public class GPDispatchServlet extends HttpServlet {
 
     private void doScanner(String scanPackage) {
 
-        URL url = this.getClass().getClassLoader().getResource("/"+ scanPackage.replaceAll(".","/"));
+        URL url = this.getClass().getClassLoader().getResource("/"+ scanPackage.replaceAll("\\.","/"));
         File classPath = new  File(url.getFile());
         for (File file:classPath.listFiles()) {
             if(file.isDirectory()){
