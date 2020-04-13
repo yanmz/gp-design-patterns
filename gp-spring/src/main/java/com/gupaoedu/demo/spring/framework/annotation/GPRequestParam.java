@@ -1,4 +1,4 @@
-package com.gupaoedu.demo.mvcfremak.annotation;
+package com.gupaoedu.demo.spring.framework.annotation;
 
 import java.lang.annotation.*;
 
