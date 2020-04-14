@@ -3,6 +3,7 @@ package com.java.stream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class StreamTest13 {
@@ -13,7 +14,6 @@ public class StreamTest13 {
         Student student4= new Student("wangwu",80,"20");
 
         List<Student>  list = Arrays.asList(student1,student2,student3,student4);
-
 
         //根据名字分组
         Map<String, List<Student>> collect1 = list.stream().collect(Collectors.groupingBy(Student::getName));
@@ -28,7 +28,8 @@ public class StreamTest13 {
         Map<String, Double> collect = list.stream().collect(Collectors.groupingBy(Student::getAge, Collectors.averagingDouble(Student::getCore)));
 
         //分区
-        list.stream().collect(Collectors.partitioningBy(student -> student.getCore()>=90));
-
+        Map<Boolean, List<Student>> collect4 = list.stream().collect(Collectors.partitioningBy(student -> student.getCore() >= 90));
+        List<Student> students = collect4.get(true);
+      
     }
 }
