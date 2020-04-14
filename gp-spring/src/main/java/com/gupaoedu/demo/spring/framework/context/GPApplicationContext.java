@@ -11,6 +11,7 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 /**
  * 职责：完成Bean的创建和DI
@@ -147,5 +148,8 @@ public class GPApplicationContext {
     }
     public String[] getBeanDefinitionNames() {
         return  this.beanDefinitionMap.keySet().toArray(new String[this.beanDefinitionMap.size()]);
+    }
+    public Properties getConfig() {
+        return this.reader.getConfig();
     }
 }

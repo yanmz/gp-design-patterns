@@ -25,6 +25,9 @@ public class GPBeanDefinitionReader {
         doScanner(contextConfig.getProperty("scanPackage"));
     }
 
+    public  Properties getConfig(){
+        return contextConfig;
+    }
     private void doScanner(String scanPackage) {
 //jar 、 war 、zip 、rar
         URL url = this.getClass().getClassLoader().getResource("/" + scanPackage.replaceAll("\\.","/"));
