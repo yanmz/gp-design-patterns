@@ -1,7 +1,7 @@
-package com.gupaoedu.demo.service;
+package com.gupaoedu.demo.mvc.service.impl;
 
-import com.gupaoedu.demo.mvcfremak.annotation.GPService;
-import com.gupaoedu.demo.service.impl.IDemoService;
+import com.gupaoedu.demo.mvc.service.IDemoService;
+import com.gupaoedu.demo.spring.framework.annotation.GPService;
 
 /**
  * 核心业务逻辑

@@ -1,10 +1,11 @@
 package com.gupaoedu.demo.mvc.action;
 
-import com.gupaoedu.demo.mvcfremak.annotation.GPAutowired;
-import com.gupaoedu.demo.mvcfremak.annotation.GPController;
-import com.gupaoedu.demo.mvcfremak.annotation.GPRequestMapping;
-import com.gupaoedu.demo.mvcfremak.annotation.GPRequestParam;
-import com.gupaoedu.demo.service.impl.IDemoService;
+import com.gupaoedu.demo.mvc.service.IDemoService;
+import com.gupaoedu.demo.spring.framework.annotation.GPAutowired;
+import com.gupaoedu.demo.spring.framework.annotation.GPController;
+import com.gupaoedu.demo.spring.framework.annotation.GPRequestMapping;
+import com.gupaoedu.demo.spring.framework.annotation.GPRequestParam;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

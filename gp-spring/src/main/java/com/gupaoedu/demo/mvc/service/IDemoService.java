@@ -1,4 +1,4 @@
-package com.gupaoedu.demo.service.impl;
+package com.gupaoedu.demo.mvc.service;
 
 
 public interface IDemoService {
