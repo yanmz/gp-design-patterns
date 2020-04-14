@@ -2,7 +2,6 @@ package com.gupaoedu.demo.spring.framework.servlet;
 
 import com.gupaoedu.demo.spring.framework.annotation.GPController;
 import com.gupaoedu.demo.spring.framework.annotation.GPRequestMapping;
-import com.gupaoedu.demo.spring.framework.annotation.GPRequestParam;
 import com.gupaoedu.demo.spring.framework.context.GPApplicationContext;
 
 import javax.servlet.ServletConfig;
@@ -13,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -24,16 +21,11 @@ public class GPMVCDispatchServlet extends HttpServlet {
 
     private GPApplicationContext applicationContext;
 
-    Properties properties = new Properties();
-
     private List<GPHandlerMapping> handlerMappings = new ArrayList<GPHandlerMapping>();
 
     private Map<GPHandlerMapping,GPHandlerAdapter> handlerAdapters = new HashMap<GPHandlerMapping, GPHandlerAdapter>();
 
     private List<GPViewResolver> viewResolvers = new ArrayList<GPViewResolver>();
-
-//    //IoC容器，key默认是类名首字母小写，value就是对应的实例对象
-//    private Map<String,Object> ioc = new HashMap<String,Object>();
 
     private Map<String,Method> handlerMapping = new HashMap<String, Method>();
 
@@ -44,12 +36,6 @@ public class GPMVCDispatchServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //完成了对HandlerMapping的封装
-        //完成了对方法返回值的封装ModelAndView
-
-        //1、通过URL获得一个HandlerMapping
-        getHandler(req);
-
         //6、委派,根据URL去找到一个对应的Method并通过response返回
         try {
             doDispatch(req,resp);
@@ -73,54 +59,31 @@ public class GPMVCDispatchServlet extends HttpServlet {
         return null;
     }
 
-    private void doDispatch(HttpServletRequest req, HttpServletResponse resp) throws IOException, InvocationTargetException, IllegalAccessException {
-        String url = req.getRequestURI();
-        String contextPath = req.getContextPath();
-        url = url.replaceAll(contextPath,"").replaceAll("/+","/");
-        if(!this.handlerMapping.containsKey(url)){
-            resp.getWriter().write("404 Not Found!!!");
+    private void doDispatch(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+        //完成了对HandlerMapping的封装
+        //完成了对方法返回值的封装ModelAndView
+
+        //1、通过URL获得一个HandlerMapping
+        GPHandlerMapping handler = getHandler(req);
+        if(handler == null){
+            processDispatchResult(req,resp,new GPModelAndView("404"));
             return;
         }
-        Map<String,String[]> params = req.getParameterMap();
 
-        Method method = this.handlerMapping.get(url);
+        //2、根据一个HandlerMaping获得一个HandlerAdapter
+        GPHandlerAdapter ha = getHandlerAdapter(handler);
 
-        //获取形参列表
-        Class<?> [] parameterTypes = method.getParameterTypes();
-        Object [] paramValues = new Object[parameterTypes.length];
+        //3、解析某一个方法的形参和返回值之后，统一封装为ModelAndView对象
+        GPModelAndView mv = ha.handler(req,resp,handler);
 
-        for (int i = 0; i < parameterTypes.length; i++) {
-            Class paramterType = parameterTypes[i];
-            if(paramterType == HttpServletRequest.class){
-                paramValues[i] = req;
-            }else if(paramterType == HttpServletResponse.class){
-                paramValues[i] = resp;
-            }else if(paramterType == String.class){
-                //通过运行时的状态去拿到你
-                Annotation[] [] pa = method.getParameterAnnotations();
-                for (int j = 0; j < pa.length ; j ++) {
-                    for(Annotation a : pa[i]){
-                        if(a instanceof GPRequestParam){
-                            String paramName = ((GPRequestParam) a).value();
-                            if(!"".equals(paramName.trim())){
-                                String value = Arrays.toString(params.get(paramName))
-                                        .replaceAll("\\[|\\]","")
-                                        .replaceAll("\\s+",",");
-                                paramValues[i] = value;
-                            }
-                        }
-                    }
-                }
-
-            }
-        }
-
-        //暂时硬编码
-        String beanName = toLowerFirstCase(method.getDeclaringClass().getSimpleName());
-        //赋值实参列表
-        method.invoke(applicationContext.getBean(beanName),paramValues);
+        // 就把ModelAndView变成一个ViewResolver
+        processDispatchResult(req,resp,mv);
     }
 
+    private GPHandlerAdapter getHandlerAdapter(GPHandlerMapping handler) {
+        if(this.handlerAdapters.isEmpty()){return null;}
+        return this.handlerAdapters.get(handler);
+    }
     @Override
     public void init(ServletConfig config) {
 
@@ -130,10 +93,12 @@ public class GPMVCDispatchServlet extends HttpServlet {
         //==============MVC部分==============
         //初始化九大组件
         initStrategies(applicationContext);
+
         System.out.println("GP Spring framework is init.");
     }
 
     private void initStrategies(GPApplicationContext context) {
+        //初始化HandlerMapping  建立url与method关系
         initHandlerMappings(context);
 
         //初始化参数适配器
@@ -141,6 +106,18 @@ public class GPMVCDispatchServlet extends HttpServlet {
 
         //初始化视图转换器
         initViewResolvers(context);
+    }
+
+    private void processDispatchResult(HttpServletRequest req, HttpServletResponse resp, GPModelAndView mv) throws Exception {
+        if(null == mv){return;}
+        if(this.viewResolvers.isEmpty()){return;}
+
+        for (GPViewResolver viewResolver : this.viewResolvers) {
+            GPView view = viewResolver.resolveViewName(mv.getViewName());
+            //直接往浏览器输出
+            view.render(mv.getModel(),req,resp);
+            return;
+        }
     }
 
     private void initViewResolvers(GPApplicationContext context) {
@@ -190,29 +167,5 @@ public class GPMVCDispatchServlet extends HttpServlet {
                 System.out.println("Mapped : " + regex + "," + method);
             }
         }
-    }
-
-    private String toLowerFirstCase(String simpleName) {
-        char[] chars = simpleName.toCharArray();
-                chars[0]+=32;
-        return String.valueOf(chars);
-    }
-
-    private void doLoadConfig(String contextConfigLocation) {
-        InputStream is = this.getClass().getClassLoader().getResourceAsStream(contextConfigLocation);
-        try {
-            properties.load(is);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally {
-            if(is!=null){
-                try {
-                    is.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
     }
 }
