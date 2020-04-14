@@ -1,6 +1,4 @@
 package com.java.stream;
-
-<<<<<<< HEAD
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -50,14 +48,5 @@ public class StreamTest14 {
                         .distinct()
                         .collect(Collectors.toList());
         System.out.println(uniqueCharacters);
-
-=======
-import java.util.*;
-
-public class StreamTest14 {
-    public static void main(String[] args) {
-        List<Integer> list1 = Arrays.asList(1, 3, 4, 6, 0 ,4 ,8, 7 ,10, -3);
-        list1.stream().filter(item->(item>3)).forEach(System.out::println);
->>>>>>> origin/master
     }
 }
