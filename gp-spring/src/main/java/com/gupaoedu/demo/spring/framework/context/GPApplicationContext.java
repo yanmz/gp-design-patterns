@@ -3,6 +3,9 @@ package com.gupaoedu.demo.spring.framework.context;
 import com.gupaoedu.demo.spring.framework.annotation.GPAutowired;
 import com.gupaoedu.demo.spring.framework.annotation.GPController;
 import com.gupaoedu.demo.spring.framework.annotation.GPService;
+import com.gupaoedu.demo.spring.framework.aop.GPJdkDynamicAopProxy;
+import com.gupaoedu.demo.spring.framework.aop.config.GPAopConfig;
+import com.gupaoedu.demo.spring.framework.aop.support.GPAdvisedSupport;
 import com.gupaoedu.demo.spring.framework.beans.GPBeanWrapper;
 import com.gupaoedu.demo.spring.framework.beans.config.GPBeanDefinition;
 import com.gupaoedu.demo.spring.framework.beans.support.GPBeanDefinitionReader;
@@ -125,12 +128,39 @@ public class GPApplicationContext {
                     Class<?> clazz = Class.forName(className);
                     //2、默认的类名首字母小写
                     instance = clazz.newInstance();
+                    //==================AOP开始=========================
+                    //如果满足条件，就直接返回Proxy对象
+                    //1、加载AOP的配置文件
+                    GPAdvisedSupport config = instantionAopConfig(beanDefinition);
+                    //目标对象class
+                    config.setTargetClass(clazz);
+
+                    config.setTarget(instance);
+
+                    //判断规则，要不要生成代理类，如果要就覆盖原生对象
+                    //如果不要就不做任何处理，返回原生对象
+                    if(config.pointCutMath()){
+                        instance = new GPJdkDynamicAopProxy(config).getProxy();
+                    }
+
+                    //===================AOP结束========================
                     this.factoryBeanObjectCache.put(beanName, instance);
                 }
         } catch (Exception e) {
             e.printStackTrace();
         }
             return instance;
+    }
+
+    private GPAdvisedSupport instantionAopConfig(GPBeanDefinition beanDefinition) {
+        GPAopConfig config = new GPAopConfig();
+        config.setPointCut(this.reader.getConfig().getProperty("pointCut"));
+        config.setAspectClass(this.reader.getConfig().getProperty("aspectClass"));
+        config.setAspectBefore(this.reader.getConfig().getProperty("aspectBefore"));
+        config.setAspectAfter(this.reader.getConfig().getProperty("aspectAfter"));
+        config.setAspectAfterThrow(this.reader.getConfig().getProperty("aspectAfterThrow"));
+        config.setAspectAfterThrowingName(this.reader.getConfig().getProperty("aspectAfterThrowingName"));
+        return new GPAdvisedSupport(config);
     }
 
     private void doRegistBeanDefinition(List<GPBeanDefinition> beanDefinitions) throws Exception {
