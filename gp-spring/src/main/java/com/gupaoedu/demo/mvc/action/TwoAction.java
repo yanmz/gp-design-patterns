@@ -1,6 +1,6 @@
 package com.gupaoedu.demo.mvc.action;
 
-import com.gupaoedu.demo.service.impl.IDemoService;
+import com.gupaoedu.demo.mvc.service.IDemoService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
