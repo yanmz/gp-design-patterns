@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * 创建流的几种方式
+ */
 public class StreamTest1 {
     public static void main(String[] args) {
         Stream stream = Stream.of("hello","word","hello word");
