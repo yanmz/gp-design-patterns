@@ -10,7 +10,7 @@ package com.classloader;
  */
 public class MyTest1 {
     public static void main(String[] args) {
-        System.out.println(MyChild1.str);
+        System.out.println(MyChild1.str2);
     }
 }
 
