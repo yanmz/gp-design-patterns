@@ -1,5 +1,8 @@
 package com.classloader;
 
+/**
+ * 准备阶段和初始化的顺序问题
+ */
 public class MyTest6 {
     public static void main(String[] args) {
         Singleton singleton = Singleton.getSingleton();

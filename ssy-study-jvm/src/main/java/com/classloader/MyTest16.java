@@ -2,7 +2,7 @@ package com.classloader;
 
 import java.io.*;
 
-public class MyTest16 extends ClassLoader {
+public class  MyTest16 extends ClassLoader {
 
     private String classLoaderName;
 
