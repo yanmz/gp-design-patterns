@@ -12,10 +12,13 @@ import java.lang.reflect.Method;
  *  不同类加载器所加载的类是不兼容的，这就相当于在java虚拟机内部
  *  创建了一个又一个相互隔离的java类空间，这类技术在很多框架中都得到了实际应用
  */
-public class MyTest20 {
+public class MyTest21 {
     public static void main(String[] args) throws  Exception {
         MyTest16 loader1 = new MyTest16("loader1");
         MyTest16 loader2 = new MyTest16("loader2");
+
+        loader1.setPath("C:\\Users\\Tom\\Desktop\\");
+        loader2.setPath("C:\\Users\\Tom\\Desktop\\");
 
         Class<?> class1 = loader1.loadClass("com.classloader.Person");
         Class<?> class2 = loader2.loadClass("com.classloader.Person");
