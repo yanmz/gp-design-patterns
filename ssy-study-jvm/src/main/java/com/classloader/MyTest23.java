@@ -33,6 +33,12 @@ public class MyTest23 {
         System.out.println(ClassLoader.class.getClassLoader());
         //扩展类加载器与系统类加载器也是由启动类加载器加载的
         System.out.println(Launcher.class.getClassLoader());
+        System.out.println("-------------------");
+        System.out.println(System.getProperty("java.system.class.loader"));
+        System.out.println(MyTest23.class.getClassLoader());
+        System.out.println(MyTest16.class.getClassLoader());
+        System.out.println(ClassLoader.getSystemClassLoader());
+
 
     }
 }

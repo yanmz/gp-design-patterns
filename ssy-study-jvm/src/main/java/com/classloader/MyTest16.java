@@ -2,6 +2,14 @@ package com.classloader;
 
 import java.io.*;
 
+/**
+ *
+ *
+ * 将MyTest16设置为系统类加载器
+ * java -Djava.system.class.loader=com.classloader.MyTest16 com.classloader23
+ *
+ * @author Tom
+ */
 public class  MyTest16 extends ClassLoader {
 
     private String classLoaderName;
@@ -19,14 +27,13 @@ public class  MyTest16 extends ClassLoader {
         this.classLoaderName = classLoaderName;
     }
 
-    public MyTest16(ClassLoader parent,String classLoaderName){
+    public MyTest16(ClassLoader parent){
         super(parent);
-        this.classLoaderName = classLoaderName;
     }
-    @Override
-    public String toString(){
-      return  "["+this.classLoaderName+"]";
-    }
+//    @Override
+//    public String toString(){
+//      return  "["+this.classLoaderName+"]";
+//    }
 
     @Override
     protected Class<?> findClass(String name) {
