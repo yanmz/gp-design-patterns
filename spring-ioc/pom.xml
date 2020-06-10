@@ -8,6 +8,7 @@
   <artifactId>spring-ioc</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
+  <description>小马哥spring</description>
 
   <name>spring-ioc Maven Webapp</name>
   <!-- FIXME change it to the project's website -->

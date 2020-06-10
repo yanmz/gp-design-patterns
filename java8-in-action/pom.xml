@@ -8,6 +8,7 @@
   <artifactId>java8-in-action</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
+  <description>平时练手基础API运用</description>
 
   <name>java8-in-action Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
@@ -15,8 +16,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -32,6 +33,13 @@
           <version>1.2.62</version>
           <scope>compile</scope>
       </dependency>
+
+    <!--guava依赖-->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>21.0</version>
+    </dependency>
   </dependencies>
 
   <build>

@@ -8,6 +8,10 @@ interface MyInterface{
 
     @Override
     String toString();
+
+    static String a(){
+        return  "";
+    };
 }
 public class MyTest2 {
     public void test(MyInterface  myInterface){
@@ -30,6 +34,15 @@ public class MyTest2 {
             System.out.println("3333333");
         });
         System.out.println("----------");
+
+        MyInterface myInterface = ()->{
+            System.out.println("my test");
+        };
+
+
+        System.out.println(myInterface.getClass());
+        System.out.println(myInterface.getClass().getSuperclass());
+        System.out.println(myInterface.getClass().getInterfaces()[0]);
 
         myTest2.test(System.out::println);
     }
