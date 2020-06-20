@@ -9,7 +9,7 @@ import java.util.logging.*;
 /**
  * JUL 默认级别info
  */
-public class MyTest1 {
+public class JulDemo {
 
     @Test
     public void test(){
