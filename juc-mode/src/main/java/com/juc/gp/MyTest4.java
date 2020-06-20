@@ -3,9 +3,9 @@ package com.juc.gp;
 import java.util.Queue;
 
 public class MyTest4 implements  Runnable {
-   private Queue<String> queue;
-   private int size;
-   public int count;
+    private Queue<String> queue;
+    private int size;
+    public int count;
     public  MyTest4(Queue<String> queue,int size){
         this.queue = queue;
         this.size = size;

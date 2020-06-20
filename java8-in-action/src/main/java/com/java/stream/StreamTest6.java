@@ -8,7 +8,7 @@ public class StreamTest6 {
     public static void main(String[] args) {
         Stream<String> stream = Stream.generate(UUID.randomUUID()::toString);
 //        stream.findFirst().ifPresent(System.out::println);
-
+//        iterate 表示从1开始一直迭代
 //        Stream.iterate(1,item->item+2).limit(10).forEach(System.out::println);
 
         Stream.iterate(1,item->item+2).limit(10).filter(value->value>2).mapToInt(i->i*2).skip(2).limit(2).min().ifPresent(System.out::println);

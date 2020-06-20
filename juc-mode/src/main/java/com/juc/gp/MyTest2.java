@@ -1,8 +1,8 @@
 package com.juc.gp;
 
 public class MyTest2 {
-    private  int  count;
-    public void inc(){
+    private     int  count;
+    public    void inc(){
         try {
             Thread.sleep(1);
         } catch (InterruptedException e) {

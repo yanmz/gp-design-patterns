@@ -15,21 +15,22 @@ public class StreamTest13 {
 
         List<Student>  list = Arrays.asList(student1,student2,student3,student4);
 
-        //根据名字分组
-        Map<String, List<Student>> collect1 = list.stream().collect(Collectors.groupingBy(Student::getName));
-
-        //根据年龄分组
-        Map<String, List<Student>> collect2 = list.stream().collect(Collectors.groupingBy(Student::getAge));
+//        //根据名字分组
+//        Map<String, List<Student>> collect1 = list.stream().collect(Collectors.groupingBy(Student::getName));
+//
+//        //根据年龄分组
+//        Map<String, List<Student>> collect2 = list.stream().collect(Collectors.groupingBy(Student::getAge));
 
         //根据年龄分组 并且得出总数
-        Map<String, Long> collect3 = list.stream().collect(Collectors.groupingBy(Student::getAge, Collectors.counting()));
+//        Map<String, Long> collect3 = list.stream().collect(Collectors.groupingBy(Student::getAge, Collectors.counting()));
 
-        //根据年龄分组并且求其分数的平均值
-        Map<String, Double> collect = list.stream().collect(Collectors.groupingBy(Student::getAge, Collectors.averagingDouble(Student::getCore)));
+//        //根据年龄分组并且求其分数的平均值
+        Map<String, Double> collect = list.stream().collect(Collectors.groupingBy(Student::getAge, Collectors.summingDouble(Student::getCore)));
+//
+//        //分区
+//        Map<Boolean, List<Student>> collect4 = list.stream().collect(Collectors.partitioningBy(student -> student.getCore() >= 90));
+//        List<Student> students = collect4.get(true);
 
-        //分区
-        Map<Boolean, List<Student>> collect4 = list.stream().collect(Collectors.partitioningBy(student -> student.getCore() >= 90));
-        List<Student> students = collect4.get(true);
-      
+        System.out.println(collect);
     }
 }
