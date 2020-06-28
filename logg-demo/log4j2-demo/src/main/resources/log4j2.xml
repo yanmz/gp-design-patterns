@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    status="warn"日志框架本身的输出日志级别
+    monitorInterval="5" 自动加载配置文件的间隔时间  不低于5秒
+-->
+<Configuration status="warn" monitorInterval="5">
+<!--
+        集中配置属性进行管理
+        使用时通过：${name}
+-->
+    <properties>
+        <property name="LOG_HOME">E:/logs</property>
+    </properties>
+
+<!--
+        日志处理器
+-->
+    <Appenders>
+<!--        控制台输出 appender-->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] [%-5level] %c{36}:%L - -- %m%n"/>
+        </Console>
+<!--        日志文件输出 appender -->
+        <File name="file" fileName="${LOG_HOME}/myfile.log">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] %l %c{36} - %m%n"/>
+        </File>
+
+<!--        <Async name="Async">-->
+<!--            <AppenderRef ref="file"/>-->
+<!--        </Async>-->
+
+<!--        自定义异步logger 对象
+            includeLocation="false" 关闭日志记录行号信息
+            additivity="false" 不继承RootLogger 对象
+            -->
+        <AsyncLogger name="com.itheima" level="trace" includeLocation="false" additivity="false">
+            <AppenderRef ref="file"/>
+        </AsyncLogger>
+
+<!--       使用随机读写流的日志文件 输出appender 性能提高 -->
+        <RandomAccessFile name="accessFile" fileName="${LOG_HOME}/myAcclog.log">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] %l %c{36} - %m%n"/>
+        </RandomAccessFile>
+<!--        按照一定的规则拆分的 日志文件 的appender-->
+        <RollingFile name="rollingFile" fileName="${LOG_HOME}/myrollog.log"
+                     filePattern="D:/logs/$${date:yyyy-MM-dd}/myrollog-%d{yyyy- MM-dd-HH-mm}-%i.log">
+<!--            日志级别过滤器  -->   <!-- 阀值过滤 警告及以上日志接受，其他拒绝 -->
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>
+<!--            日志消息格式-->
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] %l %c{36} - %msg%n"/>
+
+
+            <Policies>
+<!--            在系统启动时 开启拆分规则  生产一个新的日志文件-->
+                <OnStartupTriggeringPolicy/>
+<!--              按照文件大小拆分  10MB  -->
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+<!--                按照时间节点拆分 规则根据filePattern定义的-->
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+<!--            在同一个目录下 文件的个数限定为30个  超过进行覆盖-->
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+    </Appenders>
+
+    <!--然后定义logger，只有定义了logger并引入的appender，appender才会生效-->
+    <Loggers>
+<!--        使用rootLogger 配置日志级别  level="trace"-->
+        <Root level="trace">
+<!--            指定日志使用的处理器-->
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="file"/>
+            <AppenderRef ref="accessFile"/>
+            <AppenderRef ref="rollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

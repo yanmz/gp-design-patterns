@@ -14,6 +14,8 @@
         <module>spring-bean</module>
         <module>dependecy-lookup</module>
         <module>dependecy-injection</module>
+        <module>Dependecy-resource</module>
+        <module>bean-scope</module>
     </modules>
 
     <properties>

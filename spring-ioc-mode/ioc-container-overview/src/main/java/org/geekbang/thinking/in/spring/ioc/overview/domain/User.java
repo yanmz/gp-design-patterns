@@ -1,8 +1,15 @@
 package org.geekbang.thinking.in.spring.ioc.overview.domain;
 
-public class User {
+import org.springframework.beans.factory.BeanNameAware;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+public class User  implements BeanNameAware {
     private Long id;
     private String name;
+
+    private String beanName;
 
     public Long getId() {
         return id;
@@ -32,5 +39,21 @@ public class User {
         user.setId(1L);
         user.setName("小马哥");
         return user;
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("User Bean [" + beanName + "] 初始化...");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("User Bean [" + beanName + "] 销毁中...");
+    }
+
+
+    @Override
+    public void setBeanName(String name) {
+        this.beanName = name;
     }
 }
