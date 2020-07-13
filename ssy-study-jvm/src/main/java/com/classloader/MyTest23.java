@@ -5,8 +5,8 @@ import sun.misc.Launcher;
 /**
  * 在运行期，一个java类是由该类的完全限定名和用于加载该类的定义类加载器所共同决定的。如果同样名字的类是由两个不同的加载器所加载，那么这些类就是不同的。
  * 即便.class文件的字节码完全一样，并且从相同的位置加载亦如此
- *
- *
+ * <p>
+ * <p>
  * 在Oracle的Hostpot实现中，系统属性sun.boot.class.path如果修改错了，则运行会出错，提示如下错误信息：
  * Error occurred during initialization of VM
  * java/lang/NoClassDeFoundError: java/lang/Object

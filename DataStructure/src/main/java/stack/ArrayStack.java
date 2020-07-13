@@ -5,11 +5,11 @@ import array.Array;
 public class ArrayStack<E> implements Stack<E> {
     Array<E> array;
 
-    public ArrayStack(int capacity){
+    public ArrayStack(int capacity) {
         array = new Array<E>(capacity);
     }
 
-    public ArrayStack(){
+    public ArrayStack() {
         array = new Array<E>();
     }
 
@@ -22,7 +22,7 @@ public class ArrayStack<E> implements Stack<E> {
     }
 
     public void push(E e) {
-       array.addLast(e);
+        array.addLast(e);
     }
 
     public E pop() {
@@ -34,13 +34,13 @@ public class ArrayStack<E> implements Stack<E> {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Stack:");
         stringBuilder.append('[');
-        for(int i=0;i<array.getSize();i++){
+        for (int i = 0; i < array.getSize(); i++) {
             stringBuilder.append(array.get(i));
-            if(i!=array.getSize()-1){
+            if (i != array.getSize() - 1) {
                 stringBuilder.append(",");
             }
         }

@@ -7,7 +7,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import javax.annotation.PostConstruct;
 
 /**
- *  ResovleableDependecy 作为依赖来源
+ * ResovleableDependecy 作为依赖来源
+ *
  * @author Tom
  */
 public class ResovleableDependecyResourceDemo {

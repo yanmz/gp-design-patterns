@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class MyTest1 {
     public static void main(String[] args) {
-        List<String> list = Lists.newArrayList("a", "b", "g", "8",null, "9");
+        List<String> list = Lists.newArrayList("a", "b", "g", "8", null, "9");
 //        String join = Joiner.on(":").join(list);
 //        System.out.println(join);
         System.out.println("==================================");

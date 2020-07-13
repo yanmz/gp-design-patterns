@@ -2,14 +2,14 @@ package com.monery;
 
 public class MyTest4 {
     public static void main(String[] args) {
-        new Thread(()->A.method(),"MethodA").start();
-        new Thread(()->B.method(),"MethodB").start();
+        new Thread(() -> A.method(), "MethodA").start();
+        new Thread(() -> B.method(), "MethodB").start();
     }
 }
 
 
-class A{
-    public static synchronized void method(){
+class A {
+    public static synchronized void method() {
         System.out.println("Method A");
         try {
             Thread.sleep(5000);
@@ -21,8 +21,8 @@ class A{
 }
 
 
-class B{
-    public static synchronized void method(){
+class B {
+    public static synchronized void method() {
         System.out.println("Method B");
         try {
             Thread.sleep(5000);

@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class Date  implements Cloneable{
+public class Date implements Cloneable {
     private List list;
 
     @Override

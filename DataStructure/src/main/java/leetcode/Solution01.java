@@ -2,9 +2,10 @@ package leetcode;
 
 public class Solution01 {
     public static void main(String[] args) {
-        int [] i = new int[]{3,1,3,4,2};
+        int[] i = new int[]{3, 1, 3, 4, 2};
         System.out.println(findDuplicate(i));
     }
+
     public static int findDuplicate(int[] nums) {
 //        int h = 0;
 //        for(int i=0;i<nums.length;i++){
@@ -22,12 +23,12 @@ public class Solution01 {
          即按照寻找链表环入口的思路来做
          **/
         int fast = 0, slow = 0;
-        while(true) {
+        while (true) {
             fast = nums[nums[fast]];//4 3 2
             slow = nums[slow];//3 4  2
-            if(slow == fast) {
+            if (slow == fast) {
                 fast = 0;
-                while(nums[slow] != nums[fast]) {
+                while (nums[slow] != nums[fast]) {
                     fast = nums[fast];
                     slow = nums[slow];
                 }

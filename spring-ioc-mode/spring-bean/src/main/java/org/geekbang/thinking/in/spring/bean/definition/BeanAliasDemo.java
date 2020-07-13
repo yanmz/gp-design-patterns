@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class BeanAliasDemo {
     public static void main(String[] args) {
         BeanFactory beanFactory = new ClassPathXmlApplicationContext("bean-definitions-context.xml");
-        User user = (User)beanFactory.getBean("xiaomage-user");
+        User user = (User) beanFactory.getBean("xiaomage-user");
         System.out.println(user);
     }
 }

@@ -5,17 +5,18 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class Parent implements  Cloneable{
+public class Parent implements Cloneable {
     private String name;
     private int age;
     private List list;
     private Date date;
 
 
-    public  Parent(){
+    public Parent() {
 
     }
-    public Parent(String name, int age, List list,Date date) {
+
+    public Parent(String name, int age, List list, Date date) {
         this.name = name;
         this.age = age;
         this.list = list;
@@ -24,8 +25,8 @@ public class Parent implements  Cloneable{
 
     @Override
     public Parent clone() throws CloneNotSupportedException {
-        Parent parent = (Parent)super.clone();
-        parent.date= (Date) this.date.clone();
+        Parent parent = (Parent) super.clone();
+        parent.date = (Date) this.date.clone();
         return parent;
     }
 

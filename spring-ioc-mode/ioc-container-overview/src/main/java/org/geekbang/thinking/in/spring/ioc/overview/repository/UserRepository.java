@@ -23,6 +23,7 @@ public class UserRepository {
     public ObjectFactory<ApplicationContext> getObjectFactory() {
         return objectFactory;
     }
+
     public void setObjectFactory(ObjectFactory<ApplicationContext> objectFactory) {
         this.objectFactory = objectFactory;
     }

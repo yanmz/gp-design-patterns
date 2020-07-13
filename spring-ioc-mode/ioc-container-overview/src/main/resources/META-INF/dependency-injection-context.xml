@@ -8,13 +8,14 @@
 
     <import resource="dependency-lookup-context.xml"/>
 
-    <bean id="userRepository" class="org.geekbang.thinking.in.spring.ioc.overview.repository.UserRepository" autowire="byType">
-<!--        手动配置-->
-<!--        <property name="users">-->
-<!--                    <util:list>-->
-<!--                        <ref bean="superUser" />-->
-<!--                        <ref bean="user" />-->
-<!--                    </util:list>-->
-<!--        </property>-->
+    <bean id="userRepository" class="org.geekbang.thinking.in.spring.ioc.overview.repository.UserRepository"
+          autowire="byType">
+        <!--        手动配置-->
+        <!--        <property name="users">-->
+        <!--                    <util:list>-->
+        <!--                        <ref bean="superUser" />-->
+        <!--                        <ref bean="user" />-->
+        <!--                    </util:list>-->
+        <!--        </property>-->
     </bean>
 </beans>

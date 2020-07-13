@@ -5,8 +5,10 @@ public class MyTest8 {
         System.out.println(FianlTest.str);
     }
 }
-class  FianlTest{
-    public  static final  int str  =1;
+
+class FianlTest {
+    public static final int str = 1;
+
     static {
         System.out.println("FinalTest static block...");
     }

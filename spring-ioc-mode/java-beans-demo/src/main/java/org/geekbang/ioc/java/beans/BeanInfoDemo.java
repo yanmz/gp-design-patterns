@@ -8,21 +8,21 @@ import java.util.stream.Stream;
 
 public class BeanInfoDemo {
     public static void main(String[] args) throws IntrospectionException {
-        BeanInfo beanInfo = Introspector.getBeanInfo(Person.class,Object.class);
-        Stream.of(beanInfo.getPropertyDescriptors()).forEach(propertyDescriptors->{
+        BeanInfo beanInfo = Introspector.getBeanInfo(Person.class, Object.class);
+        Stream.of(beanInfo.getPropertyDescriptors()).forEach(propertyDescriptors -> {
 //            System.out.println(propertyDescriptors);
             Class<?> propertyType = propertyDescriptors.getPropertyType();
             String name = propertyDescriptors.getName();
-            if("age".equals(name)){
+            if ("age".equals(name)) {
 //                Integer.valueOf("");
                 propertyDescriptors.setPropertyEditorClass(StringToIntegerPropertyEditor.class);
             }
         });
     }
 
-    static class  StringToIntegerPropertyEditor extends PropertyEditorSupport{
+    static class StringToIntegerPropertyEditor extends PropertyEditorSupport {
         @Override
-        public void setAsText(String text){
+        public void setAsText(String text) {
             Integer integer = Integer.valueOf(text);
             setValue(integer);
         }

@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
+
 public class MyTest1 {
     public static void main(String[] args) {
         List<Object> list = new ArrayList();

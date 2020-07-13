@@ -9,7 +9,7 @@ public class MyTest13 {
         System.out.println(classLoader1);
         ClassLoader classLoader = ClassLoader.getSystemClassLoader();
         System.out.println(classLoader);
-        while (null !=classLoader){
+        while (null != classLoader) {
             classLoader = classLoader.getParent();
             System.out.println(classLoader);
         }

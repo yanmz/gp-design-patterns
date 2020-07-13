@@ -29,7 +29,7 @@ public class MyTest2 {
         this.sex = sex;
     }
 
-    public String a(){
+    public String a() {
         return "";
     }
 }

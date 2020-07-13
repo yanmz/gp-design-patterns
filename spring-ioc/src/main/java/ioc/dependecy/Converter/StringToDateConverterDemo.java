@@ -24,14 +24,14 @@ public class StringToDateConverterDemo {
     StringToDateConverter StringToDateConverter;
 
     @Bean(value = "abc")
-    public  Date a(){
+    public Date a() {
         Date convert = StringToDateConverter.convert("2020-01-01");
         return convert;
     }
 
     public static void main(String[] args) {
         //创建BeanFactory
-        AnnotationConfigApplicationContext applicationContext  = new AnnotationConfigApplicationContext();
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
 
         // 注册 Configuration Class（配置类）
         applicationContext.register(StringToDateConverterDemo.class);

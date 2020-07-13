@@ -3,31 +3,29 @@ package com.classloader;
 import java.io.*;
 
 /**
- *
- *
  * 将MyTest16设置为系统类加载器
  * java -Djava.system.class.loader=com.classloader.MyTest16 com.classloader23
  *
  * @author Tom
  */
-public class  MyTest16 extends ClassLoader {
+public class MyTest16 extends ClassLoader {
 
     private String classLoaderName;
 
     private String path;
 
-    private final String fileExtension=".class";
+    private final String fileExtension = ".class";
 
     public void setPath(String path) {
         this.path = path;
     }
 
-    public MyTest16(String classLoaderName){
+    public MyTest16(String classLoaderName) {
         super();
         this.classLoaderName = classLoaderName;
     }
 
-    public MyTest16(ClassLoader parent){
+    public MyTest16(ClassLoader parent) {
         super(parent);
     }
 //    @Override
@@ -37,34 +35,34 @@ public class  MyTest16 extends ClassLoader {
 
     @Override
     protected Class<?> findClass(String name) {
-        System.out.println("findClass invoked: "+name);
-        System.out.println("class loader  name "+this.classLoaderName);
-        byte[]  data = this.loadClassData(name);
-        return this.defineClass(name,data,0,data.length);
+        System.out.println("findClass invoked: " + name);
+        System.out.println("class loader  name " + this.classLoaderName);
+        byte[] data = this.loadClassData(name);
+        return this.defineClass(name, data, 0, data.length);
     }
 
-    private byte[]  loadClassData(String  className)   {
+    private byte[] loadClassData(String className) {
         InputStream inputStream = null;
         byte[] b = null;
-        ByteArrayOutputStream byteArrayOutputStream= null;
+        ByteArrayOutputStream byteArrayOutputStream = null;
 
-        className =className.replace(".","\\");
+        className = className.replace(".", "\\");
         try {
-            this.classLoaderName = classLoaderName.replace(".","/");
-            inputStream = new FileInputStream(new File(this.path+className+this.fileExtension));
+            this.classLoaderName = classLoaderName.replace(".", "/");
+            inputStream = new FileInputStream(new File(this.path + className + this.fileExtension));
             byteArrayOutputStream = new ByteArrayOutputStream();
             int h = 0;
-            while(-1 !=(h = inputStream.read())){
+            while (-1 != (h = inputStream.read())) {
                 byteArrayOutputStream.write(h);
             }
             b = byteArrayOutputStream.toByteArray();
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
-            try{
+        } finally {
+            try {
                 inputStream.close();
                 byteArrayOutputStream.close();
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -79,18 +77,18 @@ public class  MyTest16 extends ClassLoader {
         System.out.println(Class1.hashCode());
         Object obj = Class1.newInstance();
         System.out.println(obj);
-        loader1 =null;
-        Class1=null;
+        loader1 = null;
+        Class1 = null;
         obj = null;
         System.gc();
         Thread.sleep(1000000);
 
-         loader1 = new MyTest16("loader1");
-         loader1.setPath("C:\\Users\\Tom\\Desktop\\");
-         Class1 = loader1.loadClass("com.classloader.MyTest1");
-         System.out.println(Class1.hashCode());
-         obj = Class1.newInstance();
-         System.out.println(obj);
+        loader1 = new MyTest16("loader1");
+        loader1.setPath("C:\\Users\\Tom\\Desktop\\");
+        Class1 = loader1.loadClass("com.classloader.MyTest1");
+        System.out.println(Class1.hashCode());
+        obj = Class1.newInstance();
+        System.out.println(obj);
 
 
 //        System.out.println("-------------------------");

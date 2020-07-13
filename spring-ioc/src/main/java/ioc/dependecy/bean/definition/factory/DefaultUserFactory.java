@@ -9,7 +9,7 @@ import javax.annotation.PreDestroy;
 public class DefaultUserFactory implements UserFactory, InitializingBean, DisposableBean {
 
     @PostConstruct
-    public  void init(){
+    public void init() {
         System.out.println("@PostConstruct  :UserFactory:初始化。。。");
     }
 
@@ -23,7 +23,7 @@ public class DefaultUserFactory implements UserFactory, InitializingBean, Dispos
     }
 
     @PreDestroy
-    public void PreDetory(){
+    public void PreDetory() {
         System.out.println("PreDetory()销毁中。。。");
     }
 
@@ -32,7 +32,7 @@ public class DefaultUserFactory implements UserFactory, InitializingBean, Dispos
         System.out.println("DisposableBean#destroy()  销毁中。。。");
     }
 
-    public  void dodestory(){
+    public void dodestory() {
         System.out.println("自定义销毁方法 销毁中。。。");
     }
 }

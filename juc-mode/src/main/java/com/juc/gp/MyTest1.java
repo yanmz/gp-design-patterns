@@ -11,36 +11,36 @@ public class MyTest1 {
 //          System.out.println("111");
 //      },"test1").start();
 
-        new Thread(()->{
-            while(true){
+        new Thread(() -> {
+            while (true) {
                 try {
                     TimeUnit.SECONDS.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
-        },"STATUS_01").start();
+        }, "STATUS_01").start();
 
-        new Thread(()->{
-            while(true){
-                 synchronized (MyTest1.class){
-                     try {
-                         MyTest1.class.wait();
-                     } catch (InterruptedException e) {
-                         e.printStackTrace();
-                     }
-                 }
+        new Thread(() -> {
+            while (true) {
+                synchronized (MyTest1.class) {
+                    try {
+                        MyTest1.class.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
-        },"STATUS_02").start();
+        }, "STATUS_02").start();
 
-        new Thread(new BlockedDemo(),"BLOCKED-DEMO-01").start();
-        new Thread(new BlockedDemo(),"BLOCKED-DEMO-02").start();
+        new Thread(new BlockedDemo(), "BLOCKED-DEMO-01").start();
+        new Thread(new BlockedDemo(), "BLOCKED-DEMO-02").start();
     }
 
-    static  class BlockedDemo extends  Thread{
+    static class BlockedDemo extends Thread {
         @Override
         public void run() {
-            synchronized (BlockedDemo.class){
+            synchronized (BlockedDemo.class) {
                 try {
                     BlockedDemo.class.wait();
                 } catch (InterruptedException e) {

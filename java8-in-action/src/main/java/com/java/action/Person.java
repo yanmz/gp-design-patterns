@@ -20,9 +20,9 @@ public class Person {
         this.age = age;
     }
 
-    public Person(String name, Integer age){
+    public Person(String name, Integer age) {
         this.name = name;
-        this.age =age;
+        this.age = age;
     }
 
 

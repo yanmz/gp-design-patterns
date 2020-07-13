@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * 注解驱动的依赖注入处理过程
+ *
  * @author Tom
  */
 public class LazyAnnotationDependecyInjectionResoultingDemo {
@@ -20,7 +21,7 @@ public class LazyAnnotationDependecyInjectionResoultingDemo {
 
     public static void main(String[] args) {
         // 创建 BeanFactory 容器
-        AnnotationConfigApplicationContext applicationContext =new AnnotationConfigApplicationContext();
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类）
         applicationContext.register(LazyAnnotationDependecyInjectionResoultingDemo.class);
 
@@ -32,9 +33,9 @@ public class LazyAnnotationDependecyInjectionResoultingDemo {
         // 启动 Spring 应用上下文
         applicationContext.refresh();
 
-        LazyAnnotationDependecyInjectionResoultingDemo demo =  applicationContext.getBean(LazyAnnotationDependecyInjectionResoultingDemo.class);
+        LazyAnnotationDependecyInjectionResoultingDemo demo = applicationContext.getBean(LazyAnnotationDependecyInjectionResoultingDemo.class);
 
-        System.out.println("demo.user:"+demo.user);
+        System.out.println("demo.user:" + demo.user);
         System.out.println("--------------------------------");
 
 

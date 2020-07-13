@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Map;
 
-public class GPJdkDynamicAopProxy  implements InvocationHandler  {
+public class GPJdkDynamicAopProxy implements InvocationHandler {
 
     private GPAdvisedSupport config;
 
@@ -19,16 +19,16 @@ public class GPJdkDynamicAopProxy  implements InvocationHandler  {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        Map<String, GPAdvice> advices = config.getAdvices(method,null);
+        Map<String, GPAdvice> advices = config.getAdvices(method, null);
 
         Object returnValue;
         try {
             invokeAdivce(advices.get("before"));
 
-            returnValue = method.invoke(this.config.getTarget(),args);
+            returnValue = method.invoke(this.config.getTarget(), args);
 
             invokeAdivce(advices.get("after"));
-        }catch (Exception e){
+        } catch (Exception e) {
             invokeAdivce(advices.get("afterThrow"));
             throw e;
         }
@@ -47,6 +47,6 @@ public class GPJdkDynamicAopProxy  implements InvocationHandler  {
     }
 
     public Object getProxy() {
-        return Proxy.newProxyInstance(this.getClass().getClassLoader(),this.config.getTargetClass().getInterfaces(),this);
+        return Proxy.newProxyInstance(this.getClass().getClassLoader(), this.config.getTargetClass().getInterfaces(), this);
     }
 }

@@ -1,7 +1,7 @@
 package com.classloader;
 
 public class MyTest12 {
-    public static void main(String[] args) throws  Exception{
+    public static void main(String[] args) throws Exception {
         ClassLoader loader = ClassLoader.getSystemClassLoader();
         Class<?> aClass = loader.loadClass("com.classloader.CL");
         System.out.println(aClass);
@@ -11,7 +11,7 @@ public class MyTest12 {
     }
 }
 
-class CL{
+class CL {
     static {
         System.out.println("CL");
 

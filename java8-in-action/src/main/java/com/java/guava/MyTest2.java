@@ -29,23 +29,22 @@ public class MyTest2 {
         Map<String, List<String>> stringListMap = toMap(list);
 
 
-
         Map<String, List<String>> namesByCity =
-                list.stream().collect(Collectors.groupingBy(Entity::getK,Collectors.mapping(Entity::getV, Collectors.toList())));
+                list.stream().collect(Collectors.groupingBy(Entity::getK, Collectors.mapping(Entity::getV, Collectors.toList())));
         System.out.println(namesByCity);
     }
 
-    private static Map<String , List<String>> toMap(List<Entity> list) {
-        final Map<String , List<String>> map = new HashMap<>();
+    private static Map<String, List<String>> toMap(List<Entity> list) {
+        final Map<String, List<String>> map = new HashMap<>();
 
         list.forEach(item -> {
             String key = item.getK();
             String value = item.getV();
 
             List<String> keyList = map.get(key);
-            if(null == keyList) {
+            if (null == keyList) {
                 keyList = new ArrayList<String>();
-                map.put(key , keyList);
+                map.put(key, keyList);
             }
             keyList.add(value);
         });

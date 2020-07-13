@@ -10,5 +10,5 @@ public abstract class State {
         this.context = context;
     }
 
-    public abstract  void handle();
+    public abstract void handle();
 }

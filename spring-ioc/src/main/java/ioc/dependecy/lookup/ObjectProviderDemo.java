@@ -42,7 +42,7 @@ public class ObjectProviderDemo {
 
     @Bean
     @Primary
-    public String helloword(){
+    public String helloword() {
         return "hello word";
     }
 

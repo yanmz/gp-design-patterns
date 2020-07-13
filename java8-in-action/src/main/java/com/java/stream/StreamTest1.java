@@ -9,8 +9,8 @@ import java.util.stream.Stream;
  */
 public class StreamTest1 {
     public static void main(String[] args) {
-        Stream stream = Stream.of("hello","word","hello word");
-        String[] myArray = new String[]{"hello","word","hello word"};
+        Stream stream = Stream.of("hello", "word", "hello word");
+        String[] myArray = new String[]{"hello", "word", "hello word"};
         Stream stream1 = Stream.of(myArray);
         Stream stream2 = Arrays.stream(myArray);
 

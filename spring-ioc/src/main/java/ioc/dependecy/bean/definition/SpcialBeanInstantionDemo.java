@@ -31,9 +31,9 @@ public class SpcialBeanInstantionDemo {
         displayServiceLoader(serviceLoader);
     }
 
-    public static  void displayServiceLoader(ServiceLoader<UserFactory> serviceLoader){
+    public static void displayServiceLoader(ServiceLoader<UserFactory> serviceLoader) {
         Iterator<UserFactory> iterator = serviceLoader.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             UserFactory next = iterator.next();
             System.out.println(next.createUser());
         }

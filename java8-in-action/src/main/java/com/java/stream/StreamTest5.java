@@ -12,11 +12,11 @@ public class StreamTest5 {
         System.out.println("--------------------");
 
         List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5);
-        integers.stream().map(value->value*value).collect(Collectors.toList()).forEach(System.out::println);
+        integers.stream().map(value -> value * value).collect(Collectors.toList()).forEach(System.out::println);
         System.out.println("--------------------");
 
-        Stream<List<Integer>> listStream = Stream.of(Arrays.asList(1),Arrays.asList(2,3),Arrays.asList(4,5,6));
-        listStream.flatMap(value->value.stream()).map(i->i*i).forEach(System.out::println);
+        Stream<List<Integer>> listStream = Stream.of(Arrays.asList(1), Arrays.asList(2, 3), Arrays.asList(4, 5, 6));
+        listStream.flatMap(value -> value.stream()).map(i -> i * i).forEach(System.out::println);
 
 
     }

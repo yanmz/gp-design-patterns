@@ -3,7 +3,7 @@ package demo1;
 /**
  * Runable 实现线程创建
  */
-public class MyTest2 implements  Runnable{
+public class MyTest2 implements Runnable {
     public static void main(String[] args) {
         Thread thread = new Thread(new MyTest2());
         thread.start();

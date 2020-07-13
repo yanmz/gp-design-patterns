@@ -12,7 +12,7 @@ public class MyTest14 {
         ClassLoader classLoader = ClassLoader.getSystemClassLoader();
         String resources = "com/classloader/MyTest13.class";
         Enumeration<URL> resource = classLoader.getResources(resources);
-        while (resource.hasMoreElements()){
+        while (resource.hasMoreElements()) {
             URL url = resource.nextElement();
             System.out.println(url);
         }

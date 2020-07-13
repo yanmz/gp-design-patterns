@@ -9,8 +9,8 @@ import com.gupaoedu.demo.spring.framework.annotation.GPService;
 @GPService
 public class DemoService implements IDemoService {
 
-	public String get(String name) {
-		return "My name is " + name + ",from service.";
-	}
+    public String get(String name) {
+        return "My name is " + name + ",from service.";
+    }
 
 }

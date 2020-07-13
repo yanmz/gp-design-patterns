@@ -13,7 +13,7 @@ import java.util.Collection;
  */
 public class DependencyInjectionDemo {
     public static void main(String[] args) {
-        BeanFactory beanFactory =new ClassPathXmlApplicationContext("META-INF/dependency-injection-context.xml");
+        BeanFactory beanFactory = new ClassPathXmlApplicationContext("META-INF/dependency-injection-context.xml");
         UserRepositroy userRepository = (UserRepositroy) beanFactory.getBean("userRepository");
 //        System.out.println(userRepository.getUsers());
         //依赖注入
@@ -24,6 +24,6 @@ public class DependencyInjectionDemo {
 //        System.out.println(beanFactory.getBean(BeanFactory.class));
 
         ObjectFactory objectFactory = userRepository.getObjectFactory();
-        System.out.println(objectFactory.getObject()==beanFactory);
+        System.out.println(objectFactory.getObject() == beanFactory);
     }
 }

@@ -25,20 +25,23 @@ public class GPBeanDefinitionReader {
         doScanner(contextConfig.getProperty("scanPackage"));
     }
 
-    public  Properties getConfig(){
+    public Properties getConfig() {
         return contextConfig;
     }
+
     private void doScanner(String scanPackage) {
 //jar 、 war 、zip 、rar
-        URL url = this.getClass().getClassLoader().getResource("/" + scanPackage.replaceAll("\\.","/"));
+        URL url = this.getClass().getClassLoader().getResource("/" + scanPackage.replaceAll("\\.", "/"));
         File classPath = new File(url.getFile());
 
         //当成是一个ClassPath文件夹
         for (File file : classPath.listFiles()) {
-            if(file.isDirectory()){
+            if (file.isDirectory()) {
                 doScanner(scanPackage + "." + file.getName());
-            }else {
-                if(!file.getName().endsWith(".class")){continue;}
+            } else {
+                if (!file.getName().endsWith(".class")) {
+                    continue;
+                }
                 //全类名 = 包名.类名
                 String className = (scanPackage + "." + file.getName().replace(".class", ""));
                 //Class.forName(className);
@@ -48,13 +51,13 @@ public class GPBeanDefinitionReader {
     }
 
     private void doLoadConfig(String configLocation) {
-        InputStream is = this.getClass().getClassLoader().getResourceAsStream(configLocation.replaceAll("classpath:",""));
+        InputStream is = this.getClass().getClassLoader().getResourceAsStream(configLocation.replaceAll("classpath:", ""));
         try {
             contextConfig.load(is);
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            if(null != is){
+        } finally {
+            if (null != is) {
                 try {
                     is.close();
                 } catch (IOException e) {
@@ -66,24 +69,26 @@ public class GPBeanDefinitionReader {
 
     public List<GPBeanDefinition> loadBeanDefinitions() {
         List<GPBeanDefinition> result = new ArrayList<GPBeanDefinition>();
-         for(String className:regitryBeanClasses){
-             try {
-                 Class<?> beanClass = Class.forName(className);
-                 if(beanClass.isInterface()){continue;}
-                 //保存类对应的className(全类名)
-                 //保存对应的BeanName名字
-                 //1.默认是类名首字母小写
-                 result.add(doCreateBeanDefinition(toLowerFirstCase(beanClass.getSimpleName()), beanClass.getName()));
+        for (String className : regitryBeanClasses) {
+            try {
+                Class<?> beanClass = Class.forName(className);
+                if (beanClass.isInterface()) {
+                    continue;
+                }
+                //保存类对应的className(全类名)
+                //保存对应的BeanName名字
+                //1.默认是类名首字母小写
+                result.add(doCreateBeanDefinition(toLowerFirstCase(beanClass.getSimpleName()), beanClass.getName()));
 
-                 //自定义
-                 //接口注入
-                 for (Class<?> i :beanClass.getInterfaces()){
-                     result.add(doCreateBeanDefinition(i.getName(),beanClass.getName()));
-                 }
-             }catch (Exception e){
-                 e.printStackTrace();
-             }
-         }
+                //自定义
+                //接口注入
+                for (Class<?> i : beanClass.getInterfaces()) {
+                    result.add(doCreateBeanDefinition(i.getName(), beanClass.getName()));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
         return result;
     }
 
@@ -98,7 +103,7 @@ public class GPBeanDefinitionReader {
     //首字母小写
     private String toLowerFirstCase(String simpleName) {
         char[] chars = simpleName.toCharArray();
-        chars[0]+=32;
+        chars[0] += 32;
         return String.valueOf(chars);
     }
 }

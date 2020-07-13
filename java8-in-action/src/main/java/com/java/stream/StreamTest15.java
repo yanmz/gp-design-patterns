@@ -18,7 +18,7 @@ public class StreamTest15 {
                 new Dish("season fruit", true, 120, Dish.Type.OTHER),
                 new Dish("pizza", true, 550, Dish.Type.OTHER),
                 new Dish("prawns", false, 300, Dish.Type.FISH),
-                new Dish("salmon", false, 450, Dish.Type.FISH) );
+                new Dish("salmon", false, 450, Dish.Type.FISH));
 
         List<String> threeHighCaloricDishNames =
                 menu.stream()
@@ -62,7 +62,7 @@ public class StreamTest15 {
         System.out.println(dishes1);
 
         System.out.println("================6================");
-        if(menu.stream().anyMatch(Dish::isVegetarian)){
+        if (menu.stream().anyMatch(Dish::isVegetarian)) {
             System.out.println("The menu is (somewhat) vegetarian friendly!!");
         }
 
@@ -80,7 +80,7 @@ public class StreamTest15 {
                 menu.stream()
                         .filter(Dish::isVegetarian)
                         .findAny();
-         dish.ifPresent(item-> System.out.println(item.getName()));
+        dish.ifPresent(item -> System.out.println(item.getName()));
         System.out.println("==================10====================");
         List<Integer> someNumbers = Arrays.asList(1, 2, 3, 4, 5);
         Optional<Integer> firstSquareDivisibleByThree =
@@ -88,7 +88,7 @@ public class StreamTest15 {
                         .map(x -> x * x)
                         .filter(x -> x % 3 == 0)
                         .findFirst(); // 9
-         firstSquareDivisibleByThree.ifPresent(item-> System.out.println(item));
+        firstSquareDivisibleByThree.ifPresent(item -> System.out.println(item));
 
         System.out.println("===============11============");
         List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
@@ -97,12 +97,12 @@ public class StreamTest15 {
 
         System.out.println("===============12===============");
         List<Integer> number = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
-        Optional<Integer> max = number.stream().reduce((q,w)->q>w?q:w);
+        Optional<Integer> max = number.stream().reduce((q, w) -> q > w ? q : w);
         max.ifPresent(System.out::println);
 
 
         System.out.println("================13=================");
-        Long  l =  menu.stream().collect(counting());
+        Long l = menu.stream().collect(counting());
         System.out.println(l);
 
         System.out.println("================14==================");
@@ -110,7 +110,7 @@ public class StreamTest15 {
         collect.ifPresent(System.out::println);
 
         System.out.println("================15==================");
-        double avgCalories =menu.stream().collect(averagingInt(Dish::getCalories));
+        double avgCalories = menu.stream().collect(averagingInt(Dish::getCalories));
         System.out.println(avgCalories);
 
         System.out.println("================16==================");
@@ -127,12 +127,12 @@ public class StreamTest15 {
         System.out.println(shortMenu1);
 
         System.out.println("==================19=================");
-        int totalCalories = menu.stream().collect(reducing(  0, Dish::getCalories, (i, j) -> i + j));
+        int totalCalories = menu.stream().collect(reducing(0, Dish::getCalories, (i, j) -> i + j));
         System.out.println(totalCalories);
 
         System.out.println("==================20=================");
         //Optional<Dish> mostCalorieDish = menu.stream().collect(((d1, d2) -> d1.getCalories() > d2.getCalories() ? d1 : d2));
-       // System.out.println(mostCalorieDish);
+        // System.out.println(mostCalorieDish);
 
         Map<Dish.Type, List<Dish>> dishesByType = menu.stream().collect(groupingBy(Dish::getType));
         System.out.println(dishesByType);

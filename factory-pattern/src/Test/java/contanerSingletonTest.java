@@ -11,24 +11,25 @@ public class contanerSingletonTest {
 ////        th1.start();
 ////        Thread th2 = new Thread(new ExetuThread());
 ////        th2.start();
-        int[] i = new int[]{1,2,3,4,5,6};
-        twoSum(i,5);
+        int[] i = new int[]{1, 2, 3, 4, 5, 6};
+        twoSum(i, 5);
 
     }
-    public  static void twoSum(int[] nums,int target) {
-        int k=0;
-        int h=0;
-        for(int i=0;i<nums.length;i++){
+
+    public static void twoSum(int[] nums, int target) {
+        int k = 0;
+        int h = 0;
+        for (int i = 0; i < nums.length; i++) {
             k = i;
-            int ii = target-nums[i];
-            for(int j=++i;j<nums.length;j++){
-                if(ii==nums[j]){
-                    h=j;
+            int ii = target - nums[i];
+            for (int j = ++i; j < nums.length; j++) {
+                if (ii == nums[j]) {
+                    h = j;
                     break;
                 }
             }
-           break;
+            break;
         }
-        System.out.println(k+"-------"+h);
+        System.out.println(k + "-------" + h);
     }
 }

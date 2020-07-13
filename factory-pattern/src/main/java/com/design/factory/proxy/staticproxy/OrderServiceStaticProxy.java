@@ -3,13 +3,13 @@ package com.design.factory.proxy.staticproxy;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class OrderServiceStaticProxy implements  IOrderService {
+public class OrderServiceStaticProxy implements IOrderService {
 
     private SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
 
     private IOrderService orderService;
 
-    public OrderServiceStaticProxy(IOrderService orderService){
+    public OrderServiceStaticProxy(IOrderService orderService) {
         this.orderService = orderService;
     }
 

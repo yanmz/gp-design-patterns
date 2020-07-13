@@ -10,6 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 /**
  * 基于 {@link Aware} 接口回调的依赖注入示例
+ *
  * @author Tom
  */
 public class AwareInterfaceDependencyInjectionDemo implements BeanFactoryAware, ApplicationContextAware {
@@ -40,7 +41,7 @@ public class AwareInterfaceDependencyInjectionDemo implements BeanFactoryAware, 
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        AwareInterfaceDependencyInjectionDemo.beanFactory =beanFactory;
+        AwareInterfaceDependencyInjectionDemo.beanFactory = beanFactory;
     }
 
     @Override

@@ -13,13 +13,13 @@ public class OptionalTest2 {
         Employee employee2 = new Employee();
         employee2.setName("lisi");
 
-        Company company  = new Company();
+        Company company = new Company();
         company.setName("wangwu");
 
-        List<Employee> list = Arrays.asList(employee1,employee2);
+        List<Employee> list = Arrays.asList(employee1, employee2);
         company.setEmployees(list);
 
         Optional<Company> company1 = Optional.ofNullable(company);
-        System.out.println(company1.map(theCompany->theCompany.getEmployees()).orElse(Collections.emptyList()));
+        System.out.println(company1.map(theCompany -> theCompany.getEmployees()).orElse(Collections.emptyList()));
     }
 }

@@ -4,6 +4,7 @@ public class MyTest10 {
     static {
         System.out.println("MyTest10 static block...");
     }
+
     public static void main(String[] args) {
         Parent10 parent10;
         System.out.println("--------------");
@@ -16,15 +17,17 @@ public class MyTest10 {
     }
 }
 
-class Parent10{
-    public static int a= 1;
+class Parent10 {
+    public static int a = 1;
+
     static {
         System.out.println("Parent10 static block...");
     }
 }
 
-class Child10{
-    public  static int b= 2;
+class Child10 {
+    public static int b = 2;
+
     static {
         System.out.println("Child10 static block...");
     }

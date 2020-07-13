@@ -3,7 +3,7 @@ package com.design.factory.pattern.abstractfactory;
 public class WcPayFactory extends PayFactory {
     @Override
     public DomesticPay domesticPay() {
-        return  new  WcPay();
+        return new WcPay();
     }
 
     @Override

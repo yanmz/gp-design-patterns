@@ -5,7 +5,7 @@ import org.springframework.beans.factory.BeanNameAware;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-public class User  implements BeanNameAware {
+public class User implements BeanNameAware {
     private Long id;
     private String name;
 
@@ -34,6 +34,7 @@ public class User  implements BeanNameAware {
                 ", name='" + name + '\'' +
                 '}';
     }
+
     public static User createUser() {
         User user = new User();
         user.setId(1L);
@@ -50,7 +51,6 @@ public class User  implements BeanNameAware {
     public void destroy() {
         System.out.println("User Bean [" + beanName + "] 销毁中...");
     }
-
 
     @Override
     public void setBeanName(String name) {

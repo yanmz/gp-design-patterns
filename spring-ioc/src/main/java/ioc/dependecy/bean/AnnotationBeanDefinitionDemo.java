@@ -12,8 +12,8 @@ import org.springframework.util.StringUtils;
 
 
 /**
+ * 注解 BeanDefinition 示例
  *
- *注解 BeanDefinition 示例
  * @author Tom
  */
 @Import(AnnotationBeanDefinitionDemo.Config.class)
@@ -43,11 +43,11 @@ public class AnnotationBeanDefinitionDemo {
 
     //定义当前类作为Spring Bean组件
     @Component
-    public  static  class Config{
+    public static class Config {
 
         //通过java  @Bean注解定义一个bean
         @Bean(name = "user")
-        public User user(){
+        public User user() {
             User user = new User();
             user.setId(1L);
             user.setName("小马哥");
@@ -57,12 +57,12 @@ public class AnnotationBeanDefinitionDemo {
 
     public static void registerUserBeanDefinition(BeanDefinitionRegistry registry, String beanName) {
         BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(User.class);
-        beanDefinitionBuilder.addPropertyValue("id",1).addPropertyValue("name","xiaoyan");
+        beanDefinitionBuilder.addPropertyValue("id", 1).addPropertyValue("name", "xiaoyan");
         // 判断如果 beanName 参数存在时
-        if(StringUtils.hasText(beanName)){
+        if (StringUtils.hasText(beanName)) {
             // 注册 BeanDefinition
-            registry.registerBeanDefinition(beanName,beanDefinitionBuilder.getBeanDefinition());
-        }else{
+            registry.registerBeanDefinition(beanName, beanDefinitionBuilder.getBeanDefinition());
+        } else {
             // 非命名 Bean 注册方法
             BeanDefinitionReaderUtils.registerWithGeneratedName(beanDefinitionBuilder.getBeanDefinition(), registry);
         }

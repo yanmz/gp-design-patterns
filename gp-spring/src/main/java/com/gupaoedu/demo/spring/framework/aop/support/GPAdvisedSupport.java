@@ -28,6 +28,7 @@ public class GPAdvisedSupport {
         this.targetClass = targetClass;
         parse();
     }
+
     //解析配置文件的方法
     private void parse() {
         //把Spring的Excpress变成Java能够识别的正则表达式
@@ -48,52 +49,52 @@ public class GPAdvisedSupport {
         //保存专门匹配方法的正则
         Pattern pointCutPattern = Pattern.compile(pointCut);
 
-        try{
+        try {
             Class aspectClass = Class.forName(this.config.getAspectClass());
-            Map<String,Method> aspectMethods = new HashMap<String, Method>();
+            Map<String, Method> aspectMethods = new HashMap<String, Method>();
             for (Method method : aspectClass.getMethods()) {
-                aspectMethods.put(method.getName(),method);
+                aspectMethods.put(method.getName(), method);
             }
 
             for (Method method : this.targetClass.getMethods()) {
                 String methodString = method.toString();
-                if(methodString.contains("throws")){
-                    methodString = methodString.substring(0,methodString.lastIndexOf("throws")).trim();
+                if (methodString.contains("throws")) {
+                    methodString = methodString.substring(0, methodString.lastIndexOf("throws")).trim();
                 }
 
                 Matcher matcher = pointCutPattern.matcher(methodString);
-                if(matcher.matches()){
-                    Map<String,GPAdvice> advices = new HashMap<String, GPAdvice>();
+                if (matcher.matches()) {
+                    Map<String, GPAdvice> advices = new HashMap<String, GPAdvice>();
 
-                    if(!(null == config.getAspectBefore() || "".equals(config.getAspectBefore()))){
-                        advices.put("before",new GPAdvice(aspectClass.newInstance(),aspectMethods.get(config.getAspectBefore())));
+                    if (!(null == config.getAspectBefore() || "".equals(config.getAspectBefore()))) {
+                        advices.put("before", new GPAdvice(aspectClass.newInstance(), aspectMethods.get(config.getAspectBefore())));
                     }
-                    if(!(null == config.getAspectAfter() || "".equals(config.getAspectAfter()))){
-                        advices.put("after",new GPAdvice(aspectClass.newInstance(),aspectMethods.get(config.getAspectAfter())));
+                    if (!(null == config.getAspectAfter() || "".equals(config.getAspectAfter()))) {
+                        advices.put("after", new GPAdvice(aspectClass.newInstance(), aspectMethods.get(config.getAspectAfter())));
                     }
-                    if(!(null == config.getAspectAfterThrow() || "".equals(config.getAspectAfterThrow()))){
-                        GPAdvice advice = new GPAdvice(aspectClass.newInstance(),aspectMethods.get(config.getAspectAfterThrow()));
+                    if (!(null == config.getAspectAfterThrow() || "".equals(config.getAspectAfterThrow()))) {
+                        GPAdvice advice = new GPAdvice(aspectClass.newInstance(), aspectMethods.get(config.getAspectAfterThrow()));
                         advice.setThrowName(config.getAspectAfterThrowingName());
-                        advices.put("afterThrow",advice);
+                        advices.put("afterThrow", advice);
                     }
 
                     //跟目标代理类的业务方法和Advices建立一对多个关联关系，以便在Porxy类中获得
-                    methodCache.put(method,advices);
+                    methodCache.put(method, advices);
                 }
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     //根据一个目标代理类的方法，获得其对应的通知
-    public Map<String,GPAdvice> getAdvices(Method method, Object o) throws Exception {
+    public Map<String, GPAdvice> getAdvices(Method method, Object o) throws Exception {
         //享元设计模式的应用
-        Map<String,GPAdvice> cache = methodCache.get(method);
-        if(null == cache){
-            Method m = targetClass.getMethod(method.getName(),method.getParameterTypes());
+        Map<String, GPAdvice> cache = methodCache.get(method);
+        if (null == cache) {
+            Method m = targetClass.getMethod(method.getName(), method.getParameterTypes());
             cache = methodCache.get(m);
-            this.methodCache.put(m,cache);
+            this.methodCache.put(m, cache);
         }
         return cache;
     }

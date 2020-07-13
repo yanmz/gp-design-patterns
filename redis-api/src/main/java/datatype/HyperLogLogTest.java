@@ -5,7 +5,7 @@ import redis.clients.jedis.Jedis;
 
 public class HyperLogLogTest {
     public static void main(String[] args) {
-        Jedis jedis = new Jedis("115.29.142.129",6379);
+        Jedis jedis = new Jedis("115.29.142.129", 6379);
         float size = 10;
 
         for (int i = 0; i < size; i++) {

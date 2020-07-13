@@ -13,7 +13,7 @@ package com.monery;
  */
 public class MyTest5 {
     public static void main(String[] args) {
-        for (;;) {
+        for (; ; ) {
             System.out.println("111111111111111111");
         }
     }

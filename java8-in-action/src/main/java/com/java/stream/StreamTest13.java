@@ -8,12 +8,12 @@ import java.util.stream.Collectors;
 
 public class StreamTest13 {
     public static void main(String[] args) {
-        Student student1= new Student("zhangsan",100,"20");
-        Student student2= new Student("lisi",90,"14");
-        Student student3= new Student("zhangsan",90,"20");
-        Student student4= new Student("wangwu",80,"20");
+        Student student1 = new Student("zhangsan", 100, "20");
+        Student student2 = new Student("lisi", 90, "14");
+        Student student3 = new Student("zhangsan", 90, "20");
+        Student student4 = new Student("wangwu", 80, "20");
 
-        List<Student>  list = Arrays.asList(student1,student2,student3,student4);
+        List<Student> list = Arrays.asList(student1, student2, student3, student4);
 
 //        //根据名字分组
 //        Map<String, List<Student>> collect1 = list.stream().collect(Collectors.groupingBy(Student::getName));

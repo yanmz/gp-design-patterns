@@ -7,7 +7,7 @@ import java.lang.annotation.*;
  * Created on 2019/11/11.
  */
 @Inherited
-@Target({ElementType.METHOD,ElementType.TYPE})
+@Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ApiType {
 

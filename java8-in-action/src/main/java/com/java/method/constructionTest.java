@@ -10,13 +10,14 @@ public class constructionTest {
         constructionTest construction = new constructionTest();
         System.out.println(construction.getString(String::new));
 
-        System.out.println(construction.getString2("hello",String::new));
-    }
-    public String getString(Supplier<String> supplier){
-        return supplier.get()+"test";
+        System.out.println(construction.getString2("hello", String::new));
     }
 
-    public String getString2(String str, Function<String,String> function){
+    public String getString(Supplier<String> supplier) {
+        return supplier.get() + "test";
+    }
+
+    public String getString2(String str, Function<String, String> function) {
         return function.apply(str);
     }
 }

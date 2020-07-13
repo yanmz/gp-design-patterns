@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * 不可抢占，其他线程不能强行抢占线程 T1 占有的资源  使用ReentrantLock
  */
-public class MyTest8_02 implements  Runnable {
+public class MyTest8_02 implements Runnable {
     private Account fromAccount; //转出账户
     private Account toAccount; //转入账户
     private int amount;
@@ -31,18 +31,19 @@ public class MyTest8_02 implements  Runnable {
                     }
                 }
             }
-        //转出账户的余额
-        System.out.println(Thread.currentThread().getName() + " " + fromAccount.getAccountName() + "->" + fromAccount.getBalance());
-        //转入账户的余额
-        System.out.println(Thread.currentThread().getName() + " " + toAccount.getAccountName() + "->" + toAccount.getBalance());
+            //转出账户的余额
+            System.out.println(Thread.currentThread().getName() + " " + fromAccount.getAccountName() + "->" + fromAccount.getBalance());
+            //转入账户的余额
+            System.out.println(Thread.currentThread().getName() + " " + toAccount.getAccountName() + "->" + toAccount.getBalance());
+        }
     }
-}
+
     public static void main(String[] args) {
-        Account fromAccount=new Account("Mic",100000);
-        Account toAccount=new Account("花花",300000);
+        Account fromAccount = new Account("Mic", 100000);
+        Account toAccount = new Account("花花", 300000);
         Allocator allocator = new Allocator();
-        Thread a =new Thread(new MyTest8_02(fromAccount,toAccount,1));
-        Thread b=new Thread(new MyTest8_02(toAccount,fromAccount,30));
+        Thread a = new Thread(new MyTest8_02(fromAccount, toAccount, 1));
+        Thread b = new Thread(new MyTest8_02(toAccount, fromAccount, 30));
 
         a.start();
         b.start();

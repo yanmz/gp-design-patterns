@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * 注解的依赖注入
+ *
  * @author Tom
  */
 public class QualfierAnnotationDependecyInjectionDemo {
@@ -32,7 +33,7 @@ public class QualfierAnnotationDependecyInjectionDemo {
 
     @Bean
     @Qualifier
-    public User user1(){
+    public User user1() {
         User user = new User();
         user.setId(7L);
         return user;
@@ -40,7 +41,7 @@ public class QualfierAnnotationDependecyInjectionDemo {
 
     @Bean
     @Qualifier
-    public User user2(){
+    public User user2() {
         User user = new User();
         user.setId(8L);
         return user;
@@ -48,7 +49,7 @@ public class QualfierAnnotationDependecyInjectionDemo {
 
     @Bean
     @UserGroup
-    public User user3(){
+    public User user3() {
         User user = new User();
         user.setId(9L);
         return user;
@@ -57,14 +58,15 @@ public class QualfierAnnotationDependecyInjectionDemo {
 
     @Bean
     @UserGroup
-    public User user4(){
+    public User user4() {
         User user = new User();
         user.setId(10L);
         return user;
     }
+
     public static void main(String[] args) {
         // 创建 BeanFactory 容器
-        AnnotationConfigApplicationContext applicationContext =new AnnotationConfigApplicationContext();
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类）
         applicationContext.register(QualfierAnnotationDependecyInjectionDemo.class);
 
@@ -76,15 +78,15 @@ public class QualfierAnnotationDependecyInjectionDemo {
         // 启动 Spring 应用上下文
         applicationContext.refresh();
 
-        QualfierAnnotationDependecyInjectionDemo demo =  applicationContext.getBean(QualfierAnnotationDependecyInjectionDemo.class);
+        QualfierAnnotationDependecyInjectionDemo demo = applicationContext.getBean(QualfierAnnotationDependecyInjectionDemo.class);
 
-        System.out.println("demo.user:"+demo.user);
+        System.out.println("demo.user:" + demo.user);
 
-        System.out.println("demo.nameUser:"+demo.nameUser);
+        System.out.println("demo.nameUser:" + demo.nameUser);
 
-        System.out.println("demo.allUser:"+demo.allUser);
+        System.out.println("demo.allUser:" + demo.allUser);
 
-        System.out.println("demo.qualifierUser:"+demo.qualifierUser);
+        System.out.println("demo.qualifierUser:" + demo.qualifierUser);
 
         // 显示地关闭 Spring 应用上下文
         applicationContext.close();

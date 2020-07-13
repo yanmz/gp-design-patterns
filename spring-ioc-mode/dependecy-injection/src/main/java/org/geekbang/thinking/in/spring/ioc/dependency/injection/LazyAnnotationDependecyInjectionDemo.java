@@ -20,10 +20,9 @@ public class LazyAnnotationDependecyInjectionDemo {
     ObjectFactory<List<User>> objectFactory;
 
 
-
     public static void main(String[] args) {
         // 创建 BeanFactory 容器
-        AnnotationConfigApplicationContext applicationContext =new AnnotationConfigApplicationContext();
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类）
         applicationContext.register(LazyAnnotationDependecyInjectionDemo.class);
 
@@ -35,15 +34,15 @@ public class LazyAnnotationDependecyInjectionDemo {
         // 启动 Spring 应用上下文
         applicationContext.refresh();
 
-        LazyAnnotationDependecyInjectionDemo demo =  applicationContext.getBean(LazyAnnotationDependecyInjectionDemo.class);
+        LazyAnnotationDependecyInjectionDemo demo = applicationContext.getBean(LazyAnnotationDependecyInjectionDemo.class);
 
-        System.out.println("demo.user:"+demo.user);
+        System.out.println("demo.user:" + demo.user);
         System.out.println("--------------------------------");
-        System.out.println("demo.objectProvider:"+demo.objectProvider.getObject());
+        System.out.println("demo.objectProvider:" + demo.objectProvider.getObject());
         System.out.println("--------------------------------");
         demo.objectProvider.stream().forEach(System.out::println);
         System.out.println("--------------------------------");
-        System.out.println("demo.objectFactory:"+demo.objectFactory.getObject());
+        System.out.println("demo.objectFactory:" + demo.objectFactory.getObject());
 
 
         // 显示地关闭 Spring 应用上下文

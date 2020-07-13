@@ -2,10 +2,10 @@ package com.java.stream;
 
 public class Student {
     private String name;
-    private  String age;
-    private  int core;
+    private String age;
+    private int core;
 
-    public Student(String name,Integer core,String age) {
+    public Student(String name, Integer core, String age) {
         this.name = name;
         this.age = age;
         this.core = core;

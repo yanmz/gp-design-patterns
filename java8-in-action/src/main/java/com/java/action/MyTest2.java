@@ -1,20 +1,22 @@
 package com.java.action;
 
 
-
 @FunctionalInterface
-interface MyInterface{
+interface MyInterface {
     void test();
 
     @Override
     String toString();
 
-    static String a(){
-        return  "";
-    };
+    static String a() {
+        return "";
+    }
+
+    ;
 }
+
 public class MyTest2 {
-    public void test(MyInterface  myInterface){
+    public void test(MyInterface myInterface) {
         System.out.println("1");
         myInterface.test();
         System.out.println("2");
@@ -30,12 +32,12 @@ public class MyTest2 {
         });
         System.out.println("----------");
 
-        myTest2.test(()->{
+        myTest2.test(() -> {
             System.out.println("3333333");
         });
         System.out.println("----------");
 
-        MyInterface myInterface = ()->{
+        MyInterface myInterface = () -> {
             System.out.println("my test");
         };
 

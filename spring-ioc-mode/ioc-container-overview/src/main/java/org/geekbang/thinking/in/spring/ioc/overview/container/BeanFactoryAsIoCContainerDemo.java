@@ -10,18 +10,19 @@ import java.util.Map;
 
 /**
  * 作为 Ioc容器示列
+ *
  * @author Tom
  */
 public class BeanFactoryAsIoCContainerDemo {
     public static void main(String[] args) {
-            //创建BeanFactory容器
+        //创建BeanFactory容器
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(beanFactory);
 
         //xml 配置文件 Class Path路径
-        String location ="META-INF/dependency-lookup-context.xml";
+        String location = "META-INF/dependency-lookup-context.xml";
         int i = xmlBeanDefinitionReader.loadBeanDefinitions(location);
-        System.out.println("Bean 定义加载的数量："+i);
+        System.out.println("Bean 定义加载的数量：" + i);
 
         lookupCollectionByType(beanFactory);
     }

@@ -3,7 +3,7 @@ package com.java.action;
 import java.util.List;
 
 public class Company {
-    private  String name;
+    private String name;
     private List<Employee> employees;
 
     public String getName() {

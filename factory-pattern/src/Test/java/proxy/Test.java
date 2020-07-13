@@ -9,9 +9,8 @@ public class Test {
     public static void main(String[] args) {
 //        ZhangLaosan zhangLaosan = new ZhangLaosan(new ZhangSan());
 //        zhangLaosan.findLove();
-        JdkMeipo  jdkMeipo = new  JdkMeipo();
+        JdkMeipo jdkMeipo = new JdkMeipo();
         jdkMeipo.getInstace(new ZhaoLiu()).findLove();
-
 
 
     }

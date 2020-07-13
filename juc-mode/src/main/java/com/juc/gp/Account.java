@@ -9,12 +9,12 @@ public class Account {
         this.balance = balance;
     }
 
-    public void debit(int amount){ //更新转出方的余额
-        this.balance-=amount;
+    public void debit(int amount) { //更新转出方的余额
+        this.balance -= amount;
     }
 
-    public void credit(int amount){ //更新转入方的余额
-        this.balance+=amount;
+    public void credit(int amount) { //更新转入方的余额
+        this.balance += amount;
     }
 
     public String getAccountName() {

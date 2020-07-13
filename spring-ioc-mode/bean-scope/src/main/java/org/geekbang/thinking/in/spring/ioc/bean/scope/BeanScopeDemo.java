@@ -2,7 +2,6 @@ package org.geekbang.thinking.in.spring.ioc.bean.scope;
 
 import org.geekbang.thinking.in.spring.ioc.overview.domain.User;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,20 +16,20 @@ import org.springframework.context.annotation.Scope;
 import java.util.Map;
 
 
-public class BeanScopeDemo  implements DisposableBean {
+public class BeanScopeDemo implements DisposableBean {
 
     @Bean
-    public User userSingleton(){
-        return  creatUser();
+    public User userSingleton() {
+        return creatUser();
     }
 
     @Bean
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    public User userPrototype(){
-        return  creatUser();
+    public User userPrototype() {
+        return creatUser();
     }
 
-    public User creatUser(){
+    public User creatUser() {
         User user = new User();
         user.setId(System.nanoTime());
         return user;
@@ -49,11 +48,10 @@ public class BeanScopeDemo  implements DisposableBean {
     private User protoTypeUser1;
 
     @Autowired
-    private Map<String,User> users;
+    private Map<String, User> users;
 
     @Autowired
     private ConfigurableListableBeanFactory beanFactory;
-
 
 
     public static void main(String[] args) {
@@ -61,7 +59,7 @@ public class BeanScopeDemo  implements DisposableBean {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
 
         applicationContext.register(BeanScopeDemo.class);
-        applicationContext.addBeanFactoryPostProcessor((beanFactory)->{
+        applicationContext.addBeanFactoryPostProcessor((beanFactory) -> {
             beanFactory.addBeanPostProcessor(new BeanPostProcessor() {
                 @Override
                 public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
@@ -71,7 +69,7 @@ public class BeanScopeDemo  implements DisposableBean {
             });
         });
 
-        applicationContext.addBeanFactoryPostProcessor((beanFactory)->{
+        applicationContext.addBeanFactoryPostProcessor((beanFactory) -> {
             beanFactory.addBeanPostProcessor(new BeanPostProcessor() {
                 @Override
                 public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
@@ -105,22 +103,22 @@ public class BeanScopeDemo  implements DisposableBean {
 
     private static void scopeBeansByInjection(AnnotationConfigApplicationContext applicationContext) {
         BeanScopeDemo bean = applicationContext.getBean(BeanScopeDemo.class);
-        System.out.println("bean.singletonUser = "+bean.singletonUser);
-        System.out.println("bean.protoTypeUser = "+bean.protoTypeUser);
-        System.out.println("bean.protoTypeUser1 = "+bean.protoTypeUser1);
+        System.out.println("bean.singletonUser = " + bean.singletonUser);
+        System.out.println("bean.protoTypeUser = " + bean.protoTypeUser);
+        System.out.println("bean.protoTypeUser1 = " + bean.protoTypeUser1);
         System.out.println("-------------------------------------------------------------");
-        System.out.println("bean.users = "+bean.users);
+        System.out.println("bean.users = " + bean.users);
         System.out.println("-------------------------------------------------------------");
     }
 
     private static void scopeBeanByLookup(AnnotationConfigApplicationContext applicationContext) {
 
-        for (int i=0;i<3;i++){
+        for (int i = 0; i < 3; i++) {
             User userSingleton = applicationContext.getBean("userSingleton", User.class);
-            System.out.println("userSingleton = "+userSingleton);
+            System.out.println("userSingleton = " + userSingleton);
 
             User userPrototype = applicationContext.getBean("userPrototype", User.class);
-            System.out.println("userPrototype = "+userPrototype);
+            System.out.println("userPrototype = " + userPrototype);
         }
     }
 
@@ -140,7 +138,6 @@ public class BeanScopeDemo  implements DisposableBean {
                 user.destroy();
             }
         }
-
         System.out.println("当前 BeanScopeDemo Bean 销毁完成");
     }
 }

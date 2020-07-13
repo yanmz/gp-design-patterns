@@ -18,22 +18,23 @@ public class RpcNetTransport {
         this.localhost = localhost;
         this.port = port;
     }
+
     public Socket newSocket() throws IOException {
-        Socket socket=new Socket(localhost,port);
+        Socket socket = new Socket(localhost, port);
         return socket;
     }
 
     public Object send(RpcRequest request) throws IOException {
-        ObjectOutputStream outputStream=null;
-        ObjectInputStream inputStream=null;
+        ObjectOutputStream outputStream = null;
+        ObjectInputStream inputStream = null;
         try {
-            Socket socket  = newSocket();
+            Socket socket = newSocket();
             outputStream = new ObjectOutputStream(socket.getOutputStream());
             outputStream.writeObject(request);
             outputStream.flush();
             inputStream = new ObjectInputStream(socket.getInputStream());
-            return  inputStream.readObject();
-        }catch (Exception e){
+            return inputStream.readObject();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;

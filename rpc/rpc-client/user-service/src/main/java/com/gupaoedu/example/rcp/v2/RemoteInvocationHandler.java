@@ -15,11 +15,14 @@ public class RemoteInvocationHandler implements InvocationHandler {
     private String localhost;
     @Value("${gp.port}")
     private int port;
-    public RemoteInvocationHandler(String localhost,int port){ }
+
+    public RemoteInvocationHandler(String localhost, int port) {
+    }
+
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         //先建立远程连接
-        RpcNetTransport rpcNetTransport=new RpcNetTransport(localhost,port);
+        RpcNetTransport rpcNetTransport = new RpcNetTransport(localhost, port);
         RpcRequest rpcRequest = new RpcRequest();
         rpcRequest.setArgs(args);
         rpcRequest.setClassName(method.getDeclaringClass().getName());

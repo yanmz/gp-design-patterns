@@ -4,12 +4,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.annotation.PostConstruct;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.Resource;
 
 @Configuration
-@PropertySource(value ="classpath:/META-INF/default.properties")
+@PropertySource(value = "classpath:/META-INF/default.properties")
 public class ExternalConfigurationDependencySourceDemo {
     @Value("${user.id:1}")
     private String str;
@@ -18,11 +19,11 @@ public class ExternalConfigurationDependencySourceDemo {
     private String name;
 
     @Value("${user.resource:classpath:/META-INF/default.properties}")
-    private  Resource resource;
+    private Resource resource;
 
     @PostConstruct
-    public void postConstruct(){
-        System.out.println(str+"---------"+name+"-------------"+resource);
+    public void postConstruct() {
+        System.out.println(str + "---------" + name + "-------------" + resource);
     }
 
     public static void main(String[] args) {

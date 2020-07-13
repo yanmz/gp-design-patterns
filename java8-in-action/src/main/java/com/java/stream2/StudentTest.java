@@ -5,10 +5,10 @@ import java.util.stream.Collectors;
 
 public class StudentTest {
     public static void main(String[] args) {
-        Student student1 = new Student("zhangsan",20);
-        Student student2 = new Student("lisi",30);
-        Student student3 = new Student("wangwu",23);
-        Student student4 = new Student("zhaoliu",53);
+        Student student1 = new Student("zhangsan", 20);
+        Student student2 = new Student("lisi", 30);
+        Student student3 = new Student("wangwu", 23);
+        Student student4 = new Student("zhaoliu", 53);
         List<Student> students = Arrays.asList(student1, student2, student3, student4);
         //遍历元素
         List<Student> list = students.stream().collect(Collectors.toList());

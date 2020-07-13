@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class JclDemo {
     @Test
-    public void test(){
+    public void test() {
         // 创建日志对象
         Log log = LogFactory.getLog(JclDemo.class);
         // 日志记录输出

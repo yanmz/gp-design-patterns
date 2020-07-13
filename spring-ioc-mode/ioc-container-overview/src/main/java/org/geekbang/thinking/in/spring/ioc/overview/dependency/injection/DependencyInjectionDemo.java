@@ -15,12 +15,12 @@ public class DependencyInjectionDemo {
     public static void main(String[] args) {
         //配置xml文件
         //创建beanfactory对象
-        BeanFactory beanFactory  = new ClassPathXmlApplicationContext("META-INF/dependency-injection-context.xml");
+        BeanFactory beanFactory = new ClassPathXmlApplicationContext("META-INF/dependency-injection-context.xml");
         //依赖来源一:自定义bean
         UserRepository userRepository = (UserRepository) beanFactory.getBean("userRepository");
 //        System.out.println(userRepository.getUsers());
 
-        System.out.println(userRepository.getBeanFactory() ==beanFactory);
+        System.out.println(userRepository.getBeanFactory() == beanFactory);
         //依赖来源二:依赖注入
         System.out.println(userRepository.getBeanFactory());
 
@@ -28,11 +28,11 @@ public class DependencyInjectionDemo {
 //        System.out.println(userObjectFactory.getObject());
 
         ObjectFactory<ApplicationContext> objectFactory = userRepository.getObjectFactory();
-        System.out.println(beanFactory ==objectFactory.getObject());
+        System.out.println(beanFactory == objectFactory.getObject());
 
         //依赖查找（错误）
 //        System.out.println(beanFactory.getBean(BeanFactory.class));
         Environment environment = beanFactory.getBean(Environment.class);
-        System.out.println("获取 Environment 类型的 Bean"+environment);
+        System.out.println("获取 Environment 类型的 Bean" + environment);
     }
 }

@@ -11,7 +11,7 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
  */
 public class XmlDependecyConstructorInjectionDemo {
     public static void main(String[] args) {
-        DefaultListableBeanFactory beanFactory  = new DefaultListableBeanFactory();
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanFactory);
         String xmlResourcePath = "classpath:/META-INF/dependency-constructor-injection.xml";
         // 加载 XML 资源，解析并且生成 BeanDefinition

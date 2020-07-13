@@ -4,7 +4,7 @@ import java.util.Queue;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 
-public class Consumer implements  Runnable{
+public class Consumer implements Runnable {
     private Queue<String> str;
     private int maxSize;
 
@@ -19,24 +19,24 @@ public class Consumer implements  Runnable{
     }
 
     @Override
-    public void run(){
-        int i=0;
-        while(true){
+    public void run() {
+        int i = 0;
+        while (true) {
             i++;
-                lock.lock();
-                while (str.isEmpty()){
-                    try {
-                        condition.await();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+            lock.lock();
+            while (str.isEmpty()) {
+                try {
+                    condition.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
+            }
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("消费消息："+str.remove());
+            System.out.println("消费消息：" + str.remove());
             condition.signal();
             lock.unlock();
         }

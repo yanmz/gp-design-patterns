@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 
 public class StreamTest9 {
     public static void main(String[] args) {
-        List<String> list  = new ArrayList<>(5000000);
-        for (int i=0;i<5000000;i++){
+        List<String> list = new ArrayList<>(5000000);
+        for (int i = 0; i < 5000000; i++) {
             list.add(UUID.randomUUID().toString());
         }
         System.out.println("开始排序");
@@ -24,7 +24,7 @@ public class StreamTest9 {
 //        list.parallelStream().sorted().count();//用并行流处理
 //        list.stream().sorted().count();//用串行流处理
         long endTime = System.nanoTime();
-        long  milles = TimeUnit.NANOSECONDS.toMillis(endTime-startTime);
-        System.out.println("耗时:"+milles);
+        long milles = TimeUnit.NANOSECONDS.toMillis(endTime - startTime);
+        System.out.println("耗时:" + milles);
     }
 }

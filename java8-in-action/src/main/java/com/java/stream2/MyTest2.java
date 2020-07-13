@@ -14,7 +14,7 @@ public class MyTest2 {
             list1.add("b");
             list1.add("c");
             list1.add("d");
-            list1.parallelStream().forEach(list->list2.add(list));
+            list1.parallelStream().forEach(list -> list2.add(list));
             System.out.println(list2.size());
         }
     }

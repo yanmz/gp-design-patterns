@@ -2,7 +2,7 @@ package demo1;
 
 import java.util.Date;
 
-public class MyTest5{
+public class MyTest5 {
     public static void main(String[] args) {
         TimeThread timeThread = new TimeThread();//创建了一个线程
         timeThread.start();//调用start()方法，使timeThread线程就绪
@@ -15,7 +15,7 @@ public class MyTest5{
     }
 }
 
-class TimeThread extends Thread{
+class TimeThread extends Thread {
 
     @Override
     public void run() {

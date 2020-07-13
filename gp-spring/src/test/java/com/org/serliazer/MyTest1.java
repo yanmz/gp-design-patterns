@@ -1,4 +1,5 @@
 package com.org.serliazer;
+
 import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -14,7 +15,7 @@ public class MyTest1 {
             System.out.println(object);
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
 
         }
     }

@@ -7,7 +7,7 @@
     <import resource="classpath:/META-INF/dependency-lookup-context.xml"/>
 
     <bean class="org.geekbang.thinking.in.spring.ioc.dependency.injection.UserHolder">
-        <constructor-arg name="user" ref="superUser" />
+        <constructor-arg name="user" ref="superUser"/>
     </bean>
 
 </beans>

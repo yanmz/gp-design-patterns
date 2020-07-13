@@ -10,13 +10,14 @@ public class MyTest7 {
     public static void main(String[] args) throws InterruptedException {
         new Thread(() -> {
             count();
-        },"other-thread").start();
+        }, "other-thread").start();
 
         Thread.sleep(1000);
 
         flag = true;
 
     }
+
     static void count() {
         while (!flag) {
 //            new File("");

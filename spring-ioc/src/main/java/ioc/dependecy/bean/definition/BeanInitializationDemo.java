@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Lazy;
 public class BeanInitializationDemo {
     public static void main(String[] args) {
         //创建BeanFactory
-        AnnotationConfigApplicationContext applicationContext  = new AnnotationConfigApplicationContext();
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
 
         // 注册 Configuration Class（配置类）
         applicationContext.register(BeanInitializationDemo.class);
@@ -32,9 +32,9 @@ public class BeanInitializationDemo {
         System.out.println("Spring 应用上下文已关闭...");
     }
 
-    @Bean(initMethod = "initUserFactory",destroyMethod = "dodestory")
+    @Bean(initMethod = "initUserFactory", destroyMethod = "dodestory")
     @Lazy(value = false)
-    public UserFactory userFactory(){
-         return  new DefaultUserFactory();
+    public UserFactory userFactory() {
+        return new DefaultUserFactory();
     }
 }

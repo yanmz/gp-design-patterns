@@ -15,9 +15,9 @@ public class BytesTest {
         String str = new String(bytes);
 //        System.out.println(str);
 
-        JedisUtil.getJedisUtil().hset("k","mybytes", str);
-        System.out.println(JedisUtil.getJedisUtil().hget("k","mybytes"));
+        JedisUtil.getJedisUtil().hset("k", "mybytes", str);
+        System.out.println(JedisUtil.getJedisUtil().hget("k", "mybytes"));
         JedisUtil jedisUtil = JedisUtil.getJedisUtil();
-         System.out.println( jedisUtil.get("k1"));
+        System.out.println(jedisUtil.get("k1"));
     }
 }

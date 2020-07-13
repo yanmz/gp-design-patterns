@@ -1,12 +1,13 @@
 package com.java.action;
 
 public class Studay {
-    private  int age=20;
-    private String  name= "xiaoyan";
+    private int age = 20;
+    private String name = "xiaoyan";
 
-    Studay(){
+    Studay() {
 
     }
+
     public int getAge() {
         return age;
     }

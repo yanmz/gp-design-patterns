@@ -10,8 +10,8 @@ public class MyTest1 {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        Method[] methods =  clazz.getDeclaredMethods();
-        for(Method m:methods){
+        Method[] methods = clazz.getDeclaredMethods();
+        for (Method m : methods) {
             System.out.println(m.getName());
         }
 

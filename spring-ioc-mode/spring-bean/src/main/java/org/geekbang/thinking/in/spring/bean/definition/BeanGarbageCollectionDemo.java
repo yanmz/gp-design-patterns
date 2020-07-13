@@ -1,6 +1,7 @@
 package org.geekbang.thinking.in.spring.bean.definition;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 /**
  * Bean 垃圾回收（GC）示例
  *

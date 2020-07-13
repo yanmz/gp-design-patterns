@@ -6,18 +6,18 @@ import java.util.stream.Stream;
 
 public class StreamTest4 {
     public static void main(String[] args) {
-        Stream<String> stream = Stream.of("hello","word","hello word");
+        Stream<String> stream = Stream.of("hello", "word", "hello word");
 
 //        String[] stringArray = stream.toArray(value -> new String[value]);
 
-        String[] StringArray1= stream.toArray(String[]::new);
+        String[] StringArray1 = stream.toArray(String[]::new);
         Arrays.asList(stream).forEach(System.out::println);
         System.out.println("----------------------------------------------");
         List<String> list = stream.collect(Collectors.toList());
 
-        List<String> list1 =stream.collect(()->new ArrayList(),(a,b)->a.add(b),(c,d)->c.addAll(d));
+        List<String> list1 = stream.collect(() -> new ArrayList(), (a, b) -> a.add(b), (c, d) -> c.addAll(d));
 
-        List<String> list2 = stream.collect(LinkedList::new,LinkedList::add,LinkedList::addAll);
+        List<String> list2 = stream.collect(LinkedList::new, LinkedList::add, LinkedList::addAll);
 
         list.forEach(System.out::println);
         System.out.println("----------------------------------------------");

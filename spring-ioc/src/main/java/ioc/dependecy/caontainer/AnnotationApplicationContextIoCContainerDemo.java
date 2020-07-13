@@ -11,6 +11,7 @@ import java.util.Map;
 
 /**
  * 注解能力 {@link ApplicationContext} 作为 IoC 容器示例
+ *
  * @author Tom
  */
 public class AnnotationApplicationContextIoCContainerDemo {
@@ -26,18 +27,18 @@ public class AnnotationApplicationContextIoCContainerDemo {
     }
 
     @Bean
-    public User user(){
+    public User user() {
         User user = new User();
         user.setId(1L);
         user.setName("小颜");
-       return user;
+        return user;
     }
 
     private static void LookupCollectionByType(BeanFactory beanFactory) {
-        if(beanFactory instanceof ListableBeanFactory){
-            ListableBeanFactory  listableBeanFactory= (ListableBeanFactory)beanFactory;
+        if (beanFactory instanceof ListableBeanFactory) {
+            ListableBeanFactory listableBeanFactory = (ListableBeanFactory) beanFactory;
             Map<String, User> userMap = listableBeanFactory.getBeansOfType(User.class);
-            System.out.println("查找到的所有的 User 集合对象:"+userMap);
+            System.out.println("查找到的所有的 User 集合对象:" + userMap);
         }
     }
 }

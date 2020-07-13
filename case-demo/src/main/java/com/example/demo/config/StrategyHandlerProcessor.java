@@ -23,7 +23,7 @@ public class StrategyHandlerProcessor implements BeanFactoryPostProcessor {
         try {
             Map<String, Class> map = new HashMap<>();
             Map<String, Class> classMap = StrategyClassLoader.scan("com.example.demo.strategy", map);
-            log.info("ღღღღღღღღღღღღღღღღ:classMap size"+classMap);
+            log.info("ღღღღღღღღღღღღღღღღ:classMap size" + classMap);
             HandlerContext handlerContext = new HandlerContext(classMap);
             beanFactory.registerSingleton("handlerContext", handlerContext);
             log.info("ღღღღღღღღღღღღღღღღ:handlerContext is loading");

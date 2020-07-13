@@ -8,6 +8,7 @@ import org.springframework.beans.factory.support.GenericBeanDefinition;
 
 /**
  * {@link org.springframework.beans.factory.config.BeanDefinition} 构建示例
+ *
  * @author Tom
  */
 public class BeanDefinitionCreationDemo {

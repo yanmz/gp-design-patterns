@@ -15,7 +15,7 @@ public class ClientProxy {
         InvocationHandler invocationHandler = new DynamicSubject(realSubject);
         Class<?> aClass = realSubject.getClass();
         //将目标类的类加载器 和实现的接口交给代理处理
-        Subject subject = (Subject) Proxy.newProxyInstance(aClass.getClassLoader(),aClass.getInterfaces(),invocationHandler);
+        Subject subject = (Subject) Proxy.newProxyInstance(aClass.getClassLoader(), aClass.getInterfaces(), invocationHandler);
         //subject = $Proxy0
         subject.request();
     }

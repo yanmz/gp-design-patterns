@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Bean;
 public class AnnotationDependecyConstructorInjectionDemo {
     public static void main(String[] args) {
         // 创建 BeanFactory 容器
-        AnnotationConfigApplicationContext  applicationContext =new AnnotationConfigApplicationContext();
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类）
         applicationContext.register(AnnotationDependecyConstructorInjectionDemo.class);
 

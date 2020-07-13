@@ -11,7 +11,8 @@ import org.springframework.core.io.ResourceLoader;
 import javax.annotation.PostConstruct;
 
 /**
- *依赖来源示例:可以通过spring内建依赖bean作为依赖来源，其中依赖来源分为三种 自定义bean  sprin内建bean(spring 容器启动时就初始化bean)  spring内建依赖bean
+ * 依赖来源示例:可以通过spring内建依赖bean作为依赖来源，其中依赖来源分为三种 自定义bean  sprin内建bean(spring 容器启动时就初始化bean)  spring内建依赖bean
+ *
  * @author Tom
  */
 public class DenpendecyReorceDemo {
@@ -29,14 +30,14 @@ public class DenpendecyReorceDemo {
 
     @PostConstruct
     public void initByInjection() {
-        System.out.println("demo.beanFactory: "+(beanFactory ==applicationContext));
-        System.out.println("demo.beanFactory: "+(beanFactory ==applicationContext.getAutowireCapableBeanFactory()));
-        System.out.println("demo.applicationEventPublisher: "+(applicationEventPublisher ==applicationContext));
-        System.out.println("demo.resourceLoader: "+(resourceLoader ==applicationContext));
+        System.out.println("demo.beanFactory: " + (beanFactory == applicationContext));
+        System.out.println("demo.beanFactory: " + (beanFactory == applicationContext.getAutowireCapableBeanFactory()));
+        System.out.println("demo.applicationEventPublisher: " + (applicationEventPublisher == applicationContext));
+        System.out.println("demo.resourceLoader: " + (resourceLoader == applicationContext));
     }
 
     @PostConstruct
-    public void initByLookup(){
+    public void initByLookup() {
         getBean(BeanFactory.class);
         getBean(ApplicationContext.class);
         getBean(ResourceLoader.class);
@@ -59,7 +60,7 @@ public class DenpendecyReorceDemo {
 
         applicationContext.refresh();
 
-        DenpendecyReorceDemo  demo = applicationContext.getBean(DenpendecyReorceDemo.class);
+        DenpendecyReorceDemo demo = applicationContext.getBean(DenpendecyReorceDemo.class);
 
 
         applicationContext.close();

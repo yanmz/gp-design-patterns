@@ -16,7 +16,7 @@ public class Demo1 extends ThreadPoolExecutor {
 
     @Override
     public void shutdown() {
-        System.out.println("已经执行的任务数："+this.getCompletedTaskCount()+", " +"当前活动线程数:" + this.getActiveCount() + ",当前排队线程 数:"+this.getQueue().size());
+        System.out.println("已经执行的任务数：" + this.getCompletedTaskCount() + ", " + "当前活动线程数:" + this.getActiveCount() + ",当前排队线程 数:" + this.getQueue().size());
         System.out.println();
         super.shutdown();
     }
@@ -40,10 +40,10 @@ public class Demo1 extends ThreadPoolExecutor {
         System.out.print("初始线程数:" + this.getPoolSize() + "\n");
         System.out.print("核心线程数:" + this.getCorePoolSize() + "\n");
         System.out.print("正在执行的任务数量:" + this.getActiveCount() + "\n");
-        System.out.print("已经执行的任务数:"+this.getCompletedTaskCount()+"\n ");
+        System.out.print("已经执行的任务数:" + this.getCompletedTaskCount() + "\n ");
         System.out.print("任务总数:" + this.getTaskCount() + "\n");
         System.out.print("最大允许的线程数:" + this.getMaximumPoolSize() + "\n");
-        System.out.print("线程空闲时间:"+this.getKeepAliveTime(TimeUnit.MILLISECONDS)+"\n ");
+        System.out.print("线程空闲时间:" + this.getKeepAliveTime(TimeUnit.MILLISECONDS) + "\n ");
         System.out.println();
         super.afterExecute(r, t);
     }

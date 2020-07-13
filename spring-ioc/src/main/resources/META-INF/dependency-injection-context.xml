@@ -5,7 +5,7 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
-     <import resource="dependency-lookup-context.xml"/>
+    <import resource="dependency-lookup-context.xml"/>
     <bean id="userRepository" class="ioc.dependecy.repository.UserRepositroy" autowire="byType">
     </bean>
 </beans>

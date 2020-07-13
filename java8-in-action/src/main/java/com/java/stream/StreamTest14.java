@@ -1,4 +1,5 @@
 package com.java.stream;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,10 +7,10 @@ import java.util.stream.Stream;
 
 /**
  * @author yanmz
- *
+ * <p>
  * flatMap方法的效果是，各个数组并不是分别映射成一个流，而是映射成流的内容。所
  * 有使用map(Arrays::stream)时生成的单个流都被合并起来.
- *
+ * <p>
  * 一言以蔽之，flatmap方法让你把一个流中的每个值都换成另一个流，然后把所有的流连接
  * 起来成为一个流。
  */

@@ -6,11 +6,11 @@ package com.monery;
 public class MyTest2 {
     private int length;
 
-    public int getLength(){
+    public int getLength() {
         return this.length;
     }
 
-    public void test(){
+    public void test() {
         length++;
         try {
             Thread.sleep(300);
@@ -19,11 +19,12 @@ public class MyTest2 {
         }
         test();
     }
+
     public static void main(String[] args) {
         MyTest2 myTest2 = new MyTest2();
-        try{
+        try {
             myTest2.test();
-        }catch (Throwable throwable){
+        } catch (Throwable throwable) {
             System.out.println(myTest2.getLength());
             throwable.printStackTrace();
         }

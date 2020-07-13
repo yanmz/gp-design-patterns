@@ -24,8 +24,8 @@ public class ObjectProviderDemo {
 
     private static void lookupByStreamOps(AnnotationConfigApplicationContext applicationContext) {
         ObjectProvider<String> objectProvider = applicationContext.getBeanProvider(String.class);
-        Iterable<String> iterator =  objectProvider;
-        for (String string:iterator) {
+        Iterable<String> iterator = objectProvider;
+        for (String string : iterator) {
             System.out.println(string);
         }
 
@@ -34,13 +34,13 @@ public class ObjectProviderDemo {
 
     private static void lookupIfAvailable(AnnotationConfigApplicationContext applicationContext) {
         ObjectProvider<User> beanProvider = applicationContext.getBeanProvider(User.class);
-        User user =beanProvider.getIfAvailable(User::createUser);
-        System.out.println("当前 User 对象："+user);
+        User user = beanProvider.getIfAvailable(User::createUser);
+        System.out.println("当前 User 对象：" + user);
     }
 
     @Bean
-    public  String helloWorld(){
-        return  "hello World";
+    public String helloWorld() {
+        return "hello World";
     }
 
     private static void lookupByObjectProvider(AnnotationConfigApplicationContext applicationContext) {

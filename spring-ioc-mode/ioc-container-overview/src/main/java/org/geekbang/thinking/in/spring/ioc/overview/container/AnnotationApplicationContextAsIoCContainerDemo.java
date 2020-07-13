@@ -27,11 +27,11 @@ public class AnnotationApplicationContextAsIoCContainerDemo {
     }
 
     @Bean
-    public User user(){
+    public User user() {
         User user = new User();
         user.setId(1L);
         user.setName("xiaoyan");
-        return  user;
+        return user;
     }
 
     private static void lookupCollectionByType(BeanFactory beanFactory) {

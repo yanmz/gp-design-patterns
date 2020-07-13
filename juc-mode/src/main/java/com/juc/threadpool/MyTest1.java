@@ -11,7 +11,7 @@ public class MyTest1 {
     }
 }
 
-class  a implements  Runnable{
+class a implements Runnable {
     @Override
     public void run() {
         System.out.println("11111");

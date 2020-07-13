@@ -15,7 +15,7 @@ public class Strategy1 implements AbstractStrategy {
 
     @Override
     public Object execute(Object object) {
-        System.out.println(object+"----->策略1");
+        System.out.println(object + "----->策略1");
         return null;
     }
 }

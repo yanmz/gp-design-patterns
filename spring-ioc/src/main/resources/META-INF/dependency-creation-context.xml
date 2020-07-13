@@ -8,12 +8,12 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/beans/spring-context.xsd">
     <!-- 静态方法实例化 Bean -->
-    <bean id="user-by-static-method" class="ioc.dependecy.domain.User"   factory-method="createUser"/>
+    <bean id="user-by-static-method" class="ioc.dependecy.domain.User" factory-method="createUser"/>
 
 
     <!-- 实例（Bean）方法实例化 Bean -->
     <bean id="user-by-instance-method" factory-bean="userFactory" factory-method="createUser"/>
-    <bean  id="userFactory" class="ioc.dependecy.bean.definition.factory.DefaultUserFactory"/>
+    <bean id="userFactory" class="ioc.dependecy.bean.definition.factory.DefaultUserFactory"/>
 
     <bean id="user-by-factory" class="ioc.dependecy.bean.definition.factory.UserFactoryBean"/>
 </beans>
