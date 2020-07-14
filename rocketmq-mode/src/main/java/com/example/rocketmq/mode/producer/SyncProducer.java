@@ -5,6 +5,9 @@ import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 发送同步消息
+ */
 public class SyncProducer {
     public static void main(String[] args) throws  Exception {
 //        1.创建消息生产者producer，并制定生产者组名
