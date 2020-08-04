@@ -9,7 +9,7 @@ import org.apache.rocketmq.common.message.MessageExt;
 import java.util.List;
 
 public class TransactioConsumer {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         //1.创建消费者Consumer，制定消费者组名
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("group1");
         //2.指定Nameserver地址

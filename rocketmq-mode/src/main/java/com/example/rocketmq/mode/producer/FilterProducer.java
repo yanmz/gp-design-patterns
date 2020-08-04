@@ -7,7 +7,7 @@ import org.apache.rocketmq.common.message.Message;
 import java.util.concurrent.TimeUnit;
 
 public class FilterProducer {
-    public static void main(String[] args)  throws  Exception{
+    public static void main(String[] args) throws Exception {
         //1.创建消息生产者producer，并制定生产者组名
         DefaultMQProducer producer = new DefaultMQProducer("group1");
 
@@ -16,10 +16,10 @@ public class FilterProducer {
 
         producer.start();
         for (int i = 0; i < 10; i++) {
-            Message msg = new Message("FilterTopic","Tag1",("Hello,Hello"+i).getBytes());
+            Message msg = new Message("FilterTopic", "Tag1", ("Hello,Hello" + i).getBytes());
             SendResult result = producer.send(msg);
 
-            System.out.println("发送结果："+result);
+            System.out.println("发送结果：" + result);
             //线程睡1秒
             TimeUnit.SECONDS.sleep(1);
         }

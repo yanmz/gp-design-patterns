@@ -12,6 +12,6 @@ public class ZfbPayFactory extends PayFactory {
 
     @Override
     public ForeignPay foreignPay() {
-        return new  OverseasZfbPay();
+        return new OverseasZfbPay();
     }
 }

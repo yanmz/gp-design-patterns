@@ -4,6 +4,7 @@ public class MyTest4 {
     public static void main(String[] args) {
         new Thread(() -> A.method(), "MethodA").start();
         new Thread(() -> B.method(), "MethodB").start();
+
     }
 }
 

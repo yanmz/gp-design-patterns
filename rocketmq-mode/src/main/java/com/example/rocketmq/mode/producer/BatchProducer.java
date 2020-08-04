@@ -4,12 +4,13 @@ import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.client.producer.SendStatus;
 import org.apache.rocketmq.common.message.Message;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class BatchProducer {
-    public static void main(String[] args)  throws Exception{
+    public static void main(String[] args) throws Exception {
         //1.创建消息生产者producer，并制定生产者组名
         DefaultMQProducer producer = new DefaultMQProducer("group1");
         //2.指定Nameserver地址

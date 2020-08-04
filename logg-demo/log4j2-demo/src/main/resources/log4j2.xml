@@ -33,14 +33,14 @@
                     includeLocation="false" 关闭日志记录行号信息
                     additivity="false" 不继承RootLogger 对象
                     -->
-        <AsyncLogger name="com.itheima" level="trace" includeLocation="false" additivity="false">
-            <AppenderRef ref="file"/>
-        </AsyncLogger>
+        <!--        <AsyncLogger name="com.itheima" level="trace" includeLocation="false" additivity="false">-->
+        <!--            <AppenderRef ref="file"/>-->
+        <!--        </AsyncLogger>-->
 
-        <!--       使用随机读写流的日志文件 输出appender 性能提高 -->
-        <RandomAccessFile name="accessFile" fileName="${LOG_HOME}/myAcclog.log">
-            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] %l %c{36} - %m%n"/>
-        </RandomAccessFile>
+        <!--        &lt;!&ndash;       使用随机读写流的日志文件 输出appender 性能提高 &ndash;&gt;-->
+        <!--        <RandomAccessFile name="accessFile" fileName="${LOG_HOME}/myAcclog.log">-->
+        <!--            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] %l %c{36} - %m%n"/>-->
+        <!--        </RandomAccessFile>-->
         <!--        按照一定的规则拆分的 日志文件 的appender-->
         <RollingFile name="rollingFile" fileName="${LOG_HOME}/myrollog.log"
                      filePattern="D:/logs/$${date:yyyy-MM-dd}/myrollog-%d{yyyy- MM-dd-HH-mm}-%i.log">
@@ -69,8 +69,8 @@
         <Root level="trace">
             <!--            指定日志使用的处理器-->
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="file"/>
-            <AppenderRef ref="accessFile"/>
+            <!--            <AppenderRef ref="file"/>-->
+            <!--            <AppenderRef ref="accessFile"/>-->
             <AppenderRef ref="rollingFile"/>
         </Root>
     </Loggers>

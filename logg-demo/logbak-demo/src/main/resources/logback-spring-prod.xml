@@ -6,7 +6,7 @@
         我们可以直接改属性的 value 值
         格式：${name}
     -->
-    <property name="pattern" value="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} %c %M %L [%thread] %m%n"></property>
+    <property name="pattern" value="=======[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} %c %M %L [%thread] %m%n"></property>
     <!--
     日志输出格式：
         %-5level
@@ -95,7 +95,7 @@
     <!--自定义 looger 对象
         additivity="false" 自定义 logger 对象是否继承 rootLogger
      -->
-    <logger name="com.log.jul" level="info" additivity="false">
-        <appender-ref ref="console"/>
-    </logger>
+    <!--    <logger name="com.log.jul" level="info" additivity="false">-->
+    <!--        <appender-ref ref="console"/>-->
+    <!--    </logger>-->
 </configuration>

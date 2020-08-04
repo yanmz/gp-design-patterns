@@ -8,9 +8,9 @@ import org.apache.rocketmq.common.message.MessageExt;
 import java.util.concurrent.TimeUnit;
 
 public class TransactioProducer {
-    public static void main(String[] args)  throws  Exception{
+    public static void main(String[] args) throws Exception {
         //1.创建消息生产者producer，并制定生产者组名
-       TransactionMQProducer producer = new TransactionMQProducer("group1");
+        TransactionMQProducer producer = new TransactionMQProducer("group1");
 
         //2.指定Nameserver地址
         producer.setNamesrvAddr("192.168.50.133:9876;192.168.50.134:9876");

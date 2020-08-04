@@ -1,6 +1,7 @@
 package com.juc.Semaphore;
 
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Semaphore 信号灯 令牌
@@ -31,10 +32,11 @@ public class Semaphore01 {
                 e.printStackTrace();
             }
             try {
-                Thread.sleep(3000);
+                TimeUnit.SECONDS.sleep(3);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
             System.out.println("抢占令牌" + num);
             semaphore.release();
         }
