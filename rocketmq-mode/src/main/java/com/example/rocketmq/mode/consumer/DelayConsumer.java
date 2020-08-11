@@ -7,7 +7,9 @@ import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.common.message.MessageExt;
 
 import java.util.List;
-
+/**
+ *延迟消息
+ */
 public class DelayConsumer {
     public static void main(String[] args) throws Exception {
         //1.创建消费者Consumer，制定消费者组名
