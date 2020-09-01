@@ -17,5 +17,4 @@ public class ResourceUtil {
     public static String getKey(String key) {
         return resourceBundle.getString(key);
     }
-
 }

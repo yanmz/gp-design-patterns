@@ -4,6 +4,9 @@ import util.JedisUtil;
 
 import java.util.List;
 
+/**
+ * @author Tom
+ */
 public class HashTest {
     public static void main(String[] args) {
         String str = JedisUtil.getJedisUtil().hget("h", "a");

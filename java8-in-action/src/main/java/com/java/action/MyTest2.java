@@ -11,8 +11,6 @@ interface MyInterface {
     static String a() {
         return "";
     }
-
-    ;
 }
 
 public class MyTest2 {
@@ -40,7 +38,6 @@ public class MyTest2 {
         MyInterface myInterface = () -> {
             System.out.println("my test");
         };
-
 
         System.out.println(myInterface.getClass());
         System.out.println(myInterface.getClass().getSuperclass());

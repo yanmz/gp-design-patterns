@@ -3,6 +3,9 @@ package datatype;
 
 import redis.clients.jedis.Jedis;
 
+/**
+ * @author Tom
+ */
 public class HyperLogLogTest {
     public static void main(String[] args) {
         Jedis jedis = new Jedis("115.29.142.129", 6379);

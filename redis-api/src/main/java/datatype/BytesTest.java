@@ -7,6 +7,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
+/**
+ * @author Tom
+ */
 public class BytesTest {
     public static void main(String[] args) throws IOException {
         System.out.println(Charset.defaultCharset());

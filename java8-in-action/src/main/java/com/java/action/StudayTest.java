@@ -8,6 +8,6 @@ public class StudayTest {
         System.out.println(studaySupplier.get().getName());
         System.out.println("--------------------");
         Supplier<Studay> studaySupplier1 = Studay::new;
-        System.out.println(studaySupplier.get().getAge());
+        System.out.println(studaySupplier1.get().getAge());
     }
 }

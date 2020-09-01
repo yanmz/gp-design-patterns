@@ -4,6 +4,9 @@ import util.JedisUtil;
 
 import java.util.Set;
 
+/**
+ * @author Tom
+ */
 public class ZSetTest {
     public static void main(String[] args) {
         JedisUtil.getJedisUtil().zadd("myzset", 20, "java");

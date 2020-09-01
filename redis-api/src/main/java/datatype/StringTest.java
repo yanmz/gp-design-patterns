@@ -2,6 +2,9 @@ package datatype;
 
 import util.JedisUtil;
 
+/**
+ * @author Tom
+ */
 public class StringTest {
     public static void main(String[] args) {
         JedisUtil.getJedisUtil().set("xiaoyan", "2673");
