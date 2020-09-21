@@ -22,7 +22,7 @@ public class AnnotationBeanDefinitionDemo {
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类）
-        applicationContext.register(Config.class);
+        applicationContext.register(AnnotationBeanDefinitionDemo.class);
         applicationContext.refresh();
 
         // 通过 BeanDefinition 注册 API 实现
@@ -32,8 +32,8 @@ public class AnnotationBeanDefinitionDemo {
         registerUserBeanDefinition(applicationContext);
 
         // 按照类型依赖查找
-        System.out.println("Config 类型的所有 Beans" + applicationContext.getBeansOfType(Config.class));
-        System.out.println("User 类型的所有 Beans" + applicationContext.getBeansOfType(User.class));
+        System.out.println("Config 类型的所有 Beans  " + applicationContext.getBeansOfType(Config.class));
+        System.out.println("User 类型的所有 Beans  " + applicationContext.getBeansOfType(User.class));
         applicationContext.close();
     }
 
@@ -62,7 +62,6 @@ public class AnnotationBeanDefinitionDemo {
     @Component // 定义当前类作为 Spring Bean（组件）
     public static class Config {
         // 1. 通过 @Bean 方式定义
-
         /**
          * 通过 Java 注解的方式，定义了一个 Bean
          */

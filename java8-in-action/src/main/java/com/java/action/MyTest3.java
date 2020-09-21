@@ -9,6 +9,5 @@ public class MyTest3 {
         list.stream().map(item -> item.toUpperCase()).forEach(item -> System.out.println(item));
         System.out.println("----------------------------------");
         list.stream().map(String::toUpperCase).forEach(item -> System.out.println(item));
-
     }
 }

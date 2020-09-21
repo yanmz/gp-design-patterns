@@ -5,6 +5,9 @@ import org.springframework.beans.factory.BeanNameAware;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+/**
+ * @author Tom
+ */
 public class User implements BeanNameAware {
     private Long id;
     private String name;
