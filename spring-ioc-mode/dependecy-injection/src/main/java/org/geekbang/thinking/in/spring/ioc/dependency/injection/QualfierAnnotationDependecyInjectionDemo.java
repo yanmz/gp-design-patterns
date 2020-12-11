@@ -20,8 +20,8 @@ public class QualfierAnnotationDependecyInjectionDemo {
     User user;
 
     @Autowired
-    @Qualifier("user")
-    User nameUser;
+    @Qualifier("user")//指定bean名称或者ID
+            User nameUser;
 
     @Autowired
     List<User> allUser;
@@ -31,9 +31,14 @@ public class QualfierAnnotationDependecyInjectionDemo {
     @Qualifier
     List<User> qualifierUser;
 
+
+    @Autowired
+    @UserGroup
+    List<User> userGroupUser;
+
     @Bean
-    @Qualifier
-    public User user1() {
+    @Qualifier// 进行逻辑分组
+    public static User user1() {
         User user = new User();
         user.setId(7L);
         return user;
@@ -41,7 +46,7 @@ public class QualfierAnnotationDependecyInjectionDemo {
 
     @Bean
     @Qualifier
-    public User user2() {
+    public static User user2() {
         User user = new User();
         user.setId(8L);
         return user;
@@ -49,7 +54,7 @@ public class QualfierAnnotationDependecyInjectionDemo {
 
     @Bean
     @UserGroup
-    public User user3() {
+    public static User user3() {
         User user = new User();
         user.setId(9L);
         return user;
@@ -58,7 +63,7 @@ public class QualfierAnnotationDependecyInjectionDemo {
 
     @Bean
     @UserGroup
-    public User user4() {
+    public static User user4() {
         User user = new User();
         user.setId(10L);
         return user;
@@ -87,6 +92,8 @@ public class QualfierAnnotationDependecyInjectionDemo {
         System.out.println("demo.allUser:" + demo.allUser);
 
         System.out.println("demo.qualifierUser:" + demo.qualifierUser);
+
+        System.out.println("demo.userGroupUser:" + demo.userGroupUser);
 
         // 显示地关闭 Spring 应用上下文
         applicationContext.close();

@@ -1,5 +1,7 @@
 package com.juc.Semaphore;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
@@ -9,10 +11,16 @@ import java.util.concurrent.TimeUnit;
  */
 public class Semaphore01 {
     public static void main(String[] args) {
-        Semaphore semaphore = new Semaphore(5);
-        for (int i = 0; i < 10; i++) {
-            new car(semaphore, i).start();
-        }
+
+
+            String str = "2222222222,3333333333,4444444444,5555555555";
+            String[] split = str.split(",");
+             Arrays.asList(split).stream().forEach(System.out::println);
+
+//        Semaphore semaphore = new Semaphore(5);
+//        for (int i = 0; i < 10; i++) {
+//            new car(semaphore, i).start();
+//        }
     }
 
     static class car extends Thread {

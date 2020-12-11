@@ -17,6 +17,7 @@
         <module>Dependecy-resource</module>
         <module>bean-scope</module>
         <module>bean-lifecycle</module>
+        <module>configuration-beanmetadata</module>
     </modules>
 
     <properties>

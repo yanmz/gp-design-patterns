@@ -16,6 +16,7 @@ import javax.annotation.PostConstruct;
  * @author Tom
  */
 public class DenpendecyReorceDemo {
+
     @Autowired
     BeanFactory beanFactory;
 

@@ -26,7 +26,7 @@ public class SpecialBeanInstantiationDemo {
 
         displayServiceLoader(serviceLoader);
 
-//        demoServiceLoader();
+        demoServiceLoader();
 
         // 创建 UserFactory 对象，通过 AutowireCapableBeanFactory
         UserFactory userFactory = beanFactory.createBean(DefaultUserFactory.class);

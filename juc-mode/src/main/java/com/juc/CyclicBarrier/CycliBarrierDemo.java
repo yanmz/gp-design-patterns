@@ -2,6 +2,9 @@ package com.juc.CyclicBarrier;
 
 import java.util.concurrent.CyclicBarrier;
 
+/**
+ * @author Tom
+ */
 public class CycliBarrierDemo extends Thread {
     @Override
     public void run() {
@@ -13,5 +16,6 @@ public class CycliBarrierDemo extends Thread {
         new Thread(new DataImportThread(cycliBarrier, "file 1")).start();
         new Thread(new DataImportThread(cycliBarrier, "file 2")).start();
         new Thread(new DataImportThread(cycliBarrier, "file 3")).start();
+        new Thread(new DataImportThread(cycliBarrier, "file 4")).start();
     }
 }

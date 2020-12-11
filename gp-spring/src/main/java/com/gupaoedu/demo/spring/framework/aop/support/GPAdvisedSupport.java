@@ -44,7 +44,7 @@ public class GPAdvisedSupport {
 
 
         //享元的共享池
-        methodCache = new HashMap<Method, Map<String, GPAdvice>>();
+        methodCache = new HashMap<Method, Map<String, GPAdvice>>(16);
 
         //保存专门匹配方法的正则
         Pattern pointCutPattern = Pattern.compile(pointCut);

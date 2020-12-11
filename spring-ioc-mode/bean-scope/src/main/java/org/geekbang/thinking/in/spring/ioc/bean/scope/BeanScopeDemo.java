@@ -59,6 +59,12 @@ public class BeanScopeDemo implements DisposableBean {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
 
         applicationContext.register(BeanScopeDemo.class);
+
+        //结论一
+        //Singleton bean  无论依赖查找还是依赖注入 都是同一个
+        //Prototype bean  无论依赖查找还是依赖注入 都是生成新的对象
+
+
         applicationContext.addBeanFactoryPostProcessor((beanFactory) -> {
             beanFactory.addBeanPostProcessor(new BeanPostProcessor() {
                 @Override

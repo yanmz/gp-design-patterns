@@ -4,6 +4,7 @@ import org.geekbang.thinking.in.spring.ioc.overview.domain.User;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
 
 
 public class ObjectProviderDemo {
@@ -39,13 +40,18 @@ public class ObjectProviderDemo {
     }
 
     @Bean
+    @Primary
     public String helloWorld() {
         return "hello World";
+    }
+
+    @Bean
+    public String message() {
+        return "message";
     }
 
     private static void lookupByObjectProvider(AnnotationConfigApplicationContext applicationContext) {
         ObjectProvider<String> beanProvider = applicationContext.getBeanProvider(String.class);
         System.out.println(beanProvider.getObject());
-
     }
 }

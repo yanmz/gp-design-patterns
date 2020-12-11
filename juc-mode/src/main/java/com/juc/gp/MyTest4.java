@@ -25,11 +25,11 @@ public class MyTest4 implements Runnable {
                     }
                 }
                 queue.add("生产者" + count);
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
                 System.out.println("生产者生成信息" + count);
                 queue.notify();
             }

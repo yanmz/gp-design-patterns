@@ -5,11 +5,13 @@ public class ThreadLocalDemo {
 
     //    private static int num=0;
     static ThreadLocal<Integer> local = new ThreadLocal<Integer>() {
+        @Override
         protected Integer initialValue() {
             return 0; //初始化一个值
         }
     };
     static ThreadLocal<Integer> local1 = new ThreadLocal<Integer>() {
+        @Override
         protected Integer initialValue() {
             return 0; //初始化一个值
         }

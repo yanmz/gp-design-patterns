@@ -25,11 +25,11 @@ public class MyTest5 implements Runnable {
                     }
                 }
                 queue.remove();
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
                 System.out.println("消费者消费信息" + count);
                 queue.notify();
             }

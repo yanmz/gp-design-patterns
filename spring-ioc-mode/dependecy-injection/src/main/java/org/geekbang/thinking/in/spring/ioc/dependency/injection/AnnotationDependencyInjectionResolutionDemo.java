@@ -40,9 +40,9 @@ import java.util.Optional;
 @Configuration
 public class AnnotationDependencyInjectionResolutionDemo {
 
-    @Autowired          // 依赖查找（处理） + 延迟
-    @Lazy
-    private User lazyUser;
+//    @Autowired          // 依赖查找（处理） + 延迟
+//    @Lazy
+//    private User lazyUser;
 
     // DependencyDescriptor ->
     // 必须（required=true）
@@ -53,17 +53,17 @@ public class AnnotationDependencyInjectionResolutionDemo {
     @Autowired          // 依赖查找（处理）
     private User user;
 
-    @Autowired          // 集合类型依赖注入
-    private Map<String, User> users; // user superUser
-
-    @MyAutowired
-    private Optional<User> userOptional; // superUser
-
-//    @Inject
-//    private User injectedUser;
-
-    @InjectedUser
-    private User myInjectedUser;
+//    @Autowired          // 集合类型依赖注入
+//    private Map<String, User> users; // user superUser
+//
+//    @MyAutowired
+//    private Optional<User> userOptional; // superUser
+//
+////    @Inject
+////    private User injectedUser;
+//
+//    @InjectedUser
+//    private User myInjectedUser;
 
 //    @Bean(name = AUTOWIRED_ANNOTATION_PROCESSOR_BEAN_NAME)
 //    public static AutowiredAnnotationBeanPostProcessor beanPostProcessor() {
@@ -100,19 +100,19 @@ public class AnnotationDependencyInjectionResolutionDemo {
         // 启动 Spring 应用上下文
         applicationContext.refresh();
 
-        // 依赖查找 QualifierAnnotationDependencyInjectionDemo Bean
+        // 依赖查找 QualifierAnnotationDependen cyInjectionDemo Bean
         AnnotationDependencyInjectionResolutionDemo demo = applicationContext.getBean(AnnotationDependencyInjectionResolutionDemo.class);
 
 //        // 期待输出 superUser Bean
 //        System.out.println("demo.user = " + demo.user);
 //        System.out.println("demo.injectedUser = " + demo.injectedUser);
 
-        // 期待输出 user superUser
-        System.out.println("demo.users = " + demo.users);
-        // 期待输出 superUser Bean
-        System.out.println("demo.userOptional = " + demo.userOptional);
-        // 期待输出 superUser Bean
-        System.out.println("demo.myInjectedUser = " + demo.myInjectedUser);
+//        // 期待输出 user superUser
+//        System.out.println("demo.users = " + demo.users);
+//        // 期待输出 superUser Bean
+//        System.out.println("demo.userOptional = " + demo.userOptional);
+//        // 期待输出 superUser Bean
+//        System.out.println("demo.myInjectedUser = " + demo.myInjectedUser);
 
 
         // 显示地关闭 Spring 应用上下文
