@@ -3,6 +3,7 @@ package com.java.action;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Predicate;
 
 public class predicateTest {
@@ -24,7 +25,7 @@ public class predicateTest {
         System.out.println("----------------------------");
         predicateTest.conditionFilter2(list, value -> value > 5, value -> value % 2 == 0);
         System.out.println("-----------------------------");
-        boolean test = predicateTest.isEqual(new Date()).test(new Date());
+        boolean test = predicateTest.isEqual("Test").test("Test");
         System.out.println(test);
 
 
@@ -46,7 +47,8 @@ public class predicateTest {
         }
     }
 
-    public Predicate<Date> isEqual(Object object) {
+
+    public Predicate<String> isEqual(Object object) {
         return Predicate.isEqual(object);
     }
 }
