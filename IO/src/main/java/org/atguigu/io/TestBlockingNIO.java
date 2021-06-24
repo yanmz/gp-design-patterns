@@ -22,7 +22,9 @@ import java.util.Iterator;
  *          |--SelectableChannel
  *              |--SocketChannel
  *              |--ServerSocketChannel
+ *                        --tcp
  *              |--DataGramChannel
+ *                        --udp
  *              |--Pipe.SinkChannel
  *              |--Pipe.SourceChannel
  *

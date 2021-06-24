@@ -25,6 +25,7 @@ import java.nio.ByteBuffer;
  * capacity：容量，表示缓冲区中最大存储数据的容量，一但声明不能改变
  * limit：界限，表示缓存区中可以操作数据的大小（limit 后数据不能进行读写）
  * position：位置，表示缓冲区中正在操作数据的位置
+ * mark：标记，表示记录当前position的位置，可通过reset() 恢复到mark的位置
  * mark <= position <= limit <= capacity
  *
  * 四、直接缓冲区与非直接缓冲区

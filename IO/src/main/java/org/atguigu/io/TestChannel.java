@@ -28,7 +28,7 @@ import java.nio.file.StandardOpenOption;
  *     |-- FileChannel
  *     |-- SocketChannel
  *     |-- ServerSocketChannel
- *     |-- DatagramChannel
+ *     |-- DatagramChannel  ---UDP
  *
  * 三、获取通道
  * 1.java针对支持通道的类型提供 getChannel() 方法
