@@ -1,9 +1,12 @@
 package com.juc.gp;
 
+import java.util.Collections;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class MyTest9 {
+
+
     static int count = 0;
     static Lock lock = new ReentrantLock();
 
@@ -31,5 +34,6 @@ public class MyTest9 {
             e.printStackTrace();
         }
         System.out.println(count);
+
     }
 }

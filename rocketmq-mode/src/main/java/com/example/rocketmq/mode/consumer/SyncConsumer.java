@@ -9,7 +9,7 @@ import org.apache.rocketmq.common.protocol.heartbeat.MessageModel;
 
 import java.util.List;
 
-public class Consumer {
+public class SyncConsumer {
     public static void main(String[] args) throws Exception {
 //        1.创建消费者Consumer，制定消费者组名
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("group1");

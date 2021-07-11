@@ -18,4 +18,6 @@ public class GPAdvice {
         this.adviceMethod = adviceMethod;
     }
 
+    public void setThrowName(String aspectAfterThrowingName) {
+    }
 }

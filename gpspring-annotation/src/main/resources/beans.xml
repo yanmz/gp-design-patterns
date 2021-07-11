@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="beanPostProcessor" class="org.example.lifecyle2.MyBeanPostProcessor"></bean>
+
+    <bean id="instantiationAwareBeanPostProcessor" class="org.example.lifecyle2.MyInstantiationAwareBeanPostProcessor"></bean>
+
+    <bean id="beanFactoryPostProcessor" class="org.example.lifecyle2.MyBeanFactoryPostProcessor"></bean>
+
+    <bean id="userRegistryPostProcessor" class="org.example.lifecyle2.MyBeanDefinitionRegistryPostProcessor"></bean>
+
+    <bean id="person" class="org.example.lifecyle2.PersonBean" init-method="myInit"
+          destroy-method="myDestory" scope="singleton" p:name="mic" p:address="广州" p:phone="13800000"></bean>
+
+    <bean id="myPerson" class="org.example.lifecyle2.entity.Person">
+        <property name="name" value="Tom"></property>
+        <property name="age" value="18"></property>
+    </bean>
+
+</beans>

@@ -30,7 +30,7 @@ public class GPBeanDefinitionReader {
     }
 
     private void doScanner(String scanPackage) {
-//jar 、 war 、zip 、rar
+        //jar 、 war 、zip 、rar
         URL url = this.getClass().getClassLoader().getResource("/" + scanPackage.replaceAll("\\.", "/"));
         File classPath = new File(url.getFile());
 

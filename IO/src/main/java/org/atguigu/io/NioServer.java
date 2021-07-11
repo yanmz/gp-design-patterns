@@ -29,7 +29,7 @@ public class NioServer {
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 
         //循环等待客户端连接
-        while(true){
+        while(selector.select()>0){
             //这里我们等待1秒 如果没有事件发生 返回
             if(selector.select(1000)==0){//没有事件发生
                 System.out.println("服务器等待1秒 ，无连接");

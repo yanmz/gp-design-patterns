@@ -15,12 +15,12 @@ public class AsyncProducer {
 //        1.创建消息生产者producer，并制定生产者组名
         DefaultMQProducer producer = new DefaultMQProducer("group1");
 //        2.指定Nameserver地址
-        producer.setNamesrvAddr("192.168.50.132:9876;192.168.50.129:9876");
+        producer.setNamesrvAddr("192.168.50.133:9876;192.168.50.134:9876");
 //        3.启动producer
         producer.start();
 //        4.创建消息对象，指定主题Topic、Tag和消息体
         for (int i = 0; i < 10; i++) {
-            Message msg = new Message("TopicTest", "Tag2", ("Hello,Rocket" + i).getBytes());
+            Message msg = new Message("TopicTest", "Tag2021", ("Hello,Rocket" + i).getBytes());
 //            5.发送消息
             producer.send(msg, new SendCallback() {
                 @Override

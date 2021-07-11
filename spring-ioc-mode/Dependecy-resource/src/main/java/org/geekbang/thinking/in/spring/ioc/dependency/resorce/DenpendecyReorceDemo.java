@@ -29,6 +29,10 @@ public class DenpendecyReorceDemo {
     @Autowired
     ResourceLoader resourceLoader;
 
+    public DenpendecyReorceDemo(){
+        System.out.println("111111111111111111111");
+    }
+
     @PostConstruct
     public void initByInjection() {
         System.out.println("demo.beanFactory: " + (beanFactory == applicationContext));

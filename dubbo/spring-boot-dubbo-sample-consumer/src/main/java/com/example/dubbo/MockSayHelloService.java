@@ -1,6 +1,5 @@
 package com.example.dubbo;
 
-import com.gupaoedu.springboot.dubbo.ISayHelloService;
 
 /**
  * 咕泡学院，只为更好的你
