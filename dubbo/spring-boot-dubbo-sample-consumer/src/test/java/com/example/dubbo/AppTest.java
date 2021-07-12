@@ -28,6 +28,13 @@ public class AppTest
          */
         LoadBalance loadBalance= ExtensionLoader.getExtensionLoader(LoadBalance.class).getExtension(loadbalance);
         System.out.println(loadBalance);
+
+
+        ExtensionLoader  extensionLoader=ExtensionLoader.getExtensionLoader(Filter.class);
+        URL url=new URL("","",0);
+        url=url.addParameter("cache","cache");
+        List<Filter> filters=extensionLoader.getActivateExtension(url,"cache");
+        System.out.println(filters.size());
     }
 
 
