@@ -3,6 +3,7 @@ package com.example.demo.config;
 /**
  * @author cuishuoguo
  * Created on 2019/11/11.
+ * ceshi
  */
 public interface AbstractStrategy {
 
