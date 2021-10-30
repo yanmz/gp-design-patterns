@@ -1,6 +1,7 @@
 package com.gupaoedu.example.rcp;
 
-import com.gupaoedu.example.IOrderService;
+
+import org.example.IOrderService;
 
 public class App {
     public static void main(String[] args) {

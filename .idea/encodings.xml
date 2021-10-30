@@ -14,12 +14,16 @@
     <file url="file://$PROJECT_DIR$/java8-in-action/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/juc-mode/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/logg-demo/logbak-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rpc/rpc-client/user-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rpc/rpc-client/user-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rpc/rpc-server/order-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rpc/rpc-server/order-provider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-ioc-mode/bean-lifecycle/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-ioc-mode/bean-lifecycle/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-ioc/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-ioc/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-lifecyle/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/spring-lifecyle/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ssy-study-jvm/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/validation-and-exception-handler/src/main/java" charset="UTF-8" />
   </component>
 </project>

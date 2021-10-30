@@ -25,6 +25,8 @@
       <module fileurl="file://$PROJECT_DIR$/logg-demo/log4j2-demo/log4j2-demo.iml" filepath="$PROJECT_DIR$/logg-demo/log4j2-demo/log4j2-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/logg-demo/logbak-demo/logbak-demo.iml" filepath="$PROJECT_DIR$/logg-demo/logbak-demo/logbak-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/logg-demo/logg-demo.iml" filepath="$PROJECT_DIR$/logg-demo/logg-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc-server/order-api/order-api.iml" filepath="$PROJECT_DIR$/rpc/rpc-server/order-api/order-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc-server/order-provider/order-provider.iml" filepath="$PROJECT_DIR$/rpc/rpc-server/order-provider/order-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis-api/redis-api.iml" filepath="$PROJECT_DIR$/redis-api/redis-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/rpc/rpc.iml" filepath="$PROJECT_DIR$/rpc/rpc.iml" />
       <module fileurl="file://$PROJECT_DIR$/rpc/rpc-client/rpc-client.iml" filepath="$PROJECT_DIR$/rpc/rpc-client/rpc-client.iml" />
@@ -37,6 +39,8 @@
       <module fileurl="file://$PROJECT_DIR$/spring-ioc-mode/spring-ioc-mode.iml" filepath="$PROJECT_DIR$/spring-ioc-mode/spring-ioc-mode.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-lifecyle/spring-lifecyle.iml" filepath="$PROJECT_DIR$/spring-lifecyle/spring-lifecyle.iml" />
       <module fileurl="file://$PROJECT_DIR$/ssy-study-jvm/ssy-study-jvm.iml" filepath="$PROJECT_DIR$/ssy-study-jvm/ssy-study-jvm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc-client/user-service/user-service.iml" filepath="$PROJECT_DIR$/rpc/rpc-client/user-service/user-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/validation-and-exception-handler/validation-and-exception-handler.iml" filepath="$PROJECT_DIR$/validation-and-exception-handler/validation-and-exception-handler.iml" />
     </modules>
   </component>
 </project>

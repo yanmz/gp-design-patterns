@@ -1,6 +1,6 @@
 package com.gupaoedu.example.rcp;
 
-import com.gupaoedu.example.RpcRequest;
+import org.example.RpcRequest;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

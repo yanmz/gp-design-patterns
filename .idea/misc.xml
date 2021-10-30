@@ -32,6 +32,8 @@
         <option value="$PROJECT_DIR$/spring-ioc-mode/pom.xml" />
         <option value="$PROJECT_DIR$/ssy-study-jvm/pom.xml" />
         <option value="$PROJECT_DIR$/spring-lifecyle/pom.xml" />
+        <option value="$PROJECT_DIR$/validation-and-exception-handler/pom.xml" />
+        <option value="$PROJECT_DIR$/rpc/rpc-client/user-service/pom.xml" />
       </list>
     </option>
   </component>

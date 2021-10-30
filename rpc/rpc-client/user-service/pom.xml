@@ -36,9 +36,10 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.example</groupId>
             <artifactId>order-api</artifactId>
-            <groupId>com.gupaoedu.example</groupId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

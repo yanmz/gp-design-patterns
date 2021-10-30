@@ -1,6 +1,7 @@
 package com.gupaoedu.example.rcp;
 
-import com.gupaoedu.example.RpcRequest;
+
+import org.example.RpcRequest;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
