@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DataStructure/DataStructure.iml" filepath="$PROJECT_DIR$/DataStructure/DataStructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ioc-mode/Dependecy-resource/Dependecy-resource.iml" filepath="$PROJECT_DIR$/spring-ioc-mode/Dependecy-resource/Dependecy-resource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IO/IO.iml" filepath="$PROJECT_DIR$/IO/IO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MapStruct/MapStruct.iml" filepath="$PROJECT_DIR$/MapStruct/MapStruct.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ioc-mode/bean-lifecycle/bean-lifecycle.iml" filepath="$PROJECT_DIR$/spring-ioc-mode/bean-lifecycle/bean-lifecycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ioc-mode/bean-scope/bean-scope.iml" filepath="$PROJECT_DIR$/spring-ioc-mode/bean-scope/bean-scope.iml" />
+      <module fileurl="file://$PROJECT_DIR$/case-demo/case-demo.iml" filepath="$PROJECT_DIR$/case-demo/case-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ioc-mode/configuration-beanmetadata/configuration-beanmetadata.iml" filepath="$PROJECT_DIR$/spring-ioc-mode/configuration-beanmetadata/configuration-beanmetadata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ioc-mode/dependecy-injection/dependecy-injection.iml" filepath="$PROJECT_DIR$/spring-ioc-mode/dependecy-injection/dependecy-injection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ioc-mode/dependecy-lookup/dependecy-lookup.iml" filepath="$PROJECT_DIR$/spring-ioc-mode/dependecy-lookup/dependecy-lookup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo/dubbo.iml" filepath="$PROJECT_DIR$/dubbo/dubbo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/factory-pattern/factory-pattern.iml" filepath="$PROJECT_DIR$/factory-pattern/factory-pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gp-assured/gp-assured.iml" filepath="$PROJECT_DIR$/gp-assured/gp-assured.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/gp-design-patterns.iml" filepath="$PROJECT_DIR$/.idea/gp-design-patterns.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gp-spring/gp-spring.iml" filepath="$PROJECT_DIR$/gp-spring/gp-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gpspring-annotation/gpspring-annotation.iml" filepath="$PROJECT_DIR$/gpspring-annotation/gpspring-annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ioc-mode/ioc-container-overview/ioc-container-overview.iml" filepath="$PROJECT_DIR$/spring-ioc-mode/ioc-container-overview/ioc-container-overview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ioc-mode/java-beans-demo/java-beans-demo.iml" filepath="$PROJECT_DIR$/spring-ioc-mode/java-beans-demo/java-beans-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java8-in-action/java8-in-action.iml" filepath="$PROJECT_DIR$/java8-in-action/java8-in-action.iml" />
+      <module fileurl="file://$PROJECT_DIR$/juc-mode/juc-mode.iml" filepath="$PROJECT_DIR$/juc-mode/juc-mode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logg-demo/log4j2-demo/log4j2-demo.iml" filepath="$PROJECT_DIR$/logg-demo/log4j2-demo/log4j2-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logg-demo/logbak-demo/logbak-demo.iml" filepath="$PROJECT_DIR$/logg-demo/logbak-demo/logbak-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logg-demo/logg-demo.iml" filepath="$PROJECT_DIR$/logg-demo/logg-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis-api/redis-api.iml" filepath="$PROJECT_DIR$/redis-api/redis-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc.iml" filepath="$PROJECT_DIR$/rpc/rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc-client/rpc-client.iml" filepath="$PROJECT_DIR$/rpc/rpc-client/rpc-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc-server/rpc-server.iml" filepath="$PROJECT_DIR$/rpc/rpc-server/rpc-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ioc-mode/spring-bean/spring-bean.iml" filepath="$PROJECT_DIR$/spring-ioc-mode/spring-bean/spring-bean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo/spring-boot-dubbo-sample-api/spring-boot-dubbo-sample-api.iml" filepath="$PROJECT_DIR$/dubbo/spring-boot-dubbo-sample-api/spring-boot-dubbo-sample-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo/spring-boot-dubbo-sample-consumer/spring-boot-dubbo-sample-consumer.iml" filepath="$PROJECT_DIR$/dubbo/spring-boot-dubbo-sample-consumer/spring-boot-dubbo-sample-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo/spring-boot-dubbo-sample-provider/spring-boot-dubbo-sample-provider.iml" filepath="$PROJECT_DIR$/dubbo/spring-boot-dubbo-sample-provider/spring-boot-dubbo-sample-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ioc/spring-ioc.iml" filepath="$PROJECT_DIR$/spring-ioc/spring-ioc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ioc-mode/spring-ioc-mode.iml" filepath="$PROJECT_DIR$/spring-ioc-mode/spring-ioc-mode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-lifecyle/spring-lifecyle.iml" filepath="$PROJECT_DIR$/spring-lifecyle/spring-lifecyle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssy-study-jvm/ssy-study-jvm.iml" filepath="$PROJECT_DIR$/ssy-study-jvm/ssy-study-jvm.iml" />
+    </modules>
+  </component>
+</project>

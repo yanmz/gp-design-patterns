@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="juc-mode:war">
+    <output-path>$PROJECT_DIR$/juc-mode/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>juc-mode</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="juc-mode.war">
+      <element id="artifact" artifact-name="juc-mode:war exploded" />
+    </root>
+  </artifact>
+</component>

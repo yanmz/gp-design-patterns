@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="factory-pattern:war">
+    <output-path>$PROJECT_DIR$/factory-pattern/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>factory-pattern</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="factory-pattern.war">
+      <element id="artifact" artifact-name="factory-pattern:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ssy-study-jvm:war">
+    <output-path>$PROJECT_DIR$/ssy-study-jvm/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>ssy-study-jvm</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ssy-study-jvm.war">
+      <element id="artifact" artifact-name="ssy-study-jvm:war exploded" />
+    </root>
+  </artifact>
+</component>

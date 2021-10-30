@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="java8-in-action:war">
+    <output-path>$PROJECT_DIR$/java8-in-action/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>java8-in-action</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="java8-in-action.war">
+      <element id="artifact" artifact-name="java8-in-action:war exploded" />
+    </root>
+  </artifact>
+</component>

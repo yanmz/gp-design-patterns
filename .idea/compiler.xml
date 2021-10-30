@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="java-beans-demo" />
+        <module name="dependecy-injection" />
+        <module name="MapStruct" />
+        <module name="rpc-client" />
+        <module name="ssy-study-jvm" />
+        <module name="juc-mode" />
+        <module name="java8-in-action" />
+        <module name="redis-api" />
+        <module name="configuration-beanmetadata" />
+        <module name="spring-lifecyle" />
+        <module name="Dependecy-resource" />
+        <module name="gp-assured" />
+        <module name="bean-lifecycle" />
+        <module name="spring-bean" />
+        <module name="gp-spring" />
+        <module name="case-demo" />
+        <module name="spring-ioc" />
+        <module name="logbak-demo" />
+        <module name="log4j2-demo" />
+        <module name="IO" />
+        <module name="DataStructure" />
+        <module name="rpc-server" />
+        <module name="gpspring-annotation" />
+        <module name="dependecy-lookup" />
+        <module name="factory-pattern" />
+        <module name="ioc-container-overview" />
+        <module name="bean-scope" />
+      </profile>
+      <profile name="Annotation profile for dubbo" enabled="true">
+        <sourceOutputDir name="../target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-boot-dubbo-sample-provider" />
+        <module name="spring-boot-dubbo-sample-consumer" />
+        <module name="spring-boot-dubbo-sample-api" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bean-lifecycle" target="1.8" />
+      <module name="bean-scope" target="1.8" />
+      <module name="case-demo" target="1.8" />
+      <module name="configuration-beanmetadata" target="1.8" />
+      <module name="DataStructure" target="1.5" />
+      <module name="dependecy-injection" target="1.8" />
+      <module name="dependecy-lookup" target="1.8" />
+      <module name="Dependecy-resource" target="1.8" />
+      <module name="dubbo" target="1.8" />
+      <module name="factory-pattern" target="1.8" />
+      <module name="gp-assured" target="1.7" />
+      <module name="gp-spring" target="1.5" />
+      <module name="gpspring-annotation" target="1.7" />
+      <module name="IO" target="7" />
+      <module name="ioc-container-overview" target="1.8" />
+      <module name="java-beans-demo" target="8" />
+      <module name="java8-in-action" target="8" />
+      <module name="juc-mode" target="1.8" />
+      <module name="log4j2-demo" target="1.8" />
+      <module name="logbak-demo" target="1.8" />
+      <module name="logg-demo" target="1.8" />
+      <module name="MapStruct" target="6" />
+      <module name="redis-api" target="1.5" />
+      <module name="rpc" target="1.5" />
+      <module name="rpc-client" target="1.5" />
+      <module name="rpc-server" target="1.5" />
+      <module name="spring-bean" target="1.8" />
+      <module name="spring-boot-dubbo-sample-api" target="1.5" />
+      <module name="spring-boot-dubbo-sample-consumer" target="1.8" />
+      <module name="spring-boot-dubbo-sample-provider" target="1.8" />
+      <module name="spring-ioc" target="1.8" />
+      <module name="spring-ioc-mode" target="1.8" />
+      <module name="spring-lifecyle" target="1.7" />
+      <module name="ssy-study-jvm" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="logbak-demo" options="-parameters" />
+    </option>
+  </component>
+</project>
