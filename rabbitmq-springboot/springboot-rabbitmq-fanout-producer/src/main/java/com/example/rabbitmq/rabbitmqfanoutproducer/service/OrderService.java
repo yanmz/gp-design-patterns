@@ -1,5 +1,8 @@
 package com.example.rabbitmq.rabbitmqfanoutproducer.service;
 
+import org.springframework.amqp.AmqpException;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessagePostProcessor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -54,5 +57,36 @@ public class OrderService {
         rabbitTemplate.convertAndSend(exchangeName, "email", orderNumer);
         rabbitTemplate.convertAndSend(exchangeName, "weixin", orderNumer);
         rabbitTemplate.convertAndSend(exchangeName, "sms", orderNumer);
+    }
+
+    public void makeOrderttl(Long userId, Long productId, int num) {
+        // 1: 定义交换机
+        String exchangeName = "ttl_order_exchange";
+        // 2: 路由key
+        // 1： 模拟用户下单
+        String orderNumer = UUID.randomUUID().toString();
+        System.out.println("用户 " + userId + ",订单编号是：" + orderNumer);
+        // 发送订单信息给RabbitMQ fanout
+        rabbitTemplate.convertAndSend(exchangeName, "ttl", orderNumer);
+    }
+
+    public void makeOrderttlMessage(Long userId, Long productId, int num) {
+        // 1: 定义交换机
+        String exchangeName = "ttl_Message_exchange";
+        // 2: 路由key
+        // 1： 模拟用户下单
+        String orderNumer = UUID.randomUUID().toString();
+        System.out.println("用户 " + userId + ",订单编号是：" + orderNumer);
+
+        MessagePostProcessor  messagePostProcessor   = new MessagePostProcessor() {
+            @Override
+            public Message postProcessMessage(Message message) throws AmqpException {
+                message.getMessageProperties().setExpiration("5000");
+                message.getMessageProperties().setContentEncoding("UTF-8");
+                return message;
+            }
+        };
+        // 发送订单信息给RabbitMQ fanout
+        rabbitTemplate.convertAndSend(exchangeName, "tl-message", orderNumer,messagePostProcessor);
     }
 }
