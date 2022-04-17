@@ -1,0 +1,47 @@
+spring:
+  shardingsphere:
+    # 参数配置，显示sql
+    props:
+      sql:
+        show: true
+    # 配置数据源
+    datasource:
+      # 给每个数据源取别名，下面的ds1,ds2,ds3任意取名字
+      names: ds0,ds1
+      # 给master-ds1每个数据源配置数据库连接信息
+      ds0:
+        # 配置druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://192.168.2.111:3306/ksd-sharding-db?useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false&useSSL=false&serverTimezone=GMT
+        username: root
+        password: 123456
+        maxPoolSize: 100
+        minPoolSize: 5
+      # 配置ds2-slave
+      ds1:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://192.168.2.112:3306/ksd-sharding-db?useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false&useSSL=false&serverTimezone=GMT
+        username: root
+        password: 123456
+        maxPoolSize: 100
+        minPoolSize: 5
+    sharding:
+      default-data-source-name: ds0
+      tables:
+        # ksd_user 逻辑表名
+        person:
+          # 数据节点：多数据源$->{0..N}.逻辑表名$->{0..N} 相同表
+          actual-data-nodes: ds$->{0..1}.person$->{0..1}
+            # 拆分库策略，也就是什么样子的数据放入放到哪个数据库中。
+          database-strategy:
+            inline:
+              sharding-column: sex    # 分片字段（分片键）
+              algorithm-expression: ds$->{sex % 2} # 分片算法表达式
+            # 拆分表策略，也就是什么样子的数据放入放到哪个数据表中。
+          table-strategy:
+            inline:
+              sharding-column: age    # 分片字段（分片键）
+              algorithm-expression: person$->{age % 2} # 分片算法表达式
+
