@@ -12,12 +12,12 @@ public class App {
         ThreadPoolExecutor executor = new ThreadPoolExecutor(2,
                 2,
                 10,
-                TimeUnit.MILLISECONDS,new LinkedBlockingQueue<>());
-         executor.allowCoreThreadTimeOut(true);
-         for (int  i=0;i<2;i++){
-             executor.execute(new Thread(()->{
-                 System.out.println(Thread.currentThread().getName()+"  执行任务");
-             }));
-         }
+                TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>());
+        executor.allowCoreThreadTimeOut(true);
+        for (int i = 0; i < 2; i++) {
+            executor.execute(new Thread(() -> {
+                System.out.println(Thread.currentThread().getName() + "  执行任务");
+            }));
+        }
     }
 }

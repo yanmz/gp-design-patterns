@@ -12,16 +12,16 @@ import org.springframework.context.annotation.Import;
  * Created by Tom.
  */
 @Configuration
-@Import(value = {Cat.class,MyImportSelector.class,MyImportBeanDefinitionRegistrar.class})
+@Import(value = {Cat.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
 public class MyConfig {
 
     @Bean
-    public Company company(){
+    public Company company() {
         return new Company();
     }
 
     @Bean
-    public Member member(){
+    public Member member() {
         return new Member();
     }
 
@@ -36,12 +36,12 @@ public class MyConfig {
     //      a、FactoryBean 负责将Bean注入到容器的Bean
     //      b、BeanFactory 从IoC中获得Bean对象
     @Bean
-    public Person person(){
-        return new Person("Tom",18);
+    public Person person() {
+        return new Person("Tom", 18);
     }
 
     @Bean
-    public MyFactoryBean monkey(){
+    public MyFactoryBean monkey() {
         return new MyFactoryBean();
     }
 }

@@ -6,6 +6,7 @@ public class ZhangLaosan implements IPerson {
     public ZhangLaosan(ZhangSan zhangsan) {
         this.zhangsan = zhangsan;
     }
+
     public void findLove() {
         System.out.println("张老三开始物色");
         zhangsan.findLove();

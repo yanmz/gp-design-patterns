@@ -39,18 +39,18 @@ spring:
             column: orderid
             type: SNOWFLAKE
           # 数据节点：多数据源$->{0..N}.逻辑表名$->{0..N} 相同表
-#          actual-data-nodes: ds$->{0..1}.order$->{2021..2022}${(1..3).collect{t ->t.toString().padLeft(2,'0')} }
+          #          actual-data-nodes: ds$->{0..1}.order$->{2021..2022}${(1..3).collect{t ->t.toString().padLeft(2,'0')} }
           actual-data-nodes: ds0.user_order_$->{2021..2022}${(1..3).collect{t ->t.toString().padLeft(2,'0')} }
             # 拆分库策略，也就是什么样子的数据放入放到哪个数据库中。
-#          database-strategy:
-#            standard:
-#              shardingColumn: yearmonth    # 分片字段（分片键）
-#              preciseAlgorithmClassName: com.example.demo.config.YearMonthShardingAlgorithm # 分片算法表达式
-            # 拆分表策略，也就是什么样子的数据放入放到哪个数据表中。
+            #          database-strategy:
+            #            standard:
+            #              shardingColumn: yearmonth    # 分片字段（分片键）
+          #              preciseAlgorithmClassName: com.example.demo.config.YearMonthShardingAlgorithm # 分片算法表达式
+          # 拆分表策略，也就是什么样子的数据放入放到哪个数据表中。
           table-strategy:
-#            inline:
-#              sharding-column: yearmonth    # 分片字段（分片键）
-#              algorithm-expression: user_order_$->{yearmonth} # 分片算法表达式
+            #            inline:
+            #              sharding-column: yearmonth    # 分片字段（分片键）
+            #              algorithm-expression: user_order_$->{yearmonth} # 分片算法表达式
             standard:
               shardingColumn: yearmonth    # 分片字段（分片键）
               preciseAlgorithmClassName: com.example.demo.config.YearMonthShardingAlgorithm # 分片算法表达式

@@ -28,17 +28,17 @@ public class test {
         ByteBuffer buf = ByteBuffer.allocate(1024);
 
         //3.读取本地文件并发送到服务器
-        while (inChannel.read(buf)!=-1){
+        while (inChannel.read(buf) != -1) {
             buf.flip();
             sChannel.write(buf);
             buf.clear();
         }
         sChannel.shutdownOutput();
 
-        int len= 0;
-        while ((len=sChannel.read(buf))!=-1){
+        int len = 0;
+        while ((len = sChannel.read(buf)) != -1) {
             buf.flip();
-            System.out.println(new String(buf.array(),0,len));
+            System.out.println(new String(buf.array(), 0, len));
             buf.clear();
         }
 
@@ -49,13 +49,13 @@ public class test {
     }
 
     @Test
-    public void server()throws IOException{
+    public void server() throws IOException {
         //1.获取通道
         ServerSocketChannel ssChannel = ServerSocketChannel.open();
         FileChannel outChannel = FileChannel.open(Paths.get("2.jpg"), StandardOpenOption.WRITE, StandardOpenOption.CREATE);
 
         //2.绑定连接
-        ssChannel.bind(new  InetSocketAddress(9898));
+        ssChannel.bind(new InetSocketAddress(9898));
 
 
         ByteBuffer buf = ByteBuffer.allocate(1024);
@@ -63,7 +63,7 @@ public class test {
         SocketChannel accept = ssChannel.accept();
 
         //4.接收客户端的数据 并保存到本地
-        while (accept.read(buf)!=-1){
+        while (accept.read(buf) != -1) {
             buf.flip();
             outChannel.write(buf);
             buf.clear();

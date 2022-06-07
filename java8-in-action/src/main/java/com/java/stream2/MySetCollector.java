@@ -9,9 +9,10 @@ import java.util.stream.Collector;
 
 /**
  * 自定义收集器
+ *
  * @param <T>
  */
-public class MySetCollector<T>   implements Collector<T,Set<T>,Set<T>> {
+public class MySetCollector<T> implements Collector<T, Set<T>, Set<T>> {
     @Override
     public Supplier<Set<T>> supplier() {
         System.out.println("supplier invoked");
@@ -27,7 +28,7 @@ public class MySetCollector<T>   implements Collector<T,Set<T>,Set<T>> {
     @Override
     public BinaryOperator<Set<T>> combiner() {
         System.out.println("combiner invoked");
-        return (set1,set2)->{
+        return (set1, set2) -> {
             set1.addAll(set2);
             return set1;
         };
@@ -42,11 +43,11 @@ public class MySetCollector<T>   implements Collector<T,Set<T>,Set<T>> {
     @Override
     public Set<Characteristics> characteristics() {
         System.out.println("characteristics  invoked");
-        return Collections.unmodifiableSet(EnumSet.of(Characteristics.IDENTITY_FINISH,Characteristics.UNORDERED));
+        return Collections.unmodifiableSet(EnumSet.of(Characteristics.IDENTITY_FINISH, Characteristics.UNORDERED));
     }
 
     public static void main(String[] args) {
-        List<String>  list = Arrays.asList("hello","world","hello world");
+        List<String> list = Arrays.asList("hello", "world", "hello world");
         Set<String> collect = list.stream().collect(new MySetCollector<>());
         System.out.println(collect);
     }

@@ -78,7 +78,7 @@ public class OrderService {
         String orderNumer = UUID.randomUUID().toString();
         System.out.println("用户 " + userId + ",订单编号是：" + orderNumer);
 
-        MessagePostProcessor  messagePostProcessor   = new MessagePostProcessor() {
+        MessagePostProcessor messagePostProcessor = new MessagePostProcessor() {
             @Override
             public Message postProcessMessage(Message message) throws AmqpException {
                 message.getMessageProperties().setExpiration("5000");
@@ -87,6 +87,6 @@ public class OrderService {
             }
         };
         // 发送订单信息给RabbitMQ fanout
-        rabbitTemplate.convertAndSend(exchangeName, "tl-message", orderNumer,messagePostProcessor);
+        rabbitTemplate.convertAndSend(exchangeName, "tl-message", orderNumer, messagePostProcessor);
     }
 }

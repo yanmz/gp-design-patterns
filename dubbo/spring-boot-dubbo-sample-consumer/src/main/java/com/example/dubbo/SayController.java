@@ -14,18 +14,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SayController {
 
-    @DubboReference(registry = {"shanghai","hunan"},
+    @DubboReference(registry = {"shanghai", "hunan"},
             protocol = "dubbo",
             loadbalance = "consistenthash",
             mock = "com.gupaoedu.springboot.dubbo.springbootdubbosampleconsumer.MockSayHelloService",
             timeout = 500,
-            cluster = "failfast",check = false,methods = {
-            @Method(loadbalance = "",name ="" )
-    },retries = 5)
+            cluster = "failfast", check = false, methods = {
+            @Method(loadbalance = "", name = "")
+    }, retries = 5)
     ISayHelloService sayHelloService;
 
     @GetMapping("/say")
-    public String say(){
+    public String say() {
         return sayHelloService.sayHello("Mic");
     }
 

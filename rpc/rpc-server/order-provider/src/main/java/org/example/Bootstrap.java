@@ -10,8 +10,8 @@ public class Bootstrap {
 
     public static void main(String[] args) {
         //SPRING BOOT
-        IOrderService orderService=new OrderServiceImpl();
-        RpcProxyServer rpcProxyServer=new RpcProxyServer();
-        rpcProxyServer.publisher(orderService,8080);
+        IOrderService orderService = new OrderServiceImpl();
+        RpcProxyServer rpcProxyServer = new RpcProxyServer();
+        rpcProxyServer.publisher(orderService, 8080);
     }
 }

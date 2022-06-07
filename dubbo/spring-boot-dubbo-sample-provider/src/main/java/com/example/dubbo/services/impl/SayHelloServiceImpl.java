@@ -23,7 +23,7 @@ public class SayHelloServiceImpl implements ISayHelloService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Msg:"+System.currentTimeMillis());
-        return "[version1.0]-Hello,"+msg+" GuPaoEdu.cn";
+        System.out.println("Msg:" + System.currentTimeMillis());
+        return "[version1.0]-Hello," + msg + " GuPaoEdu.cn";
     }
 }

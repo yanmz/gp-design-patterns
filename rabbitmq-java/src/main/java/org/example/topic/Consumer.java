@@ -1,6 +1,7 @@
 package org.example.topic;
 
 import com.rabbitmq.client.*;
+
 import java.io.IOException;
 
 public class Consumer {
@@ -70,6 +71,7 @@ public class Consumer {
             }
         }
     };
+
     public static void main(String[] args) {
         // 启动三个线程去执行
         new Thread(runnable, "queue-1").start();

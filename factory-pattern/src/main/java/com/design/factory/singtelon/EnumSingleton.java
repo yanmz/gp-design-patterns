@@ -1,9 +1,9 @@
 package com.design.factory.singtelon;
 
-public enum  EnumSingleton {
+public enum EnumSingleton {
     ENUMSINGLETON;
 
-    public EnumSingleton getEnumsingleton(){
-        return  ENUMSINGLETON;
+    public EnumSingleton getEnumsingleton() {
+        return ENUMSINGLETON;
     }
 }

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.Resource;
 
 @Configuration
-@PropertySource(value = "classpath:/META-INF/default.properties",encoding = "utf-8")
+@PropertySource(value = "classpath:/META-INF/default.properties", encoding = "utf-8")
 public class ExternalConfigurationDependencySourceDemo {
     @Value("${user.id:1}")
     private String str;

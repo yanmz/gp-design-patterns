@@ -21,7 +21,7 @@ public class QualfierAnnotationDependecyInjectionDemo {
 
     @Autowired
     @Qualifier("user")//指定bean名称或者ID
-    User nameUser;
+            User nameUser;
 
     @Autowired
     List<User> allUser;

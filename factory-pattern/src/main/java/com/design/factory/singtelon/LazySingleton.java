@@ -5,20 +5,21 @@ package com.design.factory.singtelon;
  */
 public class LazySingleton {
 
-    private LazySingleton(){}
+    private LazySingleton() {
+    }
 
 
-    private static  volatile LazySingleton lazySingleton = null;
+    private static volatile LazySingleton lazySingleton = null;
 
-    public LazySingleton getLazySingleton(){
-        if(lazySingleton==null){
-        synchronized (LazySingleton.class){
-            if(lazySingleton==null){
-                lazySingleton = new LazySingleton();
+    public LazySingleton getLazySingleton() {
+        if (lazySingleton == null) {
+            synchronized (LazySingleton.class) {
+                if (lazySingleton == null) {
+                    lazySingleton = new LazySingleton();
+                }
             }
         }
-    }
-        return  lazySingleton;
+        return lazySingleton;
     }
 
 }

@@ -7,8 +7,8 @@ import org.springframework.context.annotation.*;
 @ComponentScan(value = "org.example.lifecyle")
 public class MyConfig {
 
-    @Bean(initMethod = "addOil",destroyMethod = "close")
-    public Car car(){
+    @Bean(initMethod = "addOil", destroyMethod = "close")
+    public Car car() {
         return new Car();
     }
 

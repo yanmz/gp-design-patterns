@@ -20,15 +20,15 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 
 
-        System.out.println("服务端当前线程："+Thread.currentThread().getName());
-        System.out.println("server ctx ="+ctx);
+        System.out.println("服务端当前线程：" + Thread.currentThread().getName());
+        System.out.println("server ctx =" + ctx);
 
         //将 msg转成bytebuf
         //ByteBuf是netty提供的 不是你提供的bytebuffer
         ByteBuf buffer = (ByteBuf) msg;
 
-        System.out.println("客户端发送的信息是："+buffer.toString(CharsetUtil.UTF_8));
-        System.out.println("客户端地址："+ctx.channel().remoteAddress());
+        System.out.println("客户端发送的信息是：" + buffer.toString(CharsetUtil.UTF_8));
+        System.out.println("客户端地址：" + ctx.channel().remoteAddress());
     }
 
 
@@ -37,7 +37,7 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
 
         //将数据写入到缓存并刷新
-        ctx.writeAndFlush(Unpooled.copiedBuffer("hello  客户端",CharsetUtil.UTF_8));
+        ctx.writeAndFlush(Unpooled.copiedBuffer("hello  客户端", CharsetUtil.UTF_8));
     }
 
     //处理异常

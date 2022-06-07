@@ -6,7 +6,7 @@ package com.example.dubbo;
  * 咕泡学院-Mic: 2227324689
  * http://www.gupaoedu.com
  **/
-public class MockSayHelloService implements ISayHelloService{
+public class MockSayHelloService implements ISayHelloService {
 
     @Override
     public String sayHello(String msg) {

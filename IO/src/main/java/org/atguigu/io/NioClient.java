@@ -10,7 +10,7 @@ import java.nio.channels.SocketChannel;
  * @date 2020/9/7 15:54
  */
 public class NioClient {
-    public static void main(String[] args)  throws Exception{
+    public static void main(String[] args) throws Exception {
         //得到一个网络通道
         SocketChannel socketChannel = SocketChannel.open();
         //设置非阻塞
@@ -19,8 +19,8 @@ public class NioClient {
         InetSocketAddress inetSocketAddress = new InetSocketAddress("127.0.0.1", 6666);
 
         //连接服务器
-        if(!socketChannel.connect(inetSocketAddress)){
-            while (!socketChannel.finishConnect()){
+        if (!socketChannel.connect(inetSocketAddress)) {
+            while (!socketChannel.finishConnect()) {
                 System.out.println("11111111111111111111111");
             }
         }

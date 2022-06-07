@@ -44,7 +44,7 @@ public class NettyServer {
 
             //对关闭通道进行监听
             sync.channel().closeFuture().sync();
-        }finally {
+        } finally {
             bossGroup.shutdownGracefully();
             workerGroup.shutdownGracefully();
         }

@@ -12,11 +12,10 @@ import java.io.IOException;
 /**
  * Created by Tom.
  */
-public class GPTypeFilter implements TypeFilter{
+public class GPTypeFilter implements TypeFilter {
 
     /**
-     *
-     * @param metadataReader 获取当前正在操作的信息
+     * @param metadataReader        获取当前正在操作的信息
      * @param metadataReaderFactory 获取上下文中所有的信息
      * @return
      * @throws IOException
@@ -30,7 +29,7 @@ public class GPTypeFilter implements TypeFilter{
         //获取当前扫描到的类的资源
         Resource resource = metadataReader.getResource();
         String className = classMetadata.getClassName();
-        if(className.contains("er")){
+        if (className.contains("er")) {
             System.out.println(">>>>className:" + className + "包含er，会注入到Spring容器中");
             return true;
         }

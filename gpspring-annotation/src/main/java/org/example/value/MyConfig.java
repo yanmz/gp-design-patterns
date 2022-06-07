@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 public class MyConfig {
 
     @Bean
-    public Bird bird(){
+    public Bird bird() {
         return new Bird();
     }
 }

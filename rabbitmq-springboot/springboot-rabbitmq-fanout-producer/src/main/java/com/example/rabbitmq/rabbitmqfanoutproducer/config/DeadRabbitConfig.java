@@ -15,10 +15,9 @@ public class DeadRabbitConfig {
     }
 
     @Bean
-    public DirectExchange  deadExchange() {
+    public DirectExchange deadExchange() {
         return new DirectExchange("dead_exchange", true, false);
     }
-
 
 
     @Bean

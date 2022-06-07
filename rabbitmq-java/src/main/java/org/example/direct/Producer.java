@@ -23,7 +23,7 @@ public class Producer {
             channel = connection.createChannel();
             // 6： 准备发送消息的内容
             String message = "你好，学相伴！！！";
-            String  exchangeName = "direct-exchange";
+            String exchangeName = "direct-exchange";
             String routingKey1 = "email";
             String routingKey2 = "wx";
             // 7: 发送消息给中间件rabbitmq-server

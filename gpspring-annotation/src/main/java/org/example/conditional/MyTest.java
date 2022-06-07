@@ -9,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class MyTest {
     @Test
-    public void test(){
+    public void test() {
         ApplicationContext app = new AnnotationConfigApplicationContext(MyConfig.class);
         System.out.println("IoC容器创建完成");
     }

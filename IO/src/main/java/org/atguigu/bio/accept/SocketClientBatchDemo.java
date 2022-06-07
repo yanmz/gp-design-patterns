@@ -14,20 +14,20 @@ import java.util.concurrent.CountDownLatch;
  **/
 public class SocketClientBatchDemo {
 
-    private static void requestToServer(){
+    private static void requestToServer() {
         try {
             String threadName = Thread.currentThread().getName();
-            Socket socket=new Socket("localhost",8080);
+            Socket socket = new Socket("localhost", 8080);
             System.out.println(threadName + " SocketClientDemo：去连接serverSocket了");
             Thread.sleep(10000);
-            BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            bufferedWriter.write(threadName+ " SocketClientDemo：我是客户端，给服务端发送一个消息\n");
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            bufferedWriter.write(threadName + " SocketClientDemo：我是客户端，给服务端发送一个消息\n");
             bufferedWriter.flush();
-            BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(socket.getInputStream()));//输入流
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));//输入流
             String nowTimeStr = DateUtil.format(new Date(), "yyyy-MM-dd HH:mm:ss");
             System.out.println(threadName + nowTimeStr + " SocketClientDemo：客户端开始 readLine");
-            String serverLine=bufferedReader.readLine(); //读取服务端返回的数据（被阻塞了），如果serverSocket.sleep(20秒)的话这里就要等20s
-            System.out.println(threadName + nowTimeStr + " SocketClientDemo：我接收到了服务端反馈的数据:"+serverLine);
+            String serverLine = bufferedReader.readLine(); //读取服务端返回的数据（被阻塞了），如果serverSocket.sleep(20秒)的话这里就要等20s
+            System.out.println(threadName + nowTimeStr + " SocketClientDemo：我接收到了服务端反馈的数据:" + serverLine);
 
             /**
              * java.net.SocketException: Connection reset
@@ -44,8 +44,7 @@ public class SocketClientBatchDemo {
 
     public static void main(String[] args) {
         final CountDownLatch cdl = new CountDownLatch(1);
-        for (int i =0;i <3;i++)
-        {
+        for (int i = 0; i < 3; i++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -57,7 +56,7 @@ public class SocketClientBatchDemo {
                         e.printStackTrace();
                     }
                 }
-            },"thread_"+i).start();
+            }, "thread_" + i).start();
         }
         cdl.countDown();
     }

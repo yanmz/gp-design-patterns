@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserOrderMapper {
     @Insert("insert into user_order(ordernumber,userid,createTime,yearmonth) values(#{ordernumber},#{userid},#{createTime},#{yearmonth})")
-    @Options(useGeneratedKeys = true,keyColumn = "orderid",keyProperty = "orderid")
+    @Options(useGeneratedKeys = true, keyColumn = "orderid", keyProperty = "orderid")
     void addUserOrder(UserOrder userOrder);
 }

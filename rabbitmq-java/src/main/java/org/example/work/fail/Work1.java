@@ -1,7 +1,9 @@
 package org.example.work.fail;
 
 import com.rabbitmq.client.*;
+
 import java.io.IOException;
+
 /**
  * @author: 学相伴-飞哥
  * @description: Consumer
@@ -44,11 +46,11 @@ public class Work1 {
             finalChannel.basicConsume("queue1", false, new DeliverCallback() {
                 @Override
                 public void handle(String s, Delivery delivery) throws IOException {
-                    try{
+                    try {
                         System.out.println("Work1-收到消息是：" + new String(delivery.getBody(), "UTF-8"));
                         Thread.sleep(2000);
-                        finalChannel.basicAck(delivery.getEnvelope().getDeliveryTag(),false);
-                    }catch(Exception ex){
+                        finalChannel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
+                    } catch (Exception ex) {
                         ex.printStackTrace();
                     }
                 }

@@ -5,13 +5,14 @@ package com.design.factory.singtelon;
  */
 public class HungerSingtelon {
 
-    private HungerSingtelon(){}
+    private HungerSingtelon() {
+    }
 
 
-    private  static  final HungerSingtelon HUNGERSINGTELON = new HungerSingtelon();
+    private static final HungerSingtelon HUNGERSINGTELON = new HungerSingtelon();
 
 
-    public static HungerSingtelon getInstance(){
-        return  HUNGERSINGTELON;
+    public static HungerSingtelon getInstance() {
+        return HUNGERSINGTELON;
     }
 }

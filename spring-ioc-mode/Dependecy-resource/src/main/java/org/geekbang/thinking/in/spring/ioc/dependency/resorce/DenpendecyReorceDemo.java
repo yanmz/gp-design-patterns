@@ -29,7 +29,7 @@ public class DenpendecyReorceDemo {
     @Autowired
     ResourceLoader resourceLoader;
 
-    public DenpendecyReorceDemo(){
+    public DenpendecyReorceDemo() {
         System.out.println("111111111111111111111");
     }
 

@@ -14,6 +14,7 @@ import java.util.*;
 @Component
 public class BirthdayAlgorithm implements PreciseShardingAlgorithm<String> {
     List<Date> dateList = new ArrayList<>();
+
     {
         Calendar calendar1 = Calendar.getInstance();
         calendar1.set(2020, 1, 1, 0, 0, 0);

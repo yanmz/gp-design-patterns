@@ -35,7 +35,6 @@ public class UserController {
 //    }
 
 
-
     @PostMapping("/addUser")
     public String addUser(@RequestBody @Valid User user) {
         return userService.addUser(user);
@@ -49,7 +48,7 @@ public class UserController {
         user.setAccount("12345678");
         user.setPassword("12345678");
         user.setEmail("123@qq.com");
-        if(1==1) {
+        if (1 == 1) {
 //            throw new APIException("报错啦");
         }
         return user;

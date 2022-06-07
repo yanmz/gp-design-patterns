@@ -29,7 +29,7 @@ public class App {
         System.out.print(orgi);
     }
 
-    public  List<String> generateNum(int start, int end){
+    public List<String> generateNum(int start, int end) {
         List<String> numberList = Stream.iterate(start, item -> item + 1).limit(end).map(item -> item.toString()).collect(Collectors.toList());
         return numberList;
     }

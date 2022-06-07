@@ -14,11 +14,11 @@ public class Car implements InitializingBean, DisposableBean {
         System.out.println("调用Car的构造方法\n");
     }
 
-    public void addOil(){
+    public void addOil() {
         System.out.println("自定义方法初始化\n");
     }
 
-    public void close(){
+    public void close() {
         System.out.println("自定义方法销毁\n");
     }
 
@@ -33,12 +33,12 @@ public class Car implements InitializingBean, DisposableBean {
     }
 
     @PostConstruct
-    public void PostConstruct(){
+    public void PostConstruct() {
         System.out.println("Car 通过@PostConstruct初始化\n");
     }
 
     @PreDestroy
-    public void PreDestroy(){
+    public void PreDestroy() {
         System.out.println("Car 通过@PreDestroy销毁\n");
     }
 }

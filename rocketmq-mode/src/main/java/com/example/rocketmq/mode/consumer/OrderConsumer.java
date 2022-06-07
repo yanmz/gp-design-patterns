@@ -3,6 +3,7 @@ package com.example.rocketmq.mode.consumer;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.*;
 import org.apache.rocketmq.common.message.MessageExt;
+
 import java.util.List;
 
 /**

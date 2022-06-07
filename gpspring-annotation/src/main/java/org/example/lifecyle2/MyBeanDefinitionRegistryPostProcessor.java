@@ -12,7 +12,7 @@ public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegi
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry beanDefinitionRegistry) throws BeansException {
         System.out.println("postProcessBeanDefinitionRegistry");
         AbstractBeanDefinition userBeanDefinition = new RootBeanDefinition(UserBeanDefinition.class);
-        beanDefinitionRegistry.registerBeanDefinition("userBdf",userBeanDefinition);
+        beanDefinitionRegistry.registerBeanDefinition("userBdf", userBeanDefinition);
     }
 
     @Override

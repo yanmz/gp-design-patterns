@@ -14,10 +14,10 @@ public class MyTest {
     @Test
     public void test() {
         ApplicationContext app = new AnnotationConfigApplicationContext(MyConfig.class);
-        String [] beanNames = app.getBeanDefinitionNames();
+        String[] beanNames = app.getBeanDefinitionNames();
         System.out.println(">>>最终Spring容器中的对象为：");
         System.out.println(Arrays.toString(beanNames)
-                .replaceAll("\\[|\\]","")
-                .replaceAll(", ","\n"));
+                .replaceAll("\\[|\\]", "")
+                .replaceAll(", ", "\n"));
     }
 }

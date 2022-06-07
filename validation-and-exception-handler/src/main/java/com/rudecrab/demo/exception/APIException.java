@@ -11,6 +11,7 @@ import lombok.Getter;
 public class APIException extends RuntimeException {
     private Integer code;
     private String msg;
+
     public APIException() {
         this(1001, "接口错误");
     }

@@ -29,6 +29,6 @@ public class AnnotatedBeanDefinitionParsingDemo {
 
         AnnotatedBeanDefinitionParsingDemo bean = (AnnotatedBeanDefinitionParsingDemo) beanFactory.getBean("aaa");
         System.out.println(bean);
-        System.out.println("加载bean数量: "+(beanDefinitionCountAfter - beanDefinitionCountBefore));
+        System.out.println("加载bean数量: " + (beanDefinitionCountAfter - beanDefinitionCountBefore));
     }
 }

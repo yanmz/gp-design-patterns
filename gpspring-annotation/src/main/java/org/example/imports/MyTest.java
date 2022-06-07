@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class MyTest {
 
     @Test
-    public void test(){
+    public void test() {
         ApplicationContext app = new AnnotationConfigApplicationContext(MyConfig.class);
 
         //通过FactoryBean注入的值
@@ -25,9 +25,9 @@ public class MyTest {
         Object monkeyFactoryBean = app.getBean("&monkey");
         System.out.println("通过&monkey拿到外面的FactoryBean：" + monkeyFactoryBean);
 
-        String [] beanNames = app.getBeanDefinitionNames();
+        String[] beanNames = app.getBeanDefinitionNames();
         System.out.println(Arrays.toString(beanNames)
-                .replaceAll("\\[|\\]","")
-                .replaceAll(", ","\n"));
+                .replaceAll("\\[|\\]", "")
+                .replaceAll(", ", "\n"));
     }
 }

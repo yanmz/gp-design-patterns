@@ -18,12 +18,13 @@ public interface UserMapper {
      * @date 2021/3/10 17:14
      */
     @Insert("insert into user(nickname,password,sex,birthday,age) values(#{nickname},#{password},#{sex},#{birthday},#{age})")
-    @Options(useGeneratedKeys = true,keyColumn = "id",keyProperty = "id")
+    @Options(useGeneratedKeys = true, keyColumn = "id", keyProperty = "id")
     Long addUser(User user);
 
     @Insert("insert into person(nickname,password,sex,birthday,age) values(#{nickname},#{password},#{sex},#{birthday},#{age})")
-    @Options(useGeneratedKeys = true,keyColumn = "id",keyProperty = "id")
+    @Options(useGeneratedKeys = true, keyColumn = "id", keyProperty = "id")
     Long addPerson(Person person);
+
     /**
      * @author 学相伴-飞哥
      * @description 保存用户

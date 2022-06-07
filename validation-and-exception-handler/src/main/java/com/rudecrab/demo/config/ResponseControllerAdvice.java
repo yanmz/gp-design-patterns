@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  * @description
  */
 @RestControllerAdvice(basePackages = {"com.rudecrab.demo.controller"})// 注意哦，这里要加上需要扫描的包
-public class  ResponseControllerAdvice implements ResponseBodyAdvice<Object> {
+public class ResponseControllerAdvice implements ResponseBodyAdvice<Object> {
     @Override
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> aClass) {
         // 如果接口返回的类型本身就是ResultVO那就没有必要进行额外的操作，返回false

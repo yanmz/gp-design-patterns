@@ -1,5 +1,5 @@
 package org.dip;
 
-public  interface IReader{
-	public String getContent();
+public interface IReader {
+    public String getContent();
 } 

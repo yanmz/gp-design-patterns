@@ -72,7 +72,7 @@ public class GPAOPDispatchServlet extends HttpServlet {
         }
 
         //2、根据一个HandlerMaping获得一个HandlerAdapter
-            GPHandlerAdapter ha = getHandlerAdapter(handler);
+        GPHandlerAdapter ha = getHandlerAdapter(handler);
 
         //3、解析某一个方法的形参和返回值之后，统一封装为ModelAndView对象
         GPModelAndView mv = ha.handler(req, resp, handler);

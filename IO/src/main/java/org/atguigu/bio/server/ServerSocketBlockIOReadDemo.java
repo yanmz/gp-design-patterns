@@ -10,21 +10,21 @@ import java.util.concurrent.Executors;
  * 咕泡学院，只为更好的你
  * 咕泡学院-Mic: 2227324689
  * http://www.gupaoedu.com
- *
  **/
 public class ServerSocketBlockIOReadDemo {
 
     /**
      * 连接阻塞
+     *
      * @param args
      */
     public static void main(String[] args) {
-        ServerSocket serverSocket=null;
+        ServerSocket serverSocket = null;
         try {
             //localhost: 8080
-            serverSocket=new ServerSocket(8080);
+            serverSocket = new ServerSocket(8080);
             //加while true只是让服务端处于一直监听，这个server不停机<br>
-            while(true) {
+            while (true) {
                 Socket socket = serverSocket.accept(); //监听客户端连接(连接阻塞）被阻塞，连接阻塞<br>
                 System.out.println(" ServerSocketIOReadWithThreadPoolDemo：" + socket.getPort());
                 System.out.println(" ServerSocket连接accept了");
@@ -34,7 +34,7 @@ public class ServerSocketBlockIOReadDemo {
             e.printStackTrace();
         } finally {
             //TODO
-            if(serverSocket!=null){
+            if (serverSocket != null) {
                 try {
                     serverSocket.close();
                 } catch (IOException e) {
@@ -45,12 +45,12 @@ public class ServerSocketBlockIOReadDemo {
 
     }
 
-    public static  void handleIo(Socket socket){
+    public static void handleIo(Socket socket) {
         try {
             System.out.println(">>>>>>>>>>>>>>>>>>>>");
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));//输入流
             String clientStr = bufferedReader.readLine(); //被阻塞了
-             //读取客户端的一行数据
+            //读取客户端的一行数据
             System.out.println("接收到客户端的信息：" + clientStr);
             //写回去
             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
@@ -61,7 +61,7 @@ public class ServerSocketBlockIOReadDemo {
 
             bufferedReader.close();
             bufferedWriter.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getCause());
         }
     }

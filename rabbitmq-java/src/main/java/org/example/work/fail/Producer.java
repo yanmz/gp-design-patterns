@@ -3,6 +3,7 @@ package org.example.work.fail;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+
 /**
  * @author: 学相伴-飞哥
  * @description: Producer 简单队列生产者

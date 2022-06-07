@@ -8,7 +8,7 @@ import org.apache.rocketmq.common.message.Message;
 import java.util.concurrent.TimeUnit;
 
 /**
- *延迟消息
+ * 延迟消息
  */
 public class DelayProducer {
     public static void main(String[] args) throws Exception {

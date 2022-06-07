@@ -16,7 +16,7 @@ public class MyTest {
         Object bean = app.getBean("person");
         System.out.println(bean);
 
-        String [] beanNames = app.getBeanNamesForType(Person.class);
+        String[] beanNames = app.getBeanNamesForType(Person.class);
         System.out.println(Arrays.toString(beanNames));
 
     }

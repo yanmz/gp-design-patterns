@@ -13,20 +13,20 @@ import java.util.concurrent.Executors;
  **/
 public class RpcProxyServer {
 
-    private final ExecutorService executorService= Executors.newCachedThreadPool();
+    private final ExecutorService executorService = Executors.newCachedThreadPool();
 
-    public void publisher(Object service,int port){
-        ServerSocket serverSocket=null;
+    public void publisher(Object service, int port) {
+        ServerSocket serverSocket = null;
         try {
-            serverSocket=new ServerSocket(port);
-            while(true){
-                Socket socket=serverSocket.accept(); //监听客户端请求
-                executorService.execute(new ProcessorHandler(socket,service));
+            serverSocket = new ServerSocket(port);
+            while (true) {
+                Socket socket = serverSocket.accept(); //监听客户端请求
+                executorService.execute(new ProcessorHandler(socket, service));
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            if(serverSocket!=null){
+        } finally {
+            if (serverSocket != null) {
                 try {
                     serverSocket.close();
                 } catch (IOException e) {

@@ -15,6 +15,6 @@ public class BeanLifeCycle2Test {
         System.out.println(person);
 
         System.out.println("现在开始关闭容器！");
-        ((ClassPathXmlApplicationContext)factory).registerShutdownHook();
+        ((ClassPathXmlApplicationContext) factory).registerShutdownHook();
     }
 }

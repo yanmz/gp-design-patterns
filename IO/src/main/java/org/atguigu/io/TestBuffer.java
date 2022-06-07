@@ -14,20 +14,20 @@ import java.nio.ByteBuffer;
  * 一、缓冲区（Buffer）：在java NIO中 负责数据的存取，缓冲区就是数组，用于存储不同数据类型的数据
  * 根据数据类型不同（boolean 除外）提供了相应类型的缓冲区：
  * ByteBuffer、 CharBuffer、ShortBuffer、IntBuffer、LongBuffer、FloatBuffer、DoubleBuffer
- *
+ * <p>
  * 上述缓冲区 的管理方法几乎一致，通过allocate() 获取缓冲区
- *
+ * <p>
  * 二、缓冲区存取数据的两个核心方法
  * put(): 存入数据到缓冲区
  * get():获取缓冲区中的数据
- *
+ * <p>
  * 三、缓冲区中的四个核心属性
  * capacity：容量，表示缓冲区中最大存储数据的容量，一但声明不能改变
  * limit：界限，表示缓存区中可以操作数据的大小（limit 后数据不能进行读写）
  * position：位置，表示缓冲区中正在操作数据的位置
  * mark：标记，表示记录当前position的位置，可通过reset() 恢复到mark的位置
  * mark <= position <= limit <= capacity
- *
+ * <p>
  * 四、直接缓冲区与非直接缓冲区
  * 直接缓冲区：通过allocatedirect() 方法分配直接缓冲区，将缓冲区建立物理内存中，可以提高效率
  * 非直接缓冲区：通过allocate() 方法分配缓冲区，将缓冲区建立在JVM的内存中
@@ -35,11 +35,11 @@ import java.nio.ByteBuffer;
 public class TestBuffer {
 
     @Test
-    public void Test1(){
-        String str="abcde";
+    public void Test1() {
+        String str = "abcde";
 
         //1.分配一个指定大小的缓冲区
-        ByteBuffer buf  = ByteBuffer.allocate(1024);
+        ByteBuffer buf = ByteBuffer.allocate(1024);
         System.out.println("------allocate()----------");
         System.out.println(buf.position());
         System.out.println(buf.limit());
@@ -62,9 +62,9 @@ public class TestBuffer {
 
         //4.利用get()读取缓冲区中的数据
         System.out.println("------get()-------------");
-        byte[]  dst = new byte[buf.limit()];
+        byte[] dst = new byte[buf.limit()];
         buf.get(dst);
-        System.out.println(new String(dst,0,dst.length));
+        System.out.println(new String(dst, 0, dst.length));
 
         System.out.println(buf.position());
         System.out.println(buf.limit());
@@ -90,21 +90,21 @@ public class TestBuffer {
 
 
     @Test
-    public void test1(){
-        String str1="abcde";
+    public void test1() {
+        String str1 = "abcde";
         ByteBuffer buf = ByteBuffer.allocate(1024);
         buf.put(str1.getBytes());
         buf.flip();
         byte[] b = new byte[buf.limit()];
-        buf.get(b,0,2);
-        System.out.println(new String(b,0,2));
+        buf.get(b, 0, 2);
+        System.out.println(new String(b, 0, 2));
         System.out.println(buf.position());
 
         //mark()  标记
         buf.mark();
 
-        buf.get(b,2,2);
-        System.out.println(new String (b,2,2));
+        buf.get(b, 2, 2);
+        System.out.println(new String(b, 2, 2));
         System.out.println(buf.position());
 
         //reset():恢复到mark的位置

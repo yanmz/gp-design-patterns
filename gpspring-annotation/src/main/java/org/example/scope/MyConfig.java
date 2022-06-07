@@ -13,8 +13,8 @@ public class MyConfig {
     //session 主要应用于web模块，同一个session只创建一个实例
     @Scope("prototype")
     @Bean
-    public Person person(){
+    public Person person() {
         //IoC实例化对象的时候，并不是简单地调用我们定义的方法
-        return new Person("Tom",18);
+        return new Person("Tom", 18);
     }
 }

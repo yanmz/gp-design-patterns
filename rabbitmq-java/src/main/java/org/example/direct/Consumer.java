@@ -71,6 +71,7 @@ public class Consumer {
             }
         }
     };
+
     public static void main(String[] args) {
         // 启动三个线程去执行
         new Thread(runnable, "queue1").start();

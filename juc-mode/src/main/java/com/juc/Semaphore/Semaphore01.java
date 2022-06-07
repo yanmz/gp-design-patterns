@@ -13,9 +13,9 @@ public class Semaphore01 {
     public static void main(String[] args) {
 
 
-            String str = "2222222222,3333333333,4444444444,5555555555";
-            String[] split = str.split(",");
-             Arrays.asList(split).stream().forEach(System.out::println);
+        String str = "2222222222,3333333333,4444444444,5555555555";
+        String[] split = str.split(",");
+        Arrays.asList(split).stream().forEach(System.out::println);
 
 //        Semaphore semaphore = new Semaphore(5);
 //        for (int i = 0; i < 10; i++) {

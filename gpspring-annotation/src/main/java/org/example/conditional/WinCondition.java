@@ -16,7 +16,7 @@ public class WinCondition implements Condition {
         ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
         Environment environment = context.getEnvironment();
         String osName = environment.getProperty("os.name");
-        if(osName.contains("Windows")){
+        if (osName.contains("Windows")) {
             return true;
         }
         return false;

@@ -26,7 +26,7 @@ public class SwaggerConfig {
     private boolean enable;
 
     @Bean
-    public Docket docket(){
+    public Docket docket() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .enable(enable)
                 .apiInfo(apiInfo())
@@ -37,7 +37,7 @@ public class SwaggerConfig {
                 .build();
     }
 
-    public ApiInfo apiInfo(){
+    public ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("参数校验和统一异常处理Demo")
                 .description("用来演示参数校验和统一异常处理")

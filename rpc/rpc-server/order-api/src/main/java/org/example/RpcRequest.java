@@ -7,7 +7,7 @@ import java.io.Serializable;
  * 咕泡学院-Mic: 2227324689
  * http://www.gupaoedu.com
  **/
-public class RpcRequest implements Serializable{
+public class RpcRequest implements Serializable {
 
     private String className;
     private String methodName;

@@ -62,6 +62,7 @@ public class AnnotationBeanDefinitionDemo {
     @Component // 定义当前类作为 Spring Bean（组件）
     public static class Config {
         // 1. 通过 @Bean 方式定义
+
         /**
          * 通过 Java 注解的方式，定义了一个 Bean
          */

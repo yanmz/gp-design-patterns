@@ -13,11 +13,11 @@ public class TTLRabbitConfig {
     @Bean
     public Queue emailTtlQueue() {
         //针对队列设置过期时间
-        Map<String,Object> agrs = new HashMap();
-        agrs.put("x-message-ttl",5000);
-        agrs.put("x-dead-letter-exchange","dead_exchange");
-        agrs.put("x-dead-letter-routing-key","dead");
-        return new Queue("email.ttl.queue", true,false,false,agrs);
+        Map<String, Object> agrs = new HashMap();
+        agrs.put("x-message-ttl", 5000);
+        agrs.put("x-dead-letter-exchange", "dead_exchange");
+        agrs.put("x-dead-letter-routing-key", "dead");
+        return new Queue("email.ttl.queue", true, false, false, agrs);
     }
 
     @Bean
@@ -26,12 +26,12 @@ public class TTLRabbitConfig {
     }
 
     @Bean
-    public DirectExchange  directTtlOrderExchange() {
+    public DirectExchange directTtlOrderExchange() {
         return new DirectExchange("ttl_order_exchange", true, false);
     }
 
     @Bean
-    public DirectExchange  directTtlMessageOrderExchange() {
+    public DirectExchange directTtlMessageOrderExchange() {
         return new DirectExchange("ttl_Message_exchange", true, false);
     }
 

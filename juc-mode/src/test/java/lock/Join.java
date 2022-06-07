@@ -12,20 +12,20 @@ public class Join {
 
         Thread t = Thread.currentThread();
         for (int i = 0; i < 10; i++) {
-            Thread thread = new Thread(new Domino(t),String.valueOf(i));
+            Thread thread = new Thread(new Domino(t), String.valueOf(i));
             thread.start();
             t = thread;
         }
 
         TimeUnit.SECONDS.sleep(5);
-        System.out.println(Thread.currentThread().getName()+ "  Terminate.");
+        System.out.println(Thread.currentThread().getName() + "  Terminate.");
     }
 
-    static class Domino implements Runnable{
+    static class Domino implements Runnable {
 
         private Thread thread;
 
-        public Domino(Thread thread){
+        public Domino(Thread thread) {
             this.thread = thread;
         }
 
@@ -33,10 +33,10 @@ public class Join {
         public void run() {
             try {
                 thread.join();
-            }catch (InterruptedException e){
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(Thread.currentThread().getName()  +" Terminate. ");
+            System.out.println(Thread.currentThread().getName() + " Terminate. ");
         }
     }
 }

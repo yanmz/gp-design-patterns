@@ -5,7 +5,7 @@ package org.example;
  * 咕泡学院-Mic: 2227324689
  * http://www.gupaoedu.com
  **/
-public class OrderServiceImpl implements IOrderService{
+public class OrderServiceImpl implements IOrderService {
 
     @Override
     public String queryOrderList() {

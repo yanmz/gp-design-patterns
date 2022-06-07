@@ -45,7 +45,7 @@ public class SelectorDemo01 {
 //6.轮询式获取选择器上已"准备就绪"的事件
         while (selector.select() > 0) {
 //7.获取当前选择器中所有注册的"选择键(已就绪的监听事件)"
-            Iterator<SelectionKey> iterator  = selector.selectedKeys().iterator();
+            Iterator<SelectionKey> iterator = selector.selectedKeys().iterator();
             while (iterator.hasNext()) {
 //8.获取准备就绪的事件
                 SelectionKey key = iterator.next();

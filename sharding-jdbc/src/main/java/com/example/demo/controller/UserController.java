@@ -28,7 +28,7 @@ public class UserController {
 //        user.setAge(2);
 
         Person person = new Person();
-        person.setNickname("zhangsan"+ new Random().nextInt());
+        person.setNickname("zhangsan" + new Random().nextInt());
         person.setPassword("1234567");
         person.setSex(1);
         person.setBirthday("2020-03-09");
@@ -36,6 +36,7 @@ public class UserController {
         userMapper.addPerson(person);
         return person.getId();
     }
+
     @GetMapping("/listuser")
     public List<User> listuser() {
         return userMapper.findUsers();

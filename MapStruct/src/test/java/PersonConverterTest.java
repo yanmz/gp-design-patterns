@@ -34,7 +34,7 @@ public class PersonConverterTest {
 //        assertTrue(PersonConverter.INSTANCE.convert2Bool(1));
 //        assertEquals((int)PersonConverter.INSTANCE.convert2Int(true),1);
 
-        Person person1 = new Person(1L,"zhige","zhige.me@gmail.com",new Date(),new User(1));
+        Person person1 = new Person(1L, "zhige", "zhige.me@gmail.com", new Date(), new User(1));
         PersonDTO personDTO1 = PersonConverter.INSTANCE.domain2dto(person1);
         person1.setName("xiaozhi");
         PersonConverter.INSTANCE.update(person1, personDTO1);

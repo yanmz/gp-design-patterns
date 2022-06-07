@@ -13,9 +13,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 1.消费者正常消费消息 #正常执行
  * 2.消费者消费消息失败，  #不正常执行
  * 2.1 解决方法：
- *      可以通过消息重试，设置重试次数  #不可取
- *      可以通过try catch +手动ack方式+死信队列+人工干预  #可取
- *      可以通过try catch +手动ack方式 #不可取 数据丢失
+ * 可以通过消息重试，设置重试次数  #不可取
+ * 可以通过try catch +手动ack方式+死信队列+人工干预  #可取
+ * 可以通过try catch +手动ack方式 #不可取 数据丢失
  */
 @SpringBootApplication
 public class SpringbootRabbitmqFanoutProducerApplication {
